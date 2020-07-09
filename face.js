@@ -8,7 +8,7 @@ $(function() {
 
         var subscriptionKey = "d37b5ceed5cf447689346cab373816a3";
 
-        var uriBase = "https://facetest-nkgw.cognitiveservices.azure.com/face/v1.0/detect";
+        var uriBase = "https://southeastasia.api.cognitive.microsoft.com/face/v1.0/detect";
 
         var params = {
             "returnFaceId": "true",

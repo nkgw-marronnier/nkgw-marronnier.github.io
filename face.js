@@ -8,7 +8,7 @@ $(function() {
 
         var subscriptionKey = "41a487e4136f4603b0739b0d75089baf";
 
-        var uriBase = "https://japaneast.api.cognitive.microsoft.com/face/v1.0/detect";
+        var uriBase = "https://facetest-nkgw.cognitiveservices.azure.com/";
 
         var params = {
             "returnFaceId": "true",

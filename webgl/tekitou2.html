@@ -82,9 +82,6 @@ var init = function() {
 	var texture_saturn = textureLoader.load("texture/saturn.jpg");
 	var mat_saturn = new THREE.MeshLambertMaterial();
 	mat_saturn.map = texture_saturn;
-    //var texture_saturn_ring = textureLoader.load("texture/saturn_ring.png");
-	//var mat_saturn_ring = new THREE.MeshLambertMaterial();
-	//mat_saturn_ring.map = texture_saturn_ring;
 	var texture_uranus = textureLoader.load("texture/uranus.jpg");
 	var mat_uranus = new THREE.MeshLambertMaterial();
 	mat_uranus.map = texture_uranus;
@@ -247,14 +244,14 @@ var init = function() {
 
 	// 初回実行
 	var update = function() {
-	    requestAnimationFrame(update);
+		requestAnimationFrame(update);
 
 	  	// 星を回転させる
         sun.rotation.y += 0.001;
         mercury.rotation.y += 0.01;
         venus.rotation.y += 0.015;
-	    earth.rotation.y += 0.009;
-      	group.rotation.y += 0.011;
+		earth.rotation.y += 0.009;
+		group.rotation.y += 0.011;
         mars.rotation.y += 0.007;
         jupiter.rotation.y += 0.010;
         saturn.rotation.y += 0.08;
@@ -277,7 +274,7 @@ var init = function() {
             camera.position.z = 0;
         }
 
-	    renderer.render(scene, camera);
+		renderer.render(scene, camera);
 	};
 	update();
 }

@@ -269,7 +269,7 @@ var init = function() {
 
         //カメラを移動させる
         camera.position.z -= 0.01;
-
+		//太陽に近づいたときに元に戻す
         if(camera.position.z <= -47){
             camera.position.z = 0;
         }

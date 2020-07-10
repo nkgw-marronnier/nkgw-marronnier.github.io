@@ -96,12 +96,12 @@ var init = function() {
 
 	//初回実行
 	var update = function() {
-	    requestAnimationFrame(update);
+		requestAnimationFrame(update);
 
 	  	//図形を回転させる
-	    GameCube.rotation.y += 0.01;
+		GameCube.rotation.y += 0.01;
 		GameCube.rotation.x += 0.01;
-      	cylinder.rotation.y += 0.01;
+		cylinder.rotation.y += 0.01;
 		cylinder.rotation.x += 0.01;
 		torus.rotation.y += 0.01;
 		torus.rotation.x += 0.01;
@@ -110,7 +110,7 @@ var init = function() {
 		torusKnot.rotation.y += 0.01;
 		torusKnot.rotation.x += 0.01;
 
-	    renderer.render(scene, camera);
+		renderer.render(scene, camera);
 	};
 	update();
 }

@@ -90,9 +90,9 @@ var init = function() {
 	mat_neptune.map = texture_neptune;
 
 	//グループを作る
-	var group = new THREE.Group();
+	var moon_group = new THREE.Group();
 	//3D空間にグループを追加する
-	scene.add(group);
+	scene.add(moon_group);
     
     //太陽を作成
     var sungeometry = new THREE.SphereGeometry(0.5, 32, 32);
@@ -128,8 +128,8 @@ var init = function() {
 	var moon = new THREE.Mesh(moongeometry, mat_moon);
 	var radian = (Math.PI)*2;
 	moon.position.set(-2* Math.cos(radian),0,-2*Math.sin(radian));
-	group.add(moon);
-    group.position.set(1.9,-0.4,-30);
+	moon_group.add(moon);
+    moon_group.position.set(1.9,-0.4,-30);
 	moon.scale.set(0.5,0.5,0.5);
 
     //火星を作成

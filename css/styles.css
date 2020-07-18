@@ -1,36 +1,29 @@
 html{
     background:#f0f8ff;
-    }
-
-h1{
+}h1{
 	position: relative;
 	padding:0 0 5px 0;
 	font-size:30px;
 	border-bottom:#CC66FF dashed 2.5px;
-}
-h1:first-letter{
+}h1:first-letter{
 	font-size:50px;
 	color:#325A8C;
-}
-h2{
+}h2{
     border-bottom: solid 3px skyblue;
     position: relative;
-}
-h2:after{
+}h2:after{
     position: absolute;
     content: " ";
     display: block;
     border-bottom: solid 3px #ffc778;
     bottom: -3px;
     width: 10%;
-}
-h4{
+}h4{
     padding: 0.25em 0.5em;
     color: #494949;
     background: transparent;
     border-left: solid 5px #a2de96;
-}
-body{
+}body{
     color: #333;
     font-family: "Montserrat", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 }

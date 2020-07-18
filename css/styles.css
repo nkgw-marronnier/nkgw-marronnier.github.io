@@ -18,6 +18,22 @@ html{
     border-bottom: solid 3px #ffc778;
     bottom: -3px;
     width: 10%;
+}h3{
+    position: relative;
+    background: #f1f8ff;
+    padding: 0.25em 0.5em;
+    border-left: solid 2em #5c9ee7;
+}h3:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f303";
+    position: absolute;
+    padding: 0em;
+    color: white;
+    font-weight: 900;
+    left: -1.35em;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
 }h4{
     padding: 0.25em 0.5em;
     color: #494949;

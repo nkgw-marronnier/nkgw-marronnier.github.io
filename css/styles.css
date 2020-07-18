@@ -1,5 +1,5 @@
 html{
-    background:#EEFFFF;
+    background:#000;
     }
 
 h1{
@@ -31,6 +31,6 @@ h4{
     border-left: solid 5px #a2de96;
 }
 body{
-    color: #494949;
+    color: #EEEEEE;
     font-family: "Montserrat", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 }

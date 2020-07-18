@@ -9,10 +9,10 @@
 </head>
 <body>
 <h1>適当に作ったモノ その1「地球と月」</h1>
-<h3>使用したテクスチャ素材</h3>
+<h4>使用したテクスチャ素材</h4>
 <a href="https://earthobservatory.nasa.gov/features/BlueMarble/BlueMarble_2002.php" target="_blank" rel="noopener">->地球のテクスチャ</a><br>
 <a href="https://svs.gsfc.nasa.gov/4720" target="_blank" rel="noopener">->月のテクスチャ(NASA's Scientific Visualization Studio)</a>
-<h3>提出課題の説明など</h3>
+<h4>提出課題の説明など</h4>
 <details>
 <summary>説明を読む</summary>
 中心(0,0,0）に地球のテクスチャを適用した球をy軸中心に回転させる。月は月のテクスチャを適用させた後にグループ化し、配置座標x,y,zをradian=Math.PI*2として(2.5*Math.cos(radian),0,2.5*Math.sin(radian))と設定。さらに光源を一つの平行光源に設定し、光の強さを2.5に設定。カメラにこれらの運動が収まるように座標を(0,0,6)に設定。これらのプログラムで、地球と月の衛星運動を模したものができた。<br>

@@ -26,3 +26,7 @@ h4{
     background: transparent;
     border-left: solid 5px #a2de96;
 }
+body{
+    color: #333;
+    font-family: Verdana, sans-serif;
+}

@@ -42,15 +42,15 @@ html{
 }body{
     color: #333;
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-}ul {
-    border: solid 2px skyblue;/*線の設定*/
+}ul{
+    border: solid 2px skyblue;
     padding: 0.5em 1em 0.5em 2.3em;
     position: relative;
-}ul li {
+}ul li{
     line-height: 1.5;
     padding: 0.5em 0;
     list-style-type: none!important;
-}ul li:before {
+}ul li:before{
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
     content: "\025b6";
     position: absolute;

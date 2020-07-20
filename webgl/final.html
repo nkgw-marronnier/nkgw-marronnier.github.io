@@ -38,9 +38,10 @@ var init = function() {
 
 	// カメラを作成
 	var camera = new THREE.PerspectiveCamera( 45, width / height, 1, 1000 );
+  camera.position(-5, -5, -5);
 
 	//グループを作る
-	var round = new THREE.Group();
+	var round_group = new THREE.Group();
 	//3D空間にグループを追加する
 	scene.add(round_group);
 

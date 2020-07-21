@@ -36,7 +36,6 @@ var init = function() {
     canvas: document.querySelector('#canvas'),
   antialisa: true});
 	renderer.setSize(width, height);
-	
 
 	// シーンを作成
 	var scene = new THREE.Scene();
@@ -50,7 +49,7 @@ var init = function() {
 
   // 滑らかにカメラコントローラーを制御する
   controls.enableDamping = true;
-  controls.dampingFactor = 0.2;
+  controls.dampingFactor = 0.1;
 
   tick();
 
@@ -97,12 +96,12 @@ var init = function() {
 
   for(let i=0; i<10; i++){
   //立方体
-    var GameCubeGeometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
-    var GameCube = new THREE.Mesh( GameCubeGeometry, mat );
-    var radian = i/8*(Math.PI)*2;
-    GameCube.position.set(-3.5* Math.cos(radian),-0.3,-3.5*Math.sin(radian));
-    round3_group.add( GameCube );
-    GameCube.scale.set(0.5,0.5,0.5);
+  var GameCubeGeometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
+  var GameCube = new THREE.Mesh( GameCubeGeometry, mat );
+  var radian = i/8*(Math.PI)*2;
+  GameCube.position.set(-3.5* Math.cos(radian),-0.3,-3.5*Math.sin(radian));
+  round3_group.add( GameCube );
+  GameCube.scale.set(0.5,0.5,0.5);
 }
 
 //外側
@@ -157,7 +156,7 @@ for(let i=0; i<10; i++){
 	hidarite.scale.set(0.4,0.2,0.6);
 
   //クォータニオン利用の宣言
-  hidarite.useQuaternion = true;
+  //hidarite.useQuaternion = true;
   //回転軸ベクトルの宣言・規格化
   var axis = new THREE.Vector3(10,5,10).normalize();
   //回転角度の指定(ラジアン)

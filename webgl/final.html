@@ -105,8 +105,8 @@ for(let i=0; i<10; i++){
 for(let i=0; i<10; i++){
 	// 胴体を作成
 	var doutaigeometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var doutaimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
-  var doutai = new THREE.Mesh( doutaigeometry, doutaimaterial );
+	//var doutaimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var doutai = new THREE.Mesh( doutaigeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	doutai.position.set(-4.5* Math.cos(radian),0,-4.5*Math.sin(radian));
 	round_group.add(doutai);
@@ -115,8 +115,8 @@ for(let i=0; i<10; i++){
 for(let i=0; i<10; i++){
   // 左耳を作成
 	var hidarimimigeometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var hidarimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
-  var hidarimimi = new THREE.Mesh( hidarimimigeometry, hidarimimimaterial );
+	//var hidarimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var hidarimimi = new new THREE.Mesh( hidarimimigeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	hidarimimi.position.set(-4.75* Math.cos(radian),1,-4.75*Math.sin(radian));
 	round_group.add(hidarimimi);
@@ -125,8 +125,8 @@ for(let i=0; i<10; i++){
 for(let i=0; i<10; i++){
   // 右耳を作成
 	var migimimigeometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var migimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
-  var migimimi = new THREE.Mesh( migimimigeometry, migimimimaterial );
+	//var migimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var migimimi = new THREE.Mesh( migimimigeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	migimimi.position.set(-4.25* Math.cos(radian),1,-4.25*Math.sin(radian));
 	round_group.add(migimimi);
@@ -135,8 +135,8 @@ for(let i=0; i<10; i++){
 for(let i=0; i<10; i++){
   //左手を作成
   var hidaritegeometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var hidaritematerial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
-  var hidarite = new THREE.Mesh( hidaritegeometry, hidaritematerial );
+	//var hidaritematerial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var hidarite = new THREE.Mesh( hidaritegeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	hidarite.position.set(-4.2* Math.cos(radian),0.3,-4.2*Math.sin(radian));
 	round_group.add(hidarite);
@@ -158,8 +158,8 @@ for(let i=0; i<10; i++){
 for(let i=0; i<10; i++){
   //右手を作成
   var migitegeometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var migitematerial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
-  var migite = new THREE.Mesh( migitegeometry, migitematerial );
+	//var migitematerial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var migite = new THREE.Mesh( migitegeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	migite.position.set(-4.8* Math.cos(radian),0.3,-4.8*Math.sin(radian));
 	round_group.add(migite);
@@ -181,8 +181,8 @@ for(let i=0; i<10; i++){
 for(let i=0; i<10; i++){
   //右足を作成
   var migiashigeometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var migiashimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
-  var migiashi = new THREE.Mesh( migiashigeometry, migiashimaterial );
+	//var migiashimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var migiashi = new THREE.Mesh( migiashigeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	migiashi.position.set(-4.2* Math.cos(radian),-0.3,-4.2*Math.sin(radian));
 	round_group.add(migiashi);
@@ -204,8 +204,8 @@ for(let i=0; i<10; i++){
 for(let i=0; i<10; i++){
     //左足を作成
   var hidariashigeometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var hidariashimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
-  var hidariashi = new THREE.Mesh( hidariashigeometry, hidariashimaterial );
+	//var hidariashimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var hidariashi = new THREE.Mesh( hidariashigeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	hidariashi.position.set(-4.8* Math.cos(radian),-0.3,-4.8*Math.sin(radian));
 	round_group.add(hidariashi);

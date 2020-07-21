@@ -102,7 +102,8 @@ var init = function() {
 	var earth = new THREE.Mesh(earthgeometry, mat_earth);
   earth.receiveShadow = true;
   earth.castShadow = true;
-  earth.position.set( Math.PI/ 6, 0, 0 );
+  earth.position.set( 0, 0, 0 );
+  earth.rotate.x = Math.PI / 6;
   scene.add(earth);
   earth.scale.set(2.5,2.5,2.5);
 

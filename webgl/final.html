@@ -413,13 +413,13 @@ for(let i=0; i<8; i++){
 }
 
   //平行光源
-  var directionalLight = new THREE.DirectionalLight( 0xffffff );
+  var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
   directionalLight.position.set( 1, 1, 1 );
   //シーンに追加
   scene.add( directionalLight );
 
   //平行光源2
-  var directionalLight2 = new THREE.DirectionalLight( 0xffffff );
+  var directionalLight2 = new THREE.DirectionalLight( 0xffffff ,0.5 );
   directionalLight2.position.set( -1, 1, 1 );
   scene.add( directionalLight2 );
 

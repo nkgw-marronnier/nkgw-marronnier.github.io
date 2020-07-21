@@ -36,6 +36,7 @@ var init = function() {
     canvas: document.querySelector('#canvas'),
   antialisa: true});
 	renderer.setSize(width, height);
+  renderer.shadowMap.enabled = true;
 
 	// シーンを作成
 	var scene = new THREE.Scene();
@@ -117,6 +118,7 @@ for(let i=0; i<10; i++){
   torus.scale.set(0.5,0.5,0.5);
 }
 
+  //地面を作成
   var plane =  new THREE.Mesh(                                      
     new THREE.PlaneGeometry(100, 100, 1, 1),
     new THREE.MeshLambertMaterial({ 
@@ -124,6 +126,7 @@ for(let i=0; i<10; i++){
     }));
   plane.rotation.x = Math.PI / -2;                     
   scene.add(plane);
+  plane.castShadow = true;
   plane.position.set(0, -20, 0)
 
 //外側
@@ -134,6 +137,7 @@ for(let i=0; i<10; i++){
   var kao = new THREE.Mesh( kaogeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	kao.position.set(-4.5* Math.cos(radian),0.7,-4.5*Math.sin(radian));
+  kao.receiveShadow = true;
 	round_group.add(kao);
 	kao.scale.set(0.7,0.7,0.7);
 }

@@ -2,7 +2,7 @@ html{
   background:#fafafa;
 }h1{
 	position: relative;
-	padding:0 0 5px 0;
+	padding:0 0 1px 0;
 	font-size:30px;
 	border-bottom:#CC66FF dashed 3px;
 }h1:first-letter{

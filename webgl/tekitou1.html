@@ -50,12 +50,6 @@ var init = function() {
 	var mat_moon = new THREE.MeshPhongMaterial();
 	mat_moon.map = texture_moon;
 
-	//バンプマップ読み込み
-	mat_earth.bumpMap = texture_earth;
-  mat_earth.bumpscale = 0.01;
-  mat_moon.bumpMap = texture_moon;
-  mat_moon.bumpscale = 0.01;
-
 	//グループを作る
 	var moon_group = new THREE.Group();
 	//3D空間にグループを追加する

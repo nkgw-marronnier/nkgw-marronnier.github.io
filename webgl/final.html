@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/styles.css">
 <meta name="format-detection" content="telephone=no">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r17/Stats.min.js"></script>
 <script src="/OrbitControls.js"></script>
 </head>
 <body>
@@ -32,6 +33,8 @@
 </footer>
 </div>
 <script>
+var stats;
+
 var init = function() {
 	var width = 960,
   height = 540;
@@ -56,6 +59,17 @@ var init = function() {
   // 滑らかにカメラコントローラーを制御する
   controls.enableDamping = true;
   controls.dampingFactor = 1.0;
+
+  function createStats() {
+      var stats = new Stats();
+      stats.setMode(0);
+
+      stats.domElement.style.position = 'absolute';
+      stats.domElement.style.left = '0';
+      stats.domElement.style.top = '0';
+
+      return stats;
+    }
 
 	//グループを作る
 	var round_group = new THREE.Group();
@@ -746,6 +760,8 @@ for(let i=0; i<10; i++){
     controls.update();
 
 		renderer.render(scene, camera);
+
+    stats.update();
 	};
 	update();
 }

@@ -50,6 +50,12 @@ var init = function() {
 	var mat_moon = new THREE.MeshLambertMaterial();
 	mat_moon.map = texture_moon;
 
+	//バンプマップ読み込み
+	mat_earth.bumpMap = earth_texture;
+  mat_earth.bumpscale = 0.2;
+  minamo_mat.bumpMap = minamo_texture;
+  minamo_mat.bumpscale = 0.1;
+
 	//グループを作る
 	var moon_group = new THREE.Group();
 	//3D空間にグループを追加する

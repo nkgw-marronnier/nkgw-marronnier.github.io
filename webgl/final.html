@@ -102,7 +102,7 @@ var init = function() {
 	var earth = new THREE.Mesh(earthgeometry, mat_earth);
   earth.receiveShadow = true;
   earth.castShadow = true;
-  earth.position.set( 0, 0, 0 );
+  earth.position.set( Math.PI/ 6, 0, 0 );
   scene.add(earth);
   earth.scale.set(2.5,2.5,2.5);
 
@@ -529,7 +529,7 @@ for(let i=0; i<8; i++){
 	scene.add(starmesh4)
 
   // 毎フレーム時に実行されるループイベントです
-function tick() {
+  function tick() {
   // カメラコントローラーを更新
   controls.update();
 
@@ -537,7 +537,9 @@ function tick() {
   renderer.render(scene, camera);
 
   requestAnimationFrame(tick);
-}
+  }
+
+
 
   var ue = 0;
   var ue2 = 1;

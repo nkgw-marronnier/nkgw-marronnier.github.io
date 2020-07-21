@@ -121,18 +121,10 @@ for(let i=0; i<10; i++){
     new THREE.PlaneGeometry(100, 100, 1, 1),
     new THREE.MeshLambertMaterial({ 
     color: 0x0000ff             
-    }));                      
+    }));
+  plane.rotation.x = Math.PI / -2;                     
   scene.add(plane);
   plane.position.set(0, 0, 0)
-  var axis5 = new THREE.Vector3(1,0,0).normalize();
-  //回転角度の指定(ラジアン)
-  var angle5 =  Math.PI /2;
-  //クォータニオンオブジェクトの宣言
-  var q5 = new THREE.Quaternion();
-  //回転軸と角度からクォータニオンを計算
-  q5.setFromAxisAngle(axis5,angle5);
-  //直方体オブジェクトのquaternionプロパティに代入
-  plane.quaternion.copy(q5);
 
 //外側
 for(let i=0; i<10; i++){
@@ -414,12 +406,12 @@ for(let i=0; i<8; i++){
   scene.add( directionalLight2 );
 
   // 照明を作成
-const light = new THREE.SpotLight(0xFFFFFF, 2, 100, Math.PI / 4, 1);
-// ライトに影を有効にする
-light.castShadow = true;
-scene.add(light);
+  const light = new THREE.SpotLight(0xFFFFFF, 2, 100, Math.PI / 4, 1);
+  // ライトに影を有効にする
+  light.castShadow = true;
+  scene.add(light);
 
-  	//星空1(白色)を作成
+  //星空1(白色)を作成
 	var stargeometry = new THREE.Geometry();
 	// 配置する範囲
 	var SIZE = 1000;

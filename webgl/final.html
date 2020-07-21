@@ -44,6 +44,12 @@ var init = function() {
   // カメラコントローラーを作成
   const controls = new THREE.OrbitControls(camera);
 
+  // 滑らかにカメラコントローラーを制御する
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.2;
+
+  tick();
+
 	//グループを作る
 	var round_group = new THREE.Group();
 	//3D空間にグループを追加する

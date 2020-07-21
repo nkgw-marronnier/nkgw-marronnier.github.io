@@ -37,8 +37,6 @@ var init = function() {
   antialisa: true});
 	renderer.setSize(width, height);
   renderer.shadowMap.enabled = true;
-  light.shadow.mapSize.width = 2048;
-  light.shadow.mapSize.height = 2048;
 
 	// シーンを作成
 	var scene = new THREE.Scene();
@@ -435,6 +433,9 @@ for(let i=0; i<8; i++){
   light.castShadow = true;
   light.position.set(0,10,10);
   scene.add(light);
+
+  light.shadow.mapSize.width = 2048;
+  light.shadow.mapSize.height = 2048;
 
   //星空1(白色)を作成
 	var stargeometry = new THREE.Geometry();

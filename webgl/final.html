@@ -709,6 +709,9 @@ for(let i=0; i<10; i++){
 
 	// 初回実行
 	var update = function() {
+
+    stats.begin();
+
 		requestAnimationFrame(update);
 
     earth.rotation.y += 0.01;
@@ -762,7 +765,7 @@ for(let i=0; i<10; i++){
 
 		renderer.render(scene, camera);
 
-    stats.update();
+    stats.end();
 	};
 	update();
 }

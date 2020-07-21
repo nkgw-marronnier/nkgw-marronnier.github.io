@@ -48,11 +48,15 @@ var init = function() {
   var round2_group = new THREE.Group();
   scene.add(round2_group);
 
-  //球
-  var sphereGeometry = new THREE.SphereGeometry( 0.5, 32, 32 );
-  //半径、垂直方向の分割数、水平方向の分割数
-  var sphereMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00, wireframe: true });
-  var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+  // テクスチャー読み込み
+	var textureLoader = new THREE.TextureLoader();
+	var texture_earth = textureLoader.load("texture/earth.jpg");
+	var mat_earth = new THREE.MeshLambertMaterial();
+	mat_earth.map = texture_earth;
+
+  // 地球を作成
+	var earthgeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var earth = new THREE.Mesh(earthgeometry, mat_earth);
   sphere.position.set( 0, 0, 0 );
   scene.add(sphere);
   sphere.scale.set(2.5,2.5,2.5);

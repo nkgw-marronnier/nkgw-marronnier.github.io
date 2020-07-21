@@ -278,6 +278,7 @@ for(let i=0; i<8; i++){
   var kao = new THREE.Mesh( kaogeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
 	kao.position.set(-2.5* Math.cos(radian),0.7,-2.5*Math.sin(radian));
+  kao.castShadow = true;
 	round2_group.add(kao);
 	kao.scale.set(0.7,0.7,0.7);
 }
@@ -288,6 +289,7 @@ for(let i=0; i<8; i++){
   var doutai = new THREE.Mesh( doutaigeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
 	doutai.position.set(-2.5* Math.cos(radian),0,-2.5*Math.sin(radian));
+  doutai.castShadow = true;
 	round2_group.add(doutai);
 	doutai.scale.set(0.7,1,0.7);
 }
@@ -298,6 +300,7 @@ for(let i=0; i<8; i++){
   var hidarimimi = new THREE.Mesh( hidarimimigeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
 	hidarimimi.position.set(-2.75* Math.cos(radian),1,-2.75*Math.sin(radian));
+  hidamari.castShadow = true;
 	round2_group.add(hidarimimi);
 	hidarimimi.scale.set(0.2,0.2,0.2);
 }
@@ -308,6 +311,7 @@ for(let i=0; i<8; i++){
   var migimimi = new THREE.Mesh( migimimigeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
 	migimimi.position.set(-2.25* Math.cos(radian),1,-2.25*Math.sin(radian));
+  migimimi.castShadow = true;
 	round2_group.add(migimimi);
 	migimimi.scale.set(0.2,0.2,0.2);
 }
@@ -318,6 +322,7 @@ for(let i=0; i<8; i++){
   var hidarite = new THREE.Mesh( hidaritegeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
 	hidarite.position.set(-2.2* Math.cos(radian),0.3,-2.2*Math.sin(radian));
+  hidarite.castShadow = true;
 	round2_group.add(hidarite);
 	hidarite.scale.set(0.4,0.2,0.6);
 
@@ -341,6 +346,7 @@ for(let i=0; i<8; i++){
   var migite = new THREE.Mesh( migitegeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
 	migite.position.set(-2.8* Math.cos(radian),0.3,-2.8*Math.sin(radian));
+  migite.castShadow = true;
 	round2_group.add(migite);
 	migite.scale.set(0.4,0.2,0.6);
 
@@ -364,6 +370,7 @@ for(let i=0; i<8; i++){
   var migiashi = new THREE.Mesh( migiashigeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
 	migiashi.position.set(-2.2* Math.cos(radian),-0.3,-2.2*Math.sin(radian));
+  migiashi.castShadow = true;
 	round2_group.add(migiashi);
 	migiashi.scale.set(0.4,0.2,0.6);
 
@@ -387,6 +394,7 @@ for(let i=0; i<8; i++){
   var hidariashi = new THREE.Mesh( hidariashigeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
 	hidariashi.position.set(-2.8* Math.cos(radian),-0.3,-2.8*Math.sin(radian));
+  hidariashi.castShadow = true;
 	round2_group.add(hidariashi);
 	hidariashi.scale.set(0.4,0.2,0.6);
 
@@ -416,7 +424,7 @@ for(let i=0; i<8; i++){
   scene.add( directionalLight2 );
 
   //照明を作成
-  const light = new THREE.SpotLight(0xFFFFFF, 2, 10000, Math.PI / 4, 0.1);
+  const light = new THREE.SpotLight(0xFFFFFF, 3, 10000000, Math.PI / 4, 0.001);
   ライトに影を有効にする
   light.castShadow = true;
   light.position.set(0,5,-5);

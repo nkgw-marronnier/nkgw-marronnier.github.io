@@ -38,21 +38,45 @@ var init = function() {
 
 	// カメラを作成
 	var camera = new THREE.PerspectiveCamera( 45, width / height, 1, 1000 );
-  camera.position.set(0,0,6);
+  camera.position.set(0,0,8);
 
 	//グループを作る
 	var round_group = new THREE.Group();
 	//3D空間にグループを追加する
 	scene.add(round_group);
 
-	// 球を作成
+  // 顔を作成
+	var kaogeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var kaomaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var kao = new THREE.Mesh( kaogeometry, kaomaterial );
+	var radian = (Math.PI)*2;
+	kao.position.set(-2.5* Math.cos(radian),0.7,-2.5*Math.sin(radian));
+	round_group.add(kao);
+	kao.scale.set(0.7,0.7,0.7);
+
+	// 胴体を作成
 	var doutaigeometry = new THREE.SphereGeometry(0.5, 32, 32);
 	var doutaimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var doutai = new THREE.Mesh( doutaigeometry, doutaimaterial );
-	var radian = (Math.PI)*2;
 	doutai.position.set(-2.5* Math.cos(radian),0,-2.5*Math.sin(radian));
 	round_group.add(doutai);
-	doutai.scale.set(0.6,0.6,0.6);
+	doutai.scale.set(0.7,1,0.7);
+
+  // 左耳を作成
+	var hidarimimigeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var hidarimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var hidarimimi = new THREE.Mesh( hidarimimigeometry, hidarimimimaterial );
+	hidarimimi.position.set(-2.75* Math.cos(radian),1,-2.75*Math.sin(radian));
+	round_group.add(hidarimimi);
+	hidarimimi.scale.set(0.2,0.2,0.2);
+
+  // 右耳を作成
+	var migimimigeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var migimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var migimimi = new THREE.Mesh( migimimigeometry, migimimimaterial );
+	migimimi.position.set(-2.25* Math.cos(radian),1,-2.25*Math.sin(radian));
+	round_group.add(migimimi);
+	migimimi.scale.set(0.2,0.2,0.2);
 
   //平行光源
   var directionalLight = new THREE.DirectionalLight( 0xAAffff );
@@ -65,16 +89,26 @@ var init = function() {
   directionalLight2.position.set( -1, 1, 1 );
   scene.add( directionalLight2 );
 
-  var F = 2*round_group.position.y/10;
+  var ue = 0;
 
 	// 初回実行
 	var update = function() {
 		requestAnimationFrame(update);
 
-	  	// 星を回転させる
+	  // 熊を飛び跳ねさせる
 		round_group.rotation.y += 0.005;
-    round_group.position.y = F;
-
+    if(round_group.position.y >= 0.5){
+      ue = 1;
+    }
+    if(round_group.position.y <= -0.5){
+      ue = 0;
+    }
+    if(ue == 1){
+      round_group.position.y -= 0.03;
+    }
+    if(ue == 0){
+      round_group.position.y += 0.03;
+    }
 		renderer.render(scene, camera);
 	};
 	update();

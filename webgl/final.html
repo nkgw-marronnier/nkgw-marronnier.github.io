@@ -60,6 +60,9 @@ var init = function() {
   controls.enableDamping = true;
   controls.dampingFactor = 1.0;
 
+  stats = createStats();
+  document.body.appendChild( stats.domElement );
+
   function createStats() {
       var stats = new Stats();
       stats.setMode(0);

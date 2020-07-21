@@ -696,6 +696,12 @@ for(let i=0; i<10; i++){
   function tick() {
   // カメラコントローラーを更新
   controls.update();
+  //FPS確認
+  stats.begin();
+  mesh.rotation.y += 0.01;
+  stats.end();
+  renderer.render(scene, camera);
+  renderer.setAnimationLoop(tick);
 
   // レンダリング
   renderer.render(scene, camera);

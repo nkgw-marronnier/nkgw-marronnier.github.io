@@ -32,10 +32,11 @@ var init = function() {
   height = 540;
 
 	// レンダラーを作成
-	var renderer = new THREE.WebGLRenderer();
+	var renderer = new THREE.WebGLRenderer({
+    canvas: document.querySelector('#canvas'),
+  antialisa: true});
 	renderer.setSize(width, height);
-	canvas: document.querySelector('#canvas'),
-  antialisa: true
+	
 
 	// シーンを作成
 	var scene = new THREE.Scene();

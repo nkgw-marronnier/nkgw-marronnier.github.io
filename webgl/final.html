@@ -25,7 +25,7 @@
 <a href="https://github.com/nkgw-marronnier/WebGL-Three.js-/blob/master/tekitou1.html" target="blank" rel="noopener">->GitHub(nkgw-marronnier) [公開期間:2020/07/20~2020/07/30]</a><br>
 </details>
 <br>
-<canvas id="myCanvas"></canvas>
+<canvas id="canvas"></canvas>
 <script>
 var init = function() {
 	var width = 960,
@@ -44,7 +44,7 @@ var init = function() {
   camera.position.set(0,0,8);
 
   // カメラコントローラーを作成
-  const controls = new THREE.OrbitControls(camera, domElement);
+  const controls = new THREE.OrbitControls(camera, canvas);
 
   // 滑らかにカメラコントローラーを制御する
   controls.enableDamping = true;

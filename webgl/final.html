@@ -73,7 +73,7 @@ var init = function() {
     var GameCubeGeometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
     var GameCube = new THREE.Mesh( GameCubeGeometry, mat );
     var radian = i/8*(Math.PI)*2;
-    GameCube.position.set(-4* Math.cos(radian),-0.3,-4*Math.sin(radian));
+    GameCube.position.set(-3* Math.cos(radian),-0.3,-3*Math.sin(radian));
     round3_group.add( GameCube );
     GameCube.scale.set(0.5,0.5,0.5);
 }

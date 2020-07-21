@@ -64,6 +64,9 @@ var init = function() {
   var round3_group = new THREE.Group();
   scene.add(round3_group);
 
+  var round4_group = new THREE.Group();
+  scene.add(round4_group);
+
   // テクスチャー読み込み
 	var textureLoader = new THREE.TextureLoader();
 	var texture_earth = textureLoader.load("texture/earth.jpg");
@@ -94,14 +97,24 @@ var init = function() {
   scene.add(earth);
   earth.scale.set(2.5,2.5,2.5);
 
-  for(let i=0; i<10; i++){
+for(let i=0; i<10; i++){
   //立方体
-  var GameCubeGeometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
-  var GameCube = new THREE.Mesh( GameCubeGeometry, mat );
+  var cubegeometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
+  var cube = new THREE.Mesh( cubegeometry, mat );
   var radian = i/8*(Math.PI)*2;
-  GameCube.position.set(-3.5* Math.cos(radian),-0.3,-3.5*Math.sin(radian));
-  round3_group.add( GameCube );
-  GameCube.scale.set(0.5,0.5,0.5);
+  cube.position.set(-3.5* Math.cos(radian),-0.3,-3.5*Math.sin(radian));
+  round3_group.add( cube );
+  cube.scale.set(0.5,0.5,0.5);
+}
+
+for(let i=0; i<10; i++){
+  //立方体
+  var cube2eometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
+  var cube2 = new THREE.Mesh( cube2Geometry, mat );
+  var radian = i/10*(Math.PI)*2;
+  cube2.position.set(-5.5* Math.cos(radian),-0.3,-5.5*Math.sin(radian));
+  round4_group.add( cube2 );
+  cube2.scale.set(0.5,0.5,0.5);
 }
 
 //外側
@@ -476,6 +489,8 @@ function tick() {
     round2_group.rotation.y += 0.005;
     round3_group.rotation.y += 0.005;
     round3_group.rotation.x += 0.005;
+    round4_group.rotation.y -= 0.005;
+    round4_group.rotation.x -= 0.005;
     if(round_group.position.y >= 0.5){
       ue = 1;
     }

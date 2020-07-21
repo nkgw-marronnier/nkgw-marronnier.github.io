@@ -44,17 +44,17 @@ var init = function() {
 	// テクスチャー読み込み
 	var textureLoader = new THREE.TextureLoader();
 	var texture_earth = textureLoader.load("texture/earth.jpg");
-	var mat_earth = new THREE.MeshLambertMaterial();
+	var mat_earth = new THREE.MeshPhongMaterial();
 	mat_earth.map = texture_earth;
 	var texture_moon = textureLoader.load("texture/moon.jpg");
-	var mat_moon = new THREE.MeshLambertMaterial();
+	var mat_moon = new THREE.MeshPhongMaterial();
 	mat_moon.map = texture_moon;
 
 	//バンプマップ読み込み
 	mat_earth.bumpMap = texture_earth;
-  mat_earth.bumpscale = 0.2;
+  mat_earth.bumpscale = 0.01;
   mat_moon.bumpMap = texture_moon;
-  mat_moon.bumpscale = 0.2;
+  mat_moon.bumpscale = 0.01;
 
 	//グループを作る
 	var moon_group = new THREE.Group();

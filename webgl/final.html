@@ -60,12 +60,6 @@ var init = function() {
 
   tick();
 
-  //FPS計測
-  const stats = new Stats();
-  stats.dom.style.left = "10px";
-  stats.dom.style.top = "10px";
-  document.body.appendChild( stats.dom );
-
 	//グループを作る
 	var round_group = new THREE.Group();
 	//3D空間にグループを追加する
@@ -108,7 +102,6 @@ var init = function() {
 	var kirakira_texture = textureLoader.load("texture/kirakira.jpg");
 	var kirakira_mat = new THREE.MeshPhongMaterial();
 	kirakira_mat.map = kirakira_texture;
-
 
   //バンプマップ読み込み
 	var bump = textureLoader.load("texture/stone-bump.jpg");
@@ -719,8 +712,6 @@ for(let i=0; i<10; i++){
 	// 初回実行
 	var update = function() {
 		requestAnimationFrame(update);
-    //FPS確認
-    stats.begin();
 
     earth.rotation.y += 0.01;
 
@@ -770,8 +761,6 @@ for(let i=0; i<10; i++){
 		starmesh4.rotation.x += 0.0001;
 
 		renderer.render(scene, camera);
-
-    stats.end();
 	};
 	update();
 }

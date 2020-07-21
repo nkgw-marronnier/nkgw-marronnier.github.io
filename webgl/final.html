@@ -38,7 +38,7 @@ var init = function() {
 
 	// カメラを作成
 	var camera = new THREE.PerspectiveCamera( 45, width / height, 1, 1000 );
-  camera.position(-5, -5, -5);
+  camera.position.set(0,0,6);
 
 	//グループを作る
 	var round_group = new THREE.Group();
@@ -47,25 +47,33 @@ var init = function() {
 
 	// 球を作成
 	var doutaigeometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var doutai = new THREE.MeshPhongMaterial({ color: 0xffa500, wireframe: true });
-	doutai.position.z = 0;
-	scene.add(doutai);
-  round_group.add(doutai);
-	doutai.scale.set(1.5,1.5,1.5);
+	var doutaimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var doutai = new THREE.Mesh( doutaigeometry, doutaimaterial );
+	var radian = (Math.PI)*2;
+	doutai.position.set(-2.5* Math.cos(radian),0,-2.5*Math.sin(radian));
+	round_group.add(doutai);
+	doutai.scale.set(0.6,0.6,0.6);
 
-  //熊を照らす光
-	var directionalLight = new THREE.DirectionalLight( 0xAAffff );
+  //平行光源
+  var directionalLight = new THREE.DirectionalLight( 0xAAffff );
   directionalLight.position.set( 1, 1, 1 );
   //シーンに追加
   scene.add( directionalLight );
+
+  //平行光源2
+  var directionalLight2 = new THREE.DirectionalLight( 0xffAAff );
+  directionalLight2.position.set( -1, 1, 1 );
+  scene.add( directionalLight2 );
+
+  var F = 2*round_group.position.y/10;
 
 	// 初回実行
 	var update = function() {
 		requestAnimationFrame(update);
 
 	  	// 星を回転させる
-		doutai.rotation.y += 0.005;
-		round_group.rotation.y += 0.0055;
+		round_group.rotation.y += 0.005;
+    round_group.position.y = F;
 
 		renderer.render(scene, camera);
 	};

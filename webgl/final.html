@@ -60,11 +60,10 @@ var init = function() {
   tick();
 
   //FPS計測
-  import Stats from 'three/examples/jsm/libs/stats.module';
-
   const stats = new Stats();
-  stats.showPanel(0);
-  document.body.appendChild(stats.dom);
+  stats.dom.style.left = "10px";
+  stats.dom.style.top = "10px";
+  document.body.appendChild( stats.dom );
 
 	//グループを作る
 	var round_group = new THREE.Group();

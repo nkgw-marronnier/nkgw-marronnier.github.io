@@ -702,10 +702,7 @@ for(let i=0; i<10; i++){
   function tick() {
   // カメラコントローラーを更新
   controls.update();
-  //FPS確認
-  stats.begin();
-  mesh.rotation.y += 0.01;
-  stats.end();
+
   renderer.render(scene, camera);
   renderer.setAnimationLoop(tick);
 
@@ -715,14 +712,14 @@ for(let i=0; i<10; i++){
   requestAnimationFrame(tick);
   }
 
-
-
   var ue = 0;
   var ue2 = 1;
 
 	// 初回実行
 	var update = function() {
 		requestAnimationFrame(update);
+    //FPS確認
+    stats.begin();
 
     earth.rotation.y += 0.01;
 
@@ -772,6 +769,8 @@ for(let i=0; i<10; i++){
 		starmesh4.rotation.x += 0.0001;
 
 		renderer.render(scene, camera);
+
+    stats.end();
 	};
 	update();
 }

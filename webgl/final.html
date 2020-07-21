@@ -126,7 +126,7 @@ for(let i=0; i<10; i++){
     }));
   plane.rotation.x = Math.PI / -2;                     
   scene.add(plane);
-  plane.castShadow = true;
+  plane.receiveShadow = true;
   plane.position.set(0, -5, 0)
 
 //外側
@@ -137,7 +137,7 @@ for(let i=0; i<10; i++){
   var kao = new THREE.Mesh( kaogeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	kao.position.set(-4.5* Math.cos(radian),0.7,-4.5*Math.sin(radian));
-  kao.receiveShadow = true;
+  kao.castShadow = true;
 	round_group.add(kao);
 	kao.scale.set(0.7,0.7,0.7);
 }

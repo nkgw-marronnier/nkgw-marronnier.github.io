@@ -33,8 +33,6 @@
 </footer>
 </div>
 <script>
-var stats;
-
 var init = function() {
 	var width = 960,
   height = 540;
@@ -60,6 +58,7 @@ var init = function() {
   controls.enableDamping = true;
   controls.dampingFactor = 1.0;
 
+  var stats;
   stats = createStats();
   document.body.appendChild( stats.domElement );
 

@@ -13,7 +13,8 @@
 <h1>WebGL最終提出課題</h1>
 <h3>CIT　情報科学部　情報ネットワーク学科　3年　学生番号：1832099</h3>
 <h4>使用したテクスチャ素材</h4>
-<a href="https://earthobservatory.nasa.gov/features/BlueMarble/BlueMarble_2002.php" target="_blank" rel="noopener">->地球のテクスチャ</a>
+<a href="https://earthobservatory.nasa.gov/features/BlueMarble/BlueMarble_2002.php" target="_blank" rel="noopener">->地球のテクスチャ</a><br>
+<a href="https://www.beiz.jp/素材/革/" target="_blank" rel="noopener">->熊のテクスチャ</a>
 <h4>提出課題の説明など</h4>
 <details>
 <summary>説明を読む</summary>
@@ -40,10 +41,9 @@ var init = function() {
 	// カメラを作成
 	var camera = new THREE.PerspectiveCamera( 45, width / height, 1, 1000 );
   camera.position.set(0,0,8);
-  
-  let ele = document.getElementById("test").appendChild(renderer.domElement)
+
   // カメラコントローラーを作成
-  const controls = new THREE.OrbitControls(camera, domElement);
+  const controls = new THREE.OrbitControls(camera);
 
   // 滑らかにカメラコントローラーを制御する
   controls.enableDamping = true;

@@ -64,6 +64,10 @@ var init = function() {
 	var texture = textureLoader.load("texture/stone.jpg");
 	var mat = new THREE.MeshPhongMaterial();
 	mat.map = texture;
+  var textureLoader = new THREE.TextureLoader();
+	var kawa1_texture = textureLoader.load("texture/kawa1.jpg");
+	var kawa1_mat = new THREE.MeshPhongMaterial();
+	kawa1_mat.map = kawa1_texture;
 
   //バンプマップ読み込み
 	var bump = textureLoader.load("texture/stone-bump.jpg");
@@ -91,8 +95,8 @@ var init = function() {
 for(let i=0; i<10; i++){
   // 顔を作成
 	var kaogeometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var kaomaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
-  var kao = new THREE.Mesh( kaogeometry, kaomaterial );
+	//var kaomaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var kao = new THREE.Mesh( GameCubeGeometry, mat );
   var radian = i/10*(Math.PI)*2;
 	kao.position.set(-4.5* Math.cos(radian),0.7,-4.5*Math.sin(radian));
 	round_group.add(kao);

@@ -122,7 +122,17 @@ for(let i=0; i<10; i++){
     new THREE.MeshLambertMaterial({ 
     color: 0x0000ff             
     }));                      
-  scene.add(plane); 
+  scene.add(plane);
+  plane.position.set(0, 0, 0)
+  var axis5 = new THREE.Vector3(1,0,0).normalize();
+  //回転角度の指定(ラジアン)
+  var angle5 =  Math.PI /2;
+  //クォータニオンオブジェクトの宣言
+  var q5 = new THREE.Quaternion();
+  //回転軸と角度からクォータニオンを計算
+  q5.setFromAxisAngle(axis5,angle5);
+  //直方体オブジェクトのquaternionプロパティに代入
+  plane.quaternion.copy(q5);
 
 //外側
 for(let i=0; i<10; i++){

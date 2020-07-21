@@ -425,7 +425,7 @@ for(let i=0; i<8; i++){
 
   //照明を作成
   const light = new THREE.SpotLight(0xFFFFFF, 3, 10000000, Math.PI / 4, 0.001);
-  ライトに影を有効にする
+  //ライトに影を有効にする
   light.castShadow = true;
   light.position.set(0,5,-5);
   scene.add(light);

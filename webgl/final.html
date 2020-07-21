@@ -96,7 +96,7 @@ for(let i=0; i<10; i++){
   // 顔を作成
 	var kaogeometry = new THREE.SphereGeometry(0.5, 32, 32);
 	//var kaomaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
-  var kao = new THREE.Mesh( kaoGeometry, kawa1_mat );
+  var kao = new THREE.Mesh( kaogeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	kao.position.set(-4.5* Math.cos(radian),0.7,-4.5*Math.sin(radian));
 	round_group.add(kao);

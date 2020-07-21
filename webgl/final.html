@@ -49,7 +49,7 @@ var init = function() {
   controls.dampingFactor = 0.2;
 
   tick();
-
+  
 	//グループを作る
 	var round_group = new THREE.Group();
 	//3D空間にグループを追加する
@@ -447,6 +447,17 @@ for(let i=0; i<8; i++){
 	size: 0.6,color: 0xFF00FF,});
 	var starmesh4 = new THREE.Points(stargeometry4, starmaterial4);
 	scene.add(starmesh4)
+
+  // 毎フレーム時に実行されるループイベントです
+function tick() {
+  // カメラコントローラーを更新
+  controls.update();
+
+  // レンダリング
+  renderer.render(scene, camera);
+
+  requestAnimationFrame(tick);
+}
 
   var ue = 0;
   var ue2 = 1;

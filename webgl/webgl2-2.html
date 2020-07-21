@@ -42,7 +42,7 @@ var init = function() {
 	// テクスチャー読み込み
 	var textureLoader = new THREE.TextureLoader();
 	var texture = textureLoader.load("texture/stone.jpg");
-	var mat = new THREE.MeshLambertMaterial();
+	var mat = new THREE.MeshPhongMaterial();
 	mat.map = texture;
 
 	//バンプマップ読み込み

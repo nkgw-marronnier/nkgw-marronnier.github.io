@@ -406,22 +406,22 @@ for(let i=0; i<8; i++){
 }
 
   //平行光源
-  //var directionalLight = new THREE.DirectionalLight( 0xffffff );
-  //directionalLight.position.set( 1, 1, 1 );
+  var directionalLight = new THREE.DirectionalLight( 0xffffff );
+  directionalLight.position.set( 1, 1, 1 );
   //シーンに追加
-  //scene.add( directionalLight );
+  scene.add( directionalLight );
 
   //平行光源2
-  //var directionalLight2 = new THREE.DirectionalLight( 0xffffff );
-  //directionalLight2.position.set( -1, 1, 1 );
-  //scene.add( directionalLight2 ); {% endcomment %}
+  var directionalLight2 = new THREE.DirectionalLight( 0xffffff );
+  directionalLight2.position.set( -1, 1, 1 );
+  scene.add( directionalLight2 ); {% endcomment %}
 
   // 照明を作成
-  const light = new THREE.SpotLight(0xFFFFFF, 5, 100, Math.PI / 4, 0.00001);
+  //const light = new THREE.SpotLight(0xFFFFFF, 5, 100, Math.PI / 4, 0.00001);
   // ライトに影を有効にする
-  light.castShadow = true;
-  light.position.set(0,5,-5);
-  scene.add(light);
+  //light.castShadow = true;
+  //light.position.set(0,5,-5);
+  //scene.add(light);
 
   //星空1(白色)を作成
 	var stargeometry = new THREE.Geometry();

@@ -71,7 +71,7 @@ var init = function() {
   // テクスチャー読み込み
 	var textureLoader = new THREE.TextureLoader();
 	var texture_earth = textureLoader.load("texture/earth.jpg");
-	var mat_earth = new THREE.MeshPhongMaterial();
+	var mat_earth = new THREE.MeshLambertMaterial();
 	mat_earth.map = texture_earth;
   var textureLoader = new THREE.TextureLoader();
 	var texture = textureLoader.load("texture/stone.jpg");

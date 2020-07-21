@@ -413,6 +413,7 @@ for(let i=0; i<8; i++){
   const light = new THREE.SpotLight(0xFFFFFF, 5, 100, Math.PI / 4, 0);
   // ライトに影を有効にする
   light.castShadow = true;
+  light.position.set(0,5,-5);
   scene.add(light);
 
   //星空1(白色)を作成

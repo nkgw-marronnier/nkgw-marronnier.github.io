@@ -398,16 +398,16 @@ for(let i=0; i<8; i++){
   hidariashi.quaternion.copy(q4);
 }
 
-  {% comment %} //平行光源
-  var directionalLight = new THREE.DirectionalLight( 0xffffff );
-  directionalLight.position.set( 1, 1, 1 );
+  //平行光源
+  //var directionalLight = new THREE.DirectionalLight( 0xffffff );
+  //directionalLight.position.set( 1, 1, 1 );
   //シーンに追加
-  scene.add( directionalLight ); {% endcomment %}
+  //scene.add( directionalLight );
 
-  {% comment %} //平行光源2
-  var directionalLight2 = new THREE.DirectionalLight( 0xffffff );
-  directionalLight2.position.set( -1, 1, 1 );
-  scene.add( directionalLight2 ); {% endcomment %}
+  //平行光源2
+  //var directionalLight2 = new THREE.DirectionalLight( 0xffffff );
+  //directionalLight2.position.set( -1, 1, 1 );
+  //scene.add( directionalLight2 ); {% endcomment %}
 
   // 照明を作成
   const light = new THREE.SpotLight(0xFFFFFF, 5, 100, Math.PI / 4, 0);

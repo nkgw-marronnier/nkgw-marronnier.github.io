@@ -109,12 +109,12 @@ for(let i=0; i<10; i++){
 
 for(let i=0; i<10; i++){
   //立方体
-  var cube2geometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
-  var cube2 = new THREE.Mesh( cube2geometry, mat );
+  var torusgeometry = new THREE.TorusGeometry( 0.5, 0.2, 6, 12 );
+  var torus = new THREE.Mesh( torusgeometry, mat );
   var radian = i/10*(Math.PI)*2;
-  cube2.position.set(-5.5* Math.cos(radian),-0.3,-5.5*Math.sin(radian));
-  round4_group.add( cube2 );
-  cube2.scale.set(0.5,0.5,0.5);
+  torus.position.set(-5.5* Math.cos(radian),-0.3,-5.5*Math.sin(radian));
+  round4_group.add( torus );
+  torus.scale.set(0.5,0.5,0.5);
 }
 
 //外側

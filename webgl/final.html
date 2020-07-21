@@ -59,6 +59,13 @@ var init = function() {
 
   tick();
 
+  //FPS計測
+  import Stats from 'three/examples/jsm/libs/stats.module';
+
+  const stats = new Stats();
+  stats.showPanel(0);
+  document.body.appendChild(stats.dom);
+
 	//グループを作る
 	var round_group = new THREE.Group();
 	//3D空間にグループを追加する

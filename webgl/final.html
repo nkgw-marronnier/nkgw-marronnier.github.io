@@ -57,9 +57,9 @@ var init = function() {
   // 地球を作成
 	var earthgeometry = new THREE.SphereGeometry(0.5, 32, 32);
 	var earth = new THREE.Mesh(earthgeometry, mat_earth);
-  sphere.position.set( 0, 0, 0 );
-  scene.add(sphere);
-  sphere.scale.set(2.5,2.5,2.5);
+  earth.position.set( 0, 0, 0 );
+  scene.add(earth);
+  earth.scale.set(2.5,2.5,2.5);
 
 //外側
 for(let i=0; i<10; i++){
@@ -415,7 +415,7 @@ for(let i=0; i<8; i++){
 	var update = function() {
 		requestAnimationFrame(update);
 
-    sphere.rotation.y += 0.01;
+    earth.rotation.y += 0.01;
 
 	  // 熊を飛び跳ねさせる
 		round_group.rotation.y -= 0.005;

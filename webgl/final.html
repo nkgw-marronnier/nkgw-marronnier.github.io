@@ -415,12 +415,12 @@ for(let i=0; i<8; i++){
   directionalLight2.position.set( -1, 1, 1 );
   scene.add( directionalLight2 );
 
-  // 照明を作成
-  //const light = new THREE.SpotLight(0xFFFFFF, 5, 100, Math.PI / 4, 0.00001);
-  // ライトに影を有効にする
-  //light.castShadow = true;
-  //light.position.set(0,5,-5);
-  //scene.add(light);
+  //照明を作成
+  const light = new THREE.SpotLight(0xFFFFFF, 2, 10000, Math.PI / 4, 0.1);
+  ライトに影を有効にする
+  light.castShadow = true;
+  light.position.set(0,5,-5);
+  scene.add(light);
 
   //星空1(白色)を作成
 	var stargeometry = new THREE.Geometry();

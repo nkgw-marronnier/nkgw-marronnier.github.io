@@ -428,7 +428,7 @@ for(let i=0; i<8; i++){
   scene.add( directionalLight2 );
 
   //照明を作成
-  const light = new THREE.SpotLight(0xFFFFFF, 2, 10000000, Math.PI / 4, 0.0001);
+  const light = new THREE.SpotLight(0xFFFFFF, 1.5, 10000000, Math.PI / 4, 0.0001);
   //ライトに影を有効にする
   light.castShadow = true;
   light.position.set(0,10,10);

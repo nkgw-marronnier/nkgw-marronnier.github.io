@@ -462,7 +462,7 @@ for(let i=0; i<8; i++){
 	//var doutaimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var doutai = new THREE.Mesh( doutaigeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
-	doutai.position.set(-2.5* Math.cos(radian),0,-2.5*Math.sin(radian));
+	doutai.position.set(-7.5* Math.cos(radian),0,-7.5*Math.sin(radian));
   doutai.receiveShadow = true;
   doutai.castShadow = true;
 	round5_group.add(doutai);
@@ -474,7 +474,7 @@ for(let i=0; i<8; i++){
 	//var hidarimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var hidarimimi = new THREE.Mesh( hidarimimigeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
-	hidarimimi.position.set(-2.75* Math.cos(radian),1,-2.75*Math.sin(radian));
+	hidarimimi.position.set(-7.75* Math.cos(radian),1,-7.75*Math.sin(radian));
   hidarimimi.receiveShadow = true;
   hidarimimi.castShadow = true;
 	round5_group.add(hidarimimi);
@@ -486,7 +486,7 @@ for(let i=0; i<8; i++){
 	//var migimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var migimimi = new THREE.Mesh( migimimigeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
-	migimimi.position.set(-2.25* Math.cos(radian),1,-2.25*Math.sin(radian));
+	migimimi.position.set(-7.25* Math.cos(radian),1,-7.25*Math.sin(radian));
   migimimi.receiveShadow = true;
   migimimi.castShadow = true;
 	round5_group.add(migimimi);
@@ -498,7 +498,7 @@ for(let i=0; i<8; i++){
 	//var hidaritematerial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var hidarite = new THREE.Mesh( hidaritegeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
-	hidarite.position.set(-2.2* Math.cos(radian),0.3,-2.2*Math.sin(radian));
+	hidarite.position.set(-7.2* Math.cos(radian),0.3,-7.2*Math.sin(radian));
   hidarite.receiveShadow = true;
   hidarite.castShadow = true;
 	round5_group.add(hidarite);
@@ -523,7 +523,7 @@ for(let i=0; i<8; i++){
 	//var migitematerial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var migite = new THREE.Mesh( migitegeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
-	migite.position.set(-2.8* Math.cos(radian),0.3,-2.8*Math.sin(radian));
+	migite.position.set(-7.8* Math.cos(radian),0.3,-7.8*Math.sin(radian));
   migite.receiveShadow = true;
   migite.castShadow = true;
 	round5_group.add(migite);
@@ -548,7 +548,7 @@ for(let i=0; i<8; i++){
 	//var migiashimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var migiashi = new THREE.Mesh( migiashigeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
-	migiashi.position.set(-2.2* Math.cos(radian),-0.3,-2.2*Math.sin(radian));
+	migiashi.position.set(-7.2* Math.cos(radian),-0.3,-7.2*Math.sin(radian));
   migiashi.receiveShadow = true;
   migiashi.castShadow = true;
 	round5_group.add(migiashi);
@@ -573,7 +573,7 @@ for(let i=0; i<8; i++){
 	//var hidariashimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var hidariashi = new THREE.Mesh( hidariashigeometry, kawa2_mat );
   var radian = i/8*(Math.PI)*2;
-	hidariashi.position.set(-2.8* Math.cos(radian),-0.3,-2.8*Math.sin(radian));
+	hidariashi.position.set(-7.8* Math.cos(radian),-0.3,-7.8*Math.sin(radian));
   hidariashi.receiveShadow = true;
   hidariashi.castShadow = true;
 	round5_group.add(hidariashi);
@@ -719,9 +719,11 @@ for(let i=0; i<8; i++){
     }
     if(ue == 1){
       round_group.position.y -= 0.03;
+      round5_group.position.y -= 0.04;
     }
     if(ue == 0){
       round_group.position.y += 0.03;
+      round5_group.position.y += 0.04;
     }
     if(round2_group.position.y >= 0.5){
       ue2 = 1;

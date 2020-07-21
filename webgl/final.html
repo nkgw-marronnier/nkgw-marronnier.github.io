@@ -45,49 +45,67 @@ var init = function() {
 	//3D空間にグループを追加する
 	scene.add(round_group);
 
-  //別グループを作る
-  var teashi_group = new THREE.Group();
-  scene.add(teashi_group);
+  var round2_group = new THREE.Group();
+  scene.add(round2_group);
 
+  //球
+  var sphereGeometry = new THREE.SphereGeometry( 0.5, 32, 32 );
+  //半径、垂直方向の分割数、水平方向の分割数
+  var sphereMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00, wireframe: true });
+  var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+  sphere.position.set( 0, 0, 0 );
+  scene.add(sphere);
+  sphere.scale.set(2.5,2.5,2.5);
+
+//外側
+for(let i=0; i<10; i++){
   // 顔を作成
 	var kaogeometry = new THREE.SphereGeometry(0.5, 32, 32);
 	var kaomaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var kao = new THREE.Mesh( kaogeometry, kaomaterial );
-	var radian = (Math.PI)*2;
-	kao.position.set(-2.5* Math.cos(radian),0.7,-2.5*Math.sin(radian));
+  var radian = i/10*(Math.PI)*2;
+	kao.position.set(-4.5* Math.cos(radian),0.7,-4.5*Math.sin(radian));
 	round_group.add(kao);
 	kao.scale.set(0.7,0.7,0.7);
-
+}
+for(let i=0; i<10; i++){
 	// 胴体を作成
 	var doutaigeometry = new THREE.SphereGeometry(0.5, 32, 32);
 	var doutaimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var doutai = new THREE.Mesh( doutaigeometry, doutaimaterial );
-	doutai.position.set(-2.5* Math.cos(radian),0,-2.5*Math.sin(radian));
+  var radian = i/10*(Math.PI)*2;
+	doutai.position.set(-4.5* Math.cos(radian),0,-4.5*Math.sin(radian));
 	round_group.add(doutai);
 	doutai.scale.set(0.7,1,0.7);
-
+}
+for(let i=0; i<10; i++){
   // 左耳を作成
 	var hidarimimigeometry = new THREE.SphereGeometry(0.5, 32, 32);
 	var hidarimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var hidarimimi = new THREE.Mesh( hidarimimigeometry, hidarimimimaterial );
-	hidarimimi.position.set(-2.75* Math.cos(radian),1,-2.75*Math.sin(radian));
+  var radian = i/10*(Math.PI)*2;
+	hidarimimi.position.set(-4.75* Math.cos(radian),1,-4.75*Math.sin(radian));
 	round_group.add(hidarimimi);
 	hidarimimi.scale.set(0.2,0.2,0.2);
-
+}
+for(let i=0; i<10; i++){
   // 右耳を作成
 	var migimimigeometry = new THREE.SphereGeometry(0.5, 32, 32);
 	var migimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var migimimi = new THREE.Mesh( migimimigeometry, migimimimaterial );
-	migimimi.position.set(-2.25* Math.cos(radian),1,-2.25*Math.sin(radian));
+  var radian = i/10*(Math.PI)*2;
+	migimimi.position.set(-4.25* Math.cos(radian),1,-4.25*Math.sin(radian));
 	round_group.add(migimimi);
 	migimimi.scale.set(0.2,0.2,0.2);
-
+}
+for(let i=0; i<10; i++){
   //左手を作成
   var hidaritegeometry = new THREE.SphereGeometry(0.5, 32, 32);
 	var hidaritematerial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var hidarite = new THREE.Mesh( hidaritegeometry, hidaritematerial );
-	hidarite.position.set(-2.2* Math.cos(radian),0.3,-2.2*Math.sin(radian));
-	teashi_group.add(hidarite);
+  var radian = i/10*(Math.PI)*2;
+	hidarite.position.set(-4.2* Math.cos(radian),0.3,-4.2*Math.sin(radian));
+	round_group.add(hidarite);
 	hidarite.scale.set(0.4,0.2,0.6);
 
   //クォータニオン利用の宣言
@@ -102,13 +120,15 @@ var init = function() {
   q.setFromAxisAngle(axis,angle);
   //直方体オブジェクトのquaternionプロパティに代入
   hidarite.quaternion.copy(q);
-
+}
+for(let i=0; i<10; i++){
   //右手を作成
   var migitegeometry = new THREE.SphereGeometry(0.5, 32, 32);
 	var migitematerial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var migite = new THREE.Mesh( migitegeometry, migitematerial );
-	migite.position.set(-2.8* Math.cos(radian),0.3,-2.8*Math.sin(radian));
-	teashi_group.add(migite);
+  var radian = i/10*(Math.PI)*2;
+	migite.position.set(-4.8* Math.cos(radian),0.3,-4.8*Math.sin(radian));
+	round_group.add(migite);
 	migite.scale.set(0.4,0.2,0.6);
 
   //クォータニオン利用の宣言
@@ -116,20 +136,22 @@ var init = function() {
   //回転軸ベクトルの宣言・規格化
   var axis2 = new THREE.Vector3(-10,-10,5).normalize();
   //回転角度の指定(ラジアン)
-  var angle2 = 2* Math.PI / 4;
+  var angle2 = 2* Math.PI /4;
   //クォータニオンオブジェクトの宣言
   var q2 = new THREE.Quaternion();
   //回転軸と角度からクォータニオンを計算
   q2.setFromAxisAngle(axis2,angle2);
   //直方体オブジェクトのquaternionプロパティに代入
   migite.quaternion.copy(q2);
-
+}
+for(let i=0; i<10; i++){
   //右足を作成
   var migiashigeometry = new THREE.SphereGeometry(0.5, 32, 32);
 	var migiashimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var migiashi = new THREE.Mesh( migiashigeometry, migiashimaterial );
-	migiashi.position.set(-2.2* Math.cos(radian),-0.3,-2.2*Math.sin(radian));
-	teashi_group.add(migiashi);
+  var radian = i/10*(Math.PI)*2;
+	migiashi.position.set(-4.2* Math.cos(radian),-0.3,-4.2*Math.sin(radian));
+	round_group.add(migiashi);
 	migiashi.scale.set(0.4,0.2,0.6);
 
   //クォータニオン利用の宣言
@@ -144,13 +166,15 @@ var init = function() {
   q3.setFromAxisAngle(axis3,angle3);
   //直方体オブジェクトのquaternionプロパティに代入
   migiashi.quaternion.copy(q3);
-
+}
+for(let i=0; i<10; i++){
     //左足を作成
   var hidariashigeometry = new THREE.SphereGeometry(0.5, 32, 32);
 	var hidariashimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
   var hidariashi = new THREE.Mesh( hidariashigeometry, hidariashimaterial );
-	hidariashi.position.set(-2.8* Math.cos(radian),-0.3,-2.8*Math.sin(radian));
-	teashi_group.add(hidariashi);
+  var radian = i/10*(Math.PI)*2;
+	hidariashi.position.set(-4.8* Math.cos(radian),-0.3,-4.8*Math.sin(radian));
+	round_group.add(hidariashi);
 	hidariashi.scale.set(0.4,0.2,0.6);
 
   //クォータニオン利用の宣言
@@ -165,9 +189,141 @@ var init = function() {
   q4.setFromAxisAngle(axis4,angle4);
   //直方体オブジェクトのquaternionプロパティに代入
   hidariashi.quaternion.copy(q4);
+}
 
-  //手足グループをroundグループへ追加
-  round_group.add(teashi_group);
+//内側
+for(let i=0; i<8; i++){
+  // 顔を作成
+	var kaogeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var kaomaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var kao = new THREE.Mesh( kaogeometry, kaomaterial );
+  var radian = i/8*(Math.PI)*2;
+	kao.position.set(-2.5* Math.cos(radian),0.7,-2.5*Math.sin(radian));
+	round2_group.add(kao);
+	kao.scale.set(0.7,0.7,0.7);
+}
+for(let i=0; i<8; i++){
+	// 胴体を作成
+	var doutaigeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var doutaimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var doutai = new THREE.Mesh( doutaigeometry, doutaimaterial );
+  var radian = i/8*(Math.PI)*2;
+	doutai.position.set(-2.5* Math.cos(radian),0,-2.5*Math.sin(radian));
+	round2_group.add(doutai);
+	doutai.scale.set(0.7,1,0.7);
+}
+for(let i=0; i<8; i++){
+  // 左耳を作成
+	var hidarimimigeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var hidarimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var hidarimimi = new THREE.Mesh( hidarimimigeometry, hidarimimimaterial );
+  var radian = i/8*(Math.PI)*2;
+	hidarimimi.position.set(-2.75* Math.cos(radian),1,-2.75*Math.sin(radian));
+	round2_group.add(hidarimimi);
+	hidarimimi.scale.set(0.2,0.2,0.2);
+}
+for(let i=0; i<8; i++){
+  // 右耳を作成
+	var migimimigeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var migimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var migimimi = new THREE.Mesh( migimimigeometry, migimimimaterial );
+  var radian = i/8*(Math.PI)*2;
+	migimimi.position.set(-2.25* Math.cos(radian),1,-2.25*Math.sin(radian));
+	round2_group.add(migimimi);
+	migimimi.scale.set(0.2,0.2,0.2);
+}
+for(let i=0; i<8; i++){
+  //左手を作成
+  var hidaritegeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var hidaritematerial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var hidarite = new THREE.Mesh( hidaritegeometry, hidaritematerial );
+  var radian = i/8*(Math.PI)*2;
+	hidarite.position.set(-2.2* Math.cos(radian),0.3,-2.2*Math.sin(radian));
+	round2_group.add(hidarite);
+	hidarite.scale.set(0.4,0.2,0.6);
+
+  //クォータニオン利用の宣言
+  hidarite.useQuaternion = true;
+  //回転軸ベクトルの宣言・規格化
+  var axis = new THREE.Vector3(10,5,10).normalize();
+  //回転角度の指定(ラジアン)
+  var angle = 4* Math.PI / 4;
+  //クォータニオンオブジェクトの宣言
+  var q = new THREE.Quaternion();
+  //回転軸と角度からクォータニオンを計算
+  q.setFromAxisAngle(axis,angle);
+  //直方体オブジェクトのquaternionプロパティに代入
+  hidarite.quaternion.copy(q);
+}
+for(let i=0; i<8; i++){
+  //右手を作成
+  var migitegeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var migitematerial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var migite = new THREE.Mesh( migitegeometry, migitematerial );
+  var radian = i/8*(Math.PI)*2;
+	migite.position.set(-2.8* Math.cos(radian),0.3,-2.8*Math.sin(radian));
+	round2_group.add(migite);
+	migite.scale.set(0.4,0.2,0.6);
+
+  //クォータニオン利用の宣言
+  migite.useQuaternion = true;
+  //回転軸ベクトルの宣言・規格化
+  var axis2 = new THREE.Vector3(-10,-10,5).normalize();
+  //回転角度の指定(ラジアン)
+  var angle2 = 2* Math.PI /4;
+  //クォータニオンオブジェクトの宣言
+  var q2 = new THREE.Quaternion();
+  //回転軸と角度からクォータニオンを計算
+  q2.setFromAxisAngle(axis2,angle2);
+  //直方体オブジェクトのquaternionプロパティに代入
+  migite.quaternion.copy(q2);
+}
+for(let i=0; i<8; i++){
+  //右足を作成
+  var migiashigeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var migiashimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var migiashi = new THREE.Mesh( migiashigeometry, migiashimaterial );
+  var radian = i/8*(Math.PI)*2;
+	migiashi.position.set(-2.2* Math.cos(radian),-0.3,-2.2*Math.sin(radian));
+	round2_group.add(migiashi);
+	migiashi.scale.set(0.4,0.2,0.6);
+
+  //クォータニオン利用の宣言
+  migiashi.useQuaternion = true;
+  //回転軸ベクトルの宣言・規格化
+  var axis3 = new THREE.Vector3(-10,-10,5).normalize();
+  //回転角度の指定(ラジアン)
+  var angle3 = 2* Math.PI / 4;
+  //クォータニオンオブジェクトの宣言
+  var q3 = new THREE.Quaternion();
+  //回転軸と角度からクォータニオンを計算
+  q3.setFromAxisAngle(axis3,angle3);
+  //直方体オブジェクトのquaternionプロパティに代入
+  migiashi.quaternion.copy(q3);
+}
+for(let i=0; i<8; i++){
+    //左足を作成
+  var hidariashigeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var hidariashimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
+  var hidariashi = new THREE.Mesh( hidariashigeometry, hidariashimaterial );
+  var radian = i/8*(Math.PI)*2;
+	hidariashi.position.set(-2.8* Math.cos(radian),-0.3,-2.8*Math.sin(radian));
+	round2_group.add(hidariashi);
+	hidariashi.scale.set(0.4,0.2,0.6);
+
+  //クォータニオン利用の宣言
+  hidariashi.useQuaternion = true;
+  //回転軸ベクトルの宣言・規格化
+  var axis4 = new THREE.Vector3(-10,-5,-10).normalize();
+  //回転角度の指定(ラジアン)
+  var angle4 = 4* Math.PI / 4;
+  //クォータニオンオブジェクトの宣言
+  var q4 = new THREE.Quaternion();
+  //回転軸と角度からクォータニオンを計算
+  q4.setFromAxisAngle(axis4,angle4);
+  //直方体オブジェクトのquaternionプロパティに代入
+  hidariashi.quaternion.copy(q4);
+}
 
   //平行光源
   var directionalLight = new THREE.DirectionalLight( 0xAAffff );
@@ -180,14 +336,86 @@ var init = function() {
   directionalLight2.position.set( -1, 1, 1 );
   scene.add( directionalLight2 );
 
+  	//星空1(白色)を作成
+	var stargeometry = new THREE.Geometry();
+	// 配置する範囲
+	var SIZE = 1000;
+	// 配置する個数
+	var LENGTH = 5000;
+	for (let i = 0; i < LENGTH; i++) {
+	stargeometry.vertices.push(new THREE.Vector3(
+		SIZE * (Math.random() - 0.5),
+		SIZE * (Math.random() - 0.5),
+		SIZE * (Math.random() - 0.5),));
+	}
+	var starmaterial = new THREE.PointsMaterial({
+	size: 0.6,color: 0xF0FFFF,});
+	var starmesh = new THREE.Points(stargeometry, starmaterial);
+	scene.add(starmesh)
+
+	//星空2(青色)を作成
+	var stargeometry2 = new THREE.Geometry();
+	// 配置する範囲
+	var SIZE = 1000;
+	// 配置する個数
+	var LENGTH = 1000;
+	for (let i = 0; i < LENGTH; i++) {
+	stargeometry2.vertices.push(new THREE.Vector3(
+		SIZE * (Math.random() - 0.5),
+		SIZE * (Math.random() - 0.5),
+		SIZE * (Math.random() - 0.5),));
+	}
+	var starmaterial2 = new THREE.PointsMaterial({
+	size: 0.6,color: 0x00FFFF,});
+	var starmesh2 = new THREE.Points(stargeometry2, starmaterial2);
+	scene.add(starmesh2)
+
+	//星空3(燈色)を作成
+	var stargeometry3 = new THREE.Geometry();
+	// 配置する範囲
+	var SIZE = 1000;
+	// 配置する個数
+	var LENGTH = 1000;
+	for (let i = 0; i < LENGTH; i++) {
+	stargeometry3.vertices.push(new THREE.Vector3(
+		SIZE * (Math.random() - 0.5),
+		SIZE * (Math.random() - 0.5),
+		SIZE * (Math.random() - 0.5),));
+	}
+	var starmaterial3 = new THREE.PointsMaterial({
+	size: 0.6,color: 0xFF8C00,});
+	var starmesh3 = new THREE.Points(stargeometry3, starmaterial3);
+	scene.add(starmesh3)
+
+	//星空4(紫色)を作成
+	var stargeometry4 = new THREE.Geometry();
+	// 配置する範囲
+	var SIZE = 1000;
+	// 配置する個数
+	var LENGTH = 1000;
+	for (let i = 0; i < LENGTH; i++) {
+	stargeometry4.vertices.push(new THREE.Vector3(
+		SIZE * (Math.random() - 0.5),
+		SIZE * (Math.random() - 0.5),
+		SIZE * (Math.random() - 0.5),));
+	}
+	var starmaterial4 = new THREE.PointsMaterial({
+	size: 0.6,color: 0xFF00FF,});
+	var starmesh4 = new THREE.Points(stargeometry4, starmaterial4);
+	scene.add(starmesh4)
+
   var ue = 0;
+  var ue2 = 1;
 
 	// 初回実行
 	var update = function() {
 		requestAnimationFrame(update);
 
+    sphere.rotation.y += 0.01;
+
 	  // 熊を飛び跳ねさせる
 		round_group.rotation.y -= 0.005;
+    round2_group.rotation.y +=0.005;
     if(round_group.position.y >= 0.5){
       ue = 1;
     }
@@ -200,6 +428,29 @@ var init = function() {
     if(ue == 0){
       round_group.position.y += 0.03;
     }
+    if(round2_group.position.y >= 0.5){
+      ue2 = 1;
+    }
+    if(round2_group.position.y <= -0.5){
+      ue2 = 0;
+    }
+    if(ue2 == 1){
+      round2_group.position.y -= 0.03;
+    }
+    if(ue2 == 0){
+      round2_group.position.y += 0.03;
+    }
+
+    //星空を回転させる
+		starmesh.rotation.y += 0.0001;
+		starmesh.rotation.x += 0.0001;
+		starmesh2.rotation.y += 0.0001;
+		starmesh2.rotation.x += 0.0001;
+		starmesh3.rotation.y += 0.0001;
+		starmesh3.rotation.x += 0.0001;
+		starmesh4.rotation.y += 0.0001;
+		starmesh4.rotation.x += 0.0001;
+
 		renderer.render(scene, camera);
 	};
 	update();

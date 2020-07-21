@@ -148,6 +148,7 @@ for(let i=0; i<10; i++){
   var doutai = new THREE.Mesh( doutaigeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	doutai.position.set(-4.5* Math.cos(radian),0,-4.5*Math.sin(radian));
+  doutai.castShadow = true;
 	round_group.add(doutai);
 	doutai.scale.set(0.7,1,0.7);
 }
@@ -158,6 +159,7 @@ for(let i=0; i<10; i++){
   var hidarimimi = new THREE.Mesh( hidarimimigeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	hidarimimi.position.set(-4.75* Math.cos(radian),1,-4.75*Math.sin(radian));
+  hidarimimi.castShadow = true;
 	round_group.add(hidarimimi);
 	hidarimimi.scale.set(0.2,0.2,0.2);
 }
@@ -168,6 +170,7 @@ for(let i=0; i<10; i++){
   var migimimi = new THREE.Mesh( migimimigeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	migimimi.position.set(-4.25* Math.cos(radian),1,-4.25*Math.sin(radian));
+  migimimi.castShadow = true;
 	round_group.add(migimimi);
 	migimimi.scale.set(0.2,0.2,0.2);
 }
@@ -178,6 +181,7 @@ for(let i=0; i<10; i++){
   var hidarite = new THREE.Mesh( hidaritegeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	hidarite.position.set(-4.2* Math.cos(radian),0.3,-4.2*Math.sin(radian));
+  hidarite.castShadow = true;
 	round_group.add(hidarite);
 	hidarite.scale.set(0.4,0.2,0.6);
 
@@ -201,6 +205,7 @@ for(let i=0; i<10; i++){
   var migite = new THREE.Mesh( migitegeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	migite.position.set(-4.8* Math.cos(radian),0.3,-4.8*Math.sin(radian));
+  migite.castShadow = true;
 	round_group.add(migite);
 	migite.scale.set(0.4,0.2,0.6);
 
@@ -224,6 +229,7 @@ for(let i=0; i<10; i++){
   var migiashi = new THREE.Mesh( migiashigeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	migiashi.position.set(-4.2* Math.cos(radian),-0.3,-4.2*Math.sin(radian));
+  migiashi.castShadow = true;
 	round_group.add(migiashi);
 	migiashi.scale.set(0.4,0.2,0.6);
 
@@ -247,6 +253,7 @@ for(let i=0; i<10; i++){
   var hidariashi = new THREE.Mesh( hidariashigeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	hidariashi.position.set(-4.8* Math.cos(radian),-0.3,-4.8*Math.sin(radian));
+  hidariashi.castShadow = true;
 	round_group.add(hidariashi);
 	hidariashi.scale.set(0.4,0.2,0.6);
 

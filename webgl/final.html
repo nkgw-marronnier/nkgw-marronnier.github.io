@@ -95,6 +95,8 @@ var init = function() {
 	var bump = textureLoader.load("texture/stone-bump.jpg");
 	mat.bumpMap = bump;
 	mat.bumpscale = 0.2;
+  minamo_mat.bumpMap = minamo_texture;
+  minamo_mat.bumpscale = 0.3;
 
   // 地球を作成
 	var earthgeometry = new THREE.SphereGeometry(0.5, 32, 32);

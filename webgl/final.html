@@ -12,6 +12,7 @@
 <body>
 <h1>WebGL最終提出課題</h1>
 <h3>CIT　情報科学部　情報ネットワーク学科　3年　学生番号：1832099</h3>
+<div class="wrapper">
 <h4>使用したテクスチャ素材</h4>
 <a href="https://earthobservatory.nasa.gov/features/BlueMarble/BlueMarble_2002.php" target="_blank" rel="noopener">->地球のテクスチャ</a><br>
 <a href="https://www.beiz.jp" target="_blank" rel="noopener">->熊、水面のテクスチャ</a>
@@ -25,10 +26,11 @@
 <a href="https://github.com/nkgw-marronnier/WebGL-Three.js-/blob/master/tekitou1.html" target="blank" rel="noopener">->GitHub(nkgw-marronnier) [公開期間:2020/07/20~2020/07/30]</a><br>
 </details>
 <br>
+<canvas id="canvas"; position:fixed; left:0; top:0;></canvas>
 <footer>
 <p>[戻る]</p>
 </footer>
-<canvas id="canvas"; position:fixed; left:0; top:0;></canvas>
+</div>
 <script>
 var init = function() {
 	var width = 960,

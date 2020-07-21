@@ -48,11 +48,18 @@ var init = function() {
   var round2_group = new THREE.Group();
   scene.add(round2_group);
 
+  var round3_group = new THREE.Group();
+  scene.add(round3_group);
+
   // テクスチャー読み込み
 	var textureLoader = new THREE.TextureLoader();
 	var texture_earth = textureLoader.load("texture/earth.jpg");
 	var mat_earth = new THREE.MeshLambertMaterial();
 	mat_earth.map = texture_earth;
+  var textureLoader = new THREE.TextureLoader();
+	var texture = textureLoader.load("texture/stone.jpg");
+	var mat = new THREE.MeshLambertMaterial();
+	mat.map = texture;
 
   // 地球を作成
 	var earthgeometry = new THREE.SphereGeometry(0.5, 32, 32);
@@ -60,6 +67,14 @@ var init = function() {
   earth.position.set( 0, 0, 0 );
   scene.add(earth);
   earth.scale.set(2.5,2.5,2.5);
+
+  for(let i=0; i<10; i++){
+  //立方体
+    var GameCubeGeometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
+    var GameCube = new THREE.Mesh( GameCubeGeometry, mat );
+    GameCube.position.set( -2, 0, -5 );
+    round3_group.add( GameCube );
+}
 
 //外側
 for(let i=0; i<10; i++){
@@ -416,10 +431,13 @@ for(let i=0; i<8; i++){
 		requestAnimationFrame(update);
 
     earth.rotation.y += 0.01;
+    GameCude.rotation.y += 0.01;
+
 
 	  // 熊を飛び跳ねさせる
 		round_group.rotation.y -= 0.005;
-    round2_group.rotation.y +=0.005;
+    round2_group.rotation.y += 0.005;
+    round3_group.rotation.y += 0.005;
     if(round_group.position.y >= 0.5){
       ue = 1;
     }

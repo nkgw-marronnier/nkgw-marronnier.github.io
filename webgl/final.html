@@ -116,7 +116,7 @@ for(let i=0; i<10; i++){
   // 左耳を作成
 	var hidarimimigeometry = new THREE.SphereGeometry(0.5, 32, 32);
 	//var hidarimimimaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff, wireframe: true });
-  var hidarimimi = new new THREE.Mesh( hidarimimigeometry, kawa1_mat );
+  var hidarimimi = new THREE.Mesh( hidarimimigeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	hidarimimi.position.set(-4.75* Math.cos(radian),1,-4.75*Math.sin(radian));
 	round_group.add(hidarimimi);

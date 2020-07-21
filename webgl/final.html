@@ -122,7 +122,7 @@ for(let i=0; i<10; i++){
   var plane =  new THREE.Mesh(                                      
     new THREE.PlaneGeometry(100, 100, 1, 1),
     new THREE.MeshLambertMaterial({ 
-    color: 0x0000ff             
+    color: 0xeeeeee             
     }));
   plane.rotation.x = Math.PI / -2;                     
   scene.add(plane);
@@ -410,7 +410,7 @@ for(let i=0; i<8; i++){
   scene.add( directionalLight2 );
 
   // 照明を作成
-  const light = new THREE.SpotLight(0xFFFFFF, 3, 100, Math.PI / 4, 0);
+  const light = new THREE.SpotLight(0xFFFFFF, 5, 100, Math.PI / 4, 0);
   // ライトに影を有効にする
   light.castShadow = true;
   scene.add(light);

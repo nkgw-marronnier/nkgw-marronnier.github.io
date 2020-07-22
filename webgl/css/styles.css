@@ -48,14 +48,14 @@ details[open] {
 }a{
   font-weight:bold;
   text-decoration:none;
-}a:link{
+}#foot a:link{
   color:#FFFFFF;
-}a:visited{
+}#foot a:visited{
   color:#FFFFFF;
-}a:hover{
+}#foot a:hover{
   color:#FFFFFF;
   text-decoration:underline;
-}a:active{
+}#foot a:active{
   color:#FFFFFF;
 }.wrapper{
   min-height: 100vh;

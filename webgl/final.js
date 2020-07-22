@@ -88,7 +88,7 @@ var init = function() {
   scene.add(earth);
   earth.scale.set(2.5,2.5,2.5);
 
-for(let i=0; i<10; i++){
+for(let i=0; i<8; i++){
   //立方体
   var cubegeometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
   var cube = new THREE.Mesh( cubegeometry, mat );
@@ -529,7 +529,7 @@ for(let i=0; i<10; i++){
   scene.add( directionalLight );
 
   //照明を作成
-  const light = new THREE.SpotLight(0xFFFFFF, 1.4, 100, Math.PI / 4, 0.01);
+  const light = new THREE.SpotLight(0xFFFFFF, 1.4, 50, Math.PI / 4, 0.1);
   //ライトに影を有効にする
   light.castShadow = true;
   light.position.set(0,10,10);

@@ -206,7 +206,18 @@ var init = function() {
     //---左足を作成---
     var hidariashitemp = new THREE.Mesh(new THREE.SphereGeometry(0.5, 32, 32));
     hidariashitemp.position.set(-4.8*Math.cos(radian), -0.3, -4.8*Math.sin(radian));
+    
     hidariashigeometry.mergeMesh(hidariashitemp);
+    //回転軸ベクトルの宣言・規格化
+    var axis4 = new THREE.Vector3(-10, -5, -10).normalize();
+    //回転角度の指定(ラジアン)
+    var angle4 = 4*Math.PI/4;
+    //クォータニオンオブジェクトの宣言
+    var q4 = new THREE.Quaternion();
+    //回転軸と角度からクォータニオンを計算
+    q4.setFromAxisAngle(axis4, angle4);
+    //直方体オブジェクトのquaternionプロパティに代入
+    hidariashitemp.quaternion.copy(q4);
   }
 
   var kao = new THREE.Mesh(kaogeometry, kawa1_mat);

@@ -69,7 +69,7 @@ var init = function() {
   var textureLoader = new THREE.TextureLoader();
 	var ki_texture = textureLoader.load("texture/ki.jpg");
 	var ki_mat = new THREE.MeshLambertMaterial();
-	kirakira_mat.map = kirakira_texture;
+	ki_mat.map = ki_texture;
 
   //バンプマップ読み込み
 	var bump = textureLoader.load("texture/stone-bump.jpg");

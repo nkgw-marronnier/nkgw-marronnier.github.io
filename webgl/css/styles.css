@@ -31,6 +31,13 @@ html{
   border-left: solid 5px #a2de96;
 }body{
 	color: #333;
+}details {
+  height: 10px;
+  transition: .5s;
+}
+details[open] {
+  height: 80px;
+  background: #c3f6ff;
 }.wrapper{
   min-height: 100vh;
   position: relative;/*←相対位置*/

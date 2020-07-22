@@ -63,10 +63,10 @@ html{
   padding-bottom: 60px;
 }details {
   height: 10px;
-  transition: .5s;
+  transition: 0.5s;
 }
 details[open] {
-  height: 80px;
+  height: 100px;
   background: #c3f6ff;
 }a.foot{
   font-size: 25px;

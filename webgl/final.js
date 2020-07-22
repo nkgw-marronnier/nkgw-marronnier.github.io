@@ -56,7 +56,7 @@ var init = function() {
 	mat.map = texture;
   var textureLoader = new THREE.TextureLoader();
 	var kawa1_texture = textureLoader.load("texture/kawa1.jpg");
-	var kawa1_mat = new THREE.MeshPhongMaterial();
+	var kawa1_mat = new THREE.MeshLambertMaterial();
 	kawa1_mat.map = kawa1_texture;
   var textureLoader = new THREE.TextureLoader();
 	var kawa2_texture = textureLoader.load("texture/kawa2.jpg");
@@ -68,7 +68,7 @@ var init = function() {
 	minamo_mat.map = minamo_texture;
   var textureLoader = new THREE.TextureLoader();
 	var kirakira_texture = textureLoader.load("texture/kirakira.jpg");
-	var kirakira_mat = new THREE.MeshPhongMaterial();
+	var kirakira_mat = new THREE.MeshLambertMaterial();
 	kirakira_mat.map = kirakira_texture;
 
   //バンプマップ読み込み

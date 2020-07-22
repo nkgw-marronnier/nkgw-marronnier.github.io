@@ -529,7 +529,7 @@ for(let i=0; i<10; i++){
   scene.add( directionalLight );
 
   //照明を作成
-  const light = new THREE.SpotLight(0xFFFFFF, 1, 100, Math.PI / 4, 0.01);
+  const light = new THREE.SpotLight(0xFFFFFF, 1.4, 100, Math.PI / 4, 0.01);
   //ライトに影を有効にする
   light.castShadow = true;
   light.position.set(0,10,10);
@@ -616,6 +616,7 @@ for(let i=0; i<10; i++){
 
 		requestAnimationFrame(update);
 
+    //母なる地球
     earth.rotation.y += 0.01;
 
 	  // 熊を飛び跳ねさせる

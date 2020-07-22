@@ -94,6 +94,7 @@ var init = function() {
     var cubetemp = new THREE.Mesh(new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1));
     var radian = i/10*(Math.PI)*2;
     cubetemp.position.set(-3.5* Math.cos(radian),-0.3,-3.5*Math.sin(radian));
+    cubegeometry.mergeMesh(cubetemp);
   }
   var cubegeometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
   var cube = new THREE.Mesh( cubegeometry, mat );

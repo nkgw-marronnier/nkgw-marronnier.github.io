@@ -122,11 +122,10 @@ for(let i=0; i<10; i++){
   plane.position.set(0, -8, 0)
 
 //内中側
-var kaogeometry = new THREE.SphereGeometry(0.5, 32, 32);
-var kao = new THREE.Mesh( kaogeometry, kawa1_mat );
-
 for(let i=0; i<10; i++){
   // 顔を作成
+  var kaogeometry = new THREE.SphereGeometry(0.5, 32, 32);
+  var kao = new THREE.Mesh( kaogeometry, kawa1_mat );
   var radian = i/10*(Math.PI)*2;
 	kao.position.set(-4.5* Math.cos(radian),0.7,-4.5*Math.sin(radian));
   kao.receiveShadow = true;

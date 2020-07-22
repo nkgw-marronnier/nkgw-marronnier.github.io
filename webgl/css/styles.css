@@ -48,7 +48,7 @@ details[open] {
   background-color: #89c7de;
   color: #fff;
   text-align: center;
-  padding: 15px 0;
+  padding: 3px 0;
   position: absolute;/*←絶対位置*/
   bottom: 0; /*下に固定*/
 }

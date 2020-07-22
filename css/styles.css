@@ -14,6 +14,16 @@ html{
 }h1:first-letter{
 	font-size:50px;
 	color:#325A8C;
+}h2{
+  border-bottom: solid 3px skyblue;
+  position: relative;
+}h2:after{
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #ffc778;
+  bottom: -3px;
+  width: 10%;
 }h3{
   position: relative;
   background: #f1f8ff;
@@ -34,6 +44,20 @@ html{
   color: #494949;
   background: transparent;
   border-left: solid 5px #a2de96;
+}ul{
+  border: solid 2px skyblue;
+  padding: 0.5em 1em 0.5em 2.3em;
+  position: relative;
+}ul li{
+  line-height: 1.5;
+  padding: 0.5em 0;
+  list-style-type: none!important;
+}ul li:before{
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  content: "\025b6";
+  position: absolute;
+  left : 1em;
+  color: skyblue;
 }body{
 	color: #333;
 }main{

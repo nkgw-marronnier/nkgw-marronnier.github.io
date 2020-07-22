@@ -629,27 +629,23 @@ for(let i=0; i<10; i++){
     round5_group.rotation.y +=0.007;
     if(round_group.position.y >= 0.5){
       ue = 1;
-    }
-    if(round_group.position.y <= -0.5){
+    }else{
       ue = 0;
     }
     if(ue == 1){
       round_group.position.y -= 0.03;
-    }
-    if(ue == 0){
+    }else{
       round_group.position.y += 0.03;
     }
     if(round2_group.position.y >= 0.5){
       ue2 = 1;
-    }
-    if(round2_group.position.y <= -0.5){
+    }else{
       ue2 = 0;
     }
     if(ue2 == 1){
       round2_group.position.y -= 0.03;
       round5_group.position.y -= 0.07;
-    }
-    if(ue2 == 0){
+    }else{
       round2_group.position.y += 0.03;
       round5_group.position.y += 0.07;
     }

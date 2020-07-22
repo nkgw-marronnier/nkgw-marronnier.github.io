@@ -14,14 +14,14 @@ var init = function() {
 
 	// カメラを作成
 	var camera = new THREE.PerspectiveCamera(45, width/height, 1, 200);
-  camera.position.set(0,0,10);
+  camera.position.set(0, 0, 10);
 
   // カメラコントローラーを作成
   const controls = new THREE.OrbitControls(camera, canvas);
 
   // 滑らかにカメラコントローラーを制御する
   controls.enableDamping = true;
-  controls.dampingFactor = 1.5;
+  controls.dampingFactor = 1.0;
 
   //FPS
   var stats = new Stats();

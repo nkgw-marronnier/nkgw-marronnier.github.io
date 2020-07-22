@@ -597,9 +597,9 @@ var init = function() {
 	var LENGTH = 500;
 	for (let i=0; i<LENGTH; i++) {
 	stargeometry4.vertices.push(new THREE.Vector3(
-		SIZE * (Math.random() - 0.5),
-		SIZE * (Math.random() - 0.5),
-		SIZE * (Math.random() - 0.5),));
+		SIZE*(Math.random()-0.5),
+		SIZE*(Math.random()-0.5),
+		SIZE*(Math.random()-0.5),));
 	}
 	var starmaterial4 = new THREE.PointsMaterial({
 	size: 0.4, color: 0xFF00FF,});
@@ -614,11 +614,9 @@ var init = function() {
 
     stats.begin();
 
-		requestAnimationFrame(update);
-
     //母なる地球
     earth.rotation.y += 0.01;
-
+    
 	  // 熊を飛び跳ねさせる
 		round_group.rotation.y -= 0.005;
     round2_group.rotation.y += 0.005;
@@ -649,7 +647,7 @@ var init = function() {
       round2_group.position.y += 0.03;
       round5_group.position.y += 0.07;
     }
-
+    
     //星空を回転させる
 		starmesh.rotation.y += 0.0001;
 		starmesh.rotation.x += 0.0001;
@@ -659,10 +657,12 @@ var init = function() {
 		starmesh3.rotation.x += 0.0001;
 		starmesh4.rotation.y += 0.0001;
 		starmesh4.rotation.x += 0.0001;
-
+    
     controls.update();
 
-		renderer.render(scene, camera);
+    renderer.render(scene, camera);
+
+    requestAnimationFrame(update);
 
     stats.end();
 	};

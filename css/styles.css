@@ -46,11 +46,11 @@ html{
   border-left: solid 5px #a2de96;
 }ul{
   border: solid 2px skyblue;
-  padding: 0.2em 0.2em 0.5em 2.3em;
+  padding: 0em 0em 0em 2.3em;
   position: relative;
 }ul li{
   line-height: 1.5;
-  padding: 0.5em 0;
+  padding: 0.1em 0;
   list-style-type: none!important;
 }ul li:before{
   content: "\025b6";

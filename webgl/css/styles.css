@@ -45,17 +45,17 @@ html{
 details[open] {
   height: 80px;
   background: #c3f6ff;
-}#foot a{
+}a.foot{
   font-weight:bold;
   text-decoration:none;
-}#foot a:link{
+}a:link.foot{
   color:#FFFFFF;
-}#foot a:visited{
+}a:visited.foot{
   color:#FFFFFF;
-}#foot a:hover{
+}a:hover.foot{
   color:#FFFFFF;
   text-decoration:underline;
-}#foot a:active{
+}a:active.foot{
   color:#FFFFFF;
 }.wrapper{
   min-height: 100vh;

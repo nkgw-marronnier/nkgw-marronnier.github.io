@@ -626,7 +626,7 @@ for(let i=0; i<10; i++){
     round3_group.rotation.x += 0.005;
     round4_group.rotation.y -= 0.005;
     round4_group.rotation.x -= 0.005;
-    round5_group.rotation.y +=0.008;
+    round5_group.rotation.y +=0.007;
     if(round_group.position.y >= 0.5){
       ue = 1;
     }
@@ -647,11 +647,11 @@ for(let i=0; i<10; i++){
     }
     if(ue2 == 1){
       round2_group.position.y -= 0.03;
-      round5_group.position.y -= 0.08;
+      round5_group.position.y -= 0.07;
     }
     if(ue2 == 0){
       round2_group.position.y += 0.03;
-      round5_group.position.y += 0.08;
+      round5_group.position.y += 0.07;
     }
 
     //星空を回転させる

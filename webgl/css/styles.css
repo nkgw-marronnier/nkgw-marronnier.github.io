@@ -45,6 +45,18 @@ html{
 details[open] {
   height: 80px;
   background: #c3f6ff;
+}a{
+  font-weight:bold;
+  text-decoration:none;
+}a:link{
+  color:#FFFFFF;
+}a:visited{
+  color:#FFFFFF;
+}a:hover{
+  color:#FFFFFF;
+  text-decoration:underline;
+}a:active{
+  color:#FFFFFF;
 }.wrapper{
   min-height: 100vh;
   position: relative;/*←相対位置*/

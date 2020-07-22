@@ -9,7 +9,6 @@ var init = function () {
   });
   renderer.setSize(width, height);
   renderer.shadowMap.enabled = true;
-  document.body.appendChild(renderer.domElement);
 
   // シーンを作成
   var scene = new THREE.Scene();

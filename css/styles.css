@@ -1,59 +1,74 @@
 html{
-    background:#fafafa;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  background:#fafafa;
 }h1{
 	position: relative;
-	padding:0 0 1px 0;
+	padding:0px 0px 0px 0px;
 	font-size:30px;
-	border-bottom:#CC66FF dashed 3px;
+  border-bottom:#CC66FF dashed 3px;
+  
+  background-image: url("/nkgw-marronnier.ico");
+  background-size: 55px 55px; /* 画像サイズ */
+  background-repeat: no-repeat; /* 繰り返し表示オフ */
+  padding: 0px 0px 0px 65px; /* 画像と重ならないように文字列を右に移動 */
 }h1:first-letter{
 	font-size:50px;
 	color:#325A8C;
-}h2{
-    border-bottom: solid 3px skyblue;
-    position: relative;
-}h2:after{
-    position: absolute;
-    content: " ";
-    display: block;
-    border-bottom: solid 3px #ffc778;
-    bottom: -3px;
-    width: 10%;
 }h3{
-    position: relative;
-    background: #f1f8ff;
-    padding: 0.25em 0.5em;
-    border-left: solid 2em #5c9ee7;
+  position: relative;
+  background: #f1f8ff;
+  padding: 0.25em 0.5em;
+  border-left: solid 2em #5c9ee7;
 }h3:before {
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    content: "\02714";
-    position: absolute;
-    padding: 0em;
-    color: white;
-    font-weight: 900;
-    left: -1.35em;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+  content: "\02714";
+  position: absolute;
+  padding: 0em;
+  color: white;
+  font-weight: 900;
+  left: -1.35em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }h4{
-    padding: 0.25em 0.5em;
-    color: #494949;
-    background: transparent;
-    border-left: solid 5px #a2de96;
+  padding: 0.25em 0.5em;
+  color: #494949;
+  background: transparent;
+  border-left: solid 5px #a2de96;
 }body{
-    color: #333;
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-}ul{
-    border: solid 2px skyblue;
-    padding: 0.5em 1em 0.5em 2.3em;
-    position: relative;
-}ul li{
-    line-height: 1.5;
-    padding: 0.5em 0;
-    list-style-type: none!important;
-}ul li:before{
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    content: "\025b6";
-    position: absolute;
-    left : 1em;
-    color: skyblue;
+	color: #333;
+}main{
+  padding-bottom: 60px;
+}details {
+  height: 10px;
+  transition: .5s;
+}
+details[open] {
+  height: 80px;
+  background: #c3f6ff;
+}a.foot{
+  font-size: 30px;
+  font-weight:bold;
+  text-decoration:none;
+}a:link.foot{
+  color:#FFFFFF;
+}a:visited.foot{
+  color:#FFFFFF;
+}a:hover.foot{
+  color:#FFFFFF;
+  text-decoration:underline;
+}a:active.foot{
+  color:#FFFFFF;
+}.wrapper{
+  min-height: 100vh;
+  position: relative;/*←相対位置*/
+  padding-bottom: 80px;/*←footerの高さ*/
+  box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}footer{
+  width: 100%;
+  background-color: #89c7de;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
 }

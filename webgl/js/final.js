@@ -47,32 +47,32 @@ var init = function() {
 
   // テクスチャー読み込み
 	var textureLoader = new THREE.TextureLoader();
-	var texture_earth = textureLoader.load("texture/earth.jpg");
+	var texture_earth = textureLoader.load("/webgl/texture/earth.jpg");
 	var mat_earth = new THREE.MeshLambertMaterial();
 	mat_earth.map = texture_earth;
   var textureLoader = new THREE.TextureLoader();
-	var texture = textureLoader.load("texture/stone.jpg");
+	var texture = textureLoader.load("/webgl/texture/stone.jpg");
 	var mat = new THREE.MeshPhongMaterial();
 	mat.map = texture;
   var textureLoader = new THREE.TextureLoader();
-	var kawa1_texture = textureLoader.load("texture/kawa1.jpg");
+	var kawa1_texture = textureLoader.load("/webgl/texture/kawa1.jpg");
 	var kawa1_mat = new THREE.MeshLambertMaterial();
 	kawa1_mat.map = kawa1_texture;
   var textureLoader = new THREE.TextureLoader();
-	var kawa2_texture = textureLoader.load("texture/kawa2.jpg");
+	var kawa2_texture = textureLoader.load("/webgl/texture/kawa2.jpg");
 	var kawa2_mat = new THREE.MeshLambertMaterial();
 	kawa2_mat.map = kawa2_texture;
   var textureLoader = new THREE.TextureLoader();
-	var minamo_texture = textureLoader.load("texture/minamo.jpg");
+	var minamo_texture = textureLoader.load("/webgl/texture/minamo.jpg");
 	var minamo_mat = new THREE.MeshPhongMaterial();
 	minamo_mat.map = minamo_texture;
   var textureLoader = new THREE.TextureLoader();
-	var ki_texture = textureLoader.load("texture/ki.jpg");
+	var ki_texture = textureLoader.load("/webgl/texture/ki.jpg");
 	var ki_mat = new THREE.MeshLambertMaterial();
 	ki_mat.map = ki_texture;
 
   //バンプマップ読み込み
-	var bump = textureLoader.load("texture/stone-bump.jpg");
+	var bump = textureLoader.load("/webgl/texture/stone-bump.jpg");
 	mat.bumpMap = bump;
 	mat.bumpscale = 0.2;
   minamo_mat.bumpMap = minamo_texture;

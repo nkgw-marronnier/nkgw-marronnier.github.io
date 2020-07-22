@@ -541,7 +541,7 @@ for(let i=0; i<10; i++){
   //星空1(白色)を作成
 	var stargeometry = new THREE.Geometry();
 	// 配置する範囲
-	var SIZE = 1000;
+	var SIZE = 500;
 	// 配置する個数
 	var LENGTH = 5000;
 	for (let i = 0; i < LENGTH; i++) {
@@ -558,7 +558,7 @@ for(let i=0; i<10; i++){
 	//星空2(青色)を作成
 	var stargeometry2 = new THREE.Geometry();
 	// 配置する範囲
-	var SIZE = 1000;
+	var SIZE = 500;
 	// 配置する個数
 	var LENGTH = 1000;
 	for (let i = 0; i < LENGTH; i++) {
@@ -575,7 +575,7 @@ for(let i=0; i<10; i++){
 	//星空3(燈色)を作成
 	var stargeometry3 = new THREE.Geometry();
 	// 配置する範囲
-	var SIZE = 1000;
+	var SIZE = 500;
 	// 配置する個数
 	var LENGTH = 1000;
 	for (let i = 0; i < LENGTH; i++) {
@@ -592,7 +592,7 @@ for(let i=0; i<10; i++){
 	//星空4(紫色)を作成
 	var stargeometry4 = new THREE.Geometry();
 	// 配置する範囲
-	var SIZE = 1000;
+	var SIZE = 500;
 	// 配置する個数
 	var LENGTH = 1000;
 	for (let i = 0; i < LENGTH; i++) {

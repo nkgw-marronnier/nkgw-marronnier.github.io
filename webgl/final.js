@@ -543,7 +543,7 @@ for(let i=0; i<10; i++){
 	// 配置する範囲
 	var SIZE = 200;
 	// 配置する個数
-	var LENGTH = 1000;
+	var LENGTH = 500;
 	for (let i = 0; i < LENGTH; i++) {
 	stargeometry.vertices.push(new THREE.Vector3(
 		SIZE * (Math.random() - 0.5),
@@ -551,7 +551,7 @@ for(let i=0; i<10; i++){
 		SIZE * (Math.random() - 0.5),));
 	}
 	var starmaterial = new THREE.PointsMaterial({
-	size: 0.6,color: 0xF0FFFF,});
+	size: 0.4,color: 0xF0FFFF,});
 	var starmesh = new THREE.Points(stargeometry, starmaterial);
 	scene.add(starmesh)
 
@@ -560,7 +560,7 @@ for(let i=0; i<10; i++){
 	// 配置する範囲
 	var SIZE = 200;
 	// 配置する個数
-	var LENGTH = 300;
+	var LENGTH = 200;
 	for (let i = 0; i < LENGTH; i++) {
 	stargeometry2.vertices.push(new THREE.Vector3(
 		SIZE * (Math.random() - 0.5),
@@ -568,7 +568,7 @@ for(let i=0; i<10; i++){
 		SIZE * (Math.random() - 0.5),));
 	}
 	var starmaterial2 = new THREE.PointsMaterial({
-	size: 0.6,color: 0x00FFFF,});
+	size: 0.4,color: 0x00FFFF,});
 	var starmesh2 = new THREE.Points(stargeometry2, starmaterial2);
 	scene.add(starmesh2)
 
@@ -577,7 +577,7 @@ for(let i=0; i<10; i++){
 	// 配置する範囲
 	var SIZE = 200;
 	// 配置する個数
-	var LENGTH = 100;
+	var LENGTH = 200;
 	for (let i = 0; i < LENGTH; i++) {
 	stargeometry3.vertices.push(new THREE.Vector3(
 		SIZE * (Math.random() - 0.5),
@@ -585,7 +585,7 @@ for(let i=0; i<10; i++){
 		SIZE * (Math.random() - 0.5),));
 	}
 	var starmaterial3 = new THREE.PointsMaterial({
-	size: 0.6,color: 0xFF8C00,});
+	size: 0.4,color: 0xFF8C00,});
 	var starmesh3 = new THREE.Points(stargeometry3, starmaterial3);
 	scene.add(starmesh3)
 
@@ -594,7 +594,7 @@ for(let i=0; i<10; i++){
 	// 配置する範囲
 	var SIZE = 200;
 	// 配置する個数
-	var LENGTH = 100;
+	var LENGTH = 200;
 	for (let i = 0; i < LENGTH; i++) {
 	stargeometry4.vertices.push(new THREE.Vector3(
 		SIZE * (Math.random() - 0.5),
@@ -602,7 +602,7 @@ for(let i=0; i<10; i++){
 		SIZE * (Math.random() - 0.5),));
 	}
 	var starmaterial4 = new THREE.PointsMaterial({
-	size: 0.6,color: 0xFF00FF,});
+	size: 0.4,color: 0xFF00FF,});
 	var starmesh4 = new THREE.Points(stargeometry4, starmaterial4);
 	scene.add(starmesh4)
 

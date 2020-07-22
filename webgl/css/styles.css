@@ -45,7 +45,7 @@ html{
 details[open] {
   height: 80px;
   background: #c3f6ff;
-}a{
+}.foot a{
   font-weight:bold;
   text-decoration:none;
 }.foot a:link{

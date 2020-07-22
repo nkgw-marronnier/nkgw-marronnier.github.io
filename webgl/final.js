@@ -571,18 +571,13 @@ for(let i=0; i<10; i++){
 }
 
   //平行光源
-  var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+  var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.6 );
   directionalLight.position.set( 1, 1, 1 );
   //シーンに追加
   scene.add( directionalLight );
 
-  //平行光源2
-  //var directionalLight2 = new THREE.DirectionalLight( 0xffffff ,0.5 );
-  //directionalLight2.position.set( -1, 1, 1 );
-  //scene.add( directionalLight2 );
-
   //照明を作成
-  const light = new THREE.SpotLight(0xFFFFFF, 1.5, 1000, Math.PI / 4, 0.0001);
+  const light = new THREE.SpotLight(0xFFFFFF, 1, 100, Math.PI / 4, 0.01);
   //ライトに影を有効にする
   light.castShadow = true;
   light.position.set(0,10,10);

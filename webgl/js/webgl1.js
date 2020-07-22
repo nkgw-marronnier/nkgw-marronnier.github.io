@@ -4,10 +4,10 @@ var init = function () {
 
   //レンダラーを作成
   var renderer = new THREE.WebGLRenderer({
-  canvas: document.querySelector('#canvas'),
+  canvas: document.querySelector('#canvas1'),
   antialisa: true});
   renderer.setSize(width, height);
-  //document.body.appendChild(renderer.domElement);
+  document.body.appendChild(renderer.domElement);
 
   //シーンを作成
   var scene = new THREE.Scene();

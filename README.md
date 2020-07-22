@@ -20,7 +20,7 @@ WebGL(Three.js)の最終課題につきましては動作が重くなる可能�
 ### 動作確認済み端末の例
 念のために無理なく(かろうじて)動作した端末情報を以下に記します.
 
-* HP Pavilion Power Laptop 15 (OS:Windows10 pro, CPU:intel 第7世代 Core i7-7700HQ, Mem:16GB, Graphics:NVIDIA GeForce GTX 1050Ti)
+* HP Pavilion Power Laptop 15 (OS:Windows10 pro, CPU:intel 第7世代 Core i7-7700HQ, Mem:16GB, Graphics:NVIDIA GeForce GTX 1050Ti, ブラウザや待機タスクなどにもよるが基本的に60FPSを維持)
 * iPad pro 2017 10.5inch (常に60FPSで動作)
 * iPad (大学貸与, 40~60FPSを行ったり来たり)
 * iPhone 6S (40FPS台が限界ですぐに過熱)

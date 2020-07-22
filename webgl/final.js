@@ -108,7 +108,7 @@ var init = function() {
     var torustemp = new THREE.Mesh(new THREE.TorusGeometry(0.5, 0.2, 6, 12));
     var radian = i/10*(Math.PI)*2;
     torustemp.position.set(-5.5*Math.cos(radian), -0.3, -5.5*Math.sin(radian));
-    
+    torusgeometry.mergeMesh(torustemp);
   }
   var torus = new THREE.Mesh(torusgeometry, mat);
   torus.receiveShadow = true;

@@ -4,7 +4,7 @@ var init = function () {
 
   //レンダラーを作成
   var renderer = new THREE.WebGLRenderer({
-  canvas: document.querySelector('#canvas1'),
+  canvas: document.querySelector('#canvas'),
   antialisa: true});
   renderer.setSize(width, height);
   document.body.appendChild(renderer.domElement);

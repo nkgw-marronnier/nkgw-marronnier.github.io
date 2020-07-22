@@ -529,7 +529,7 @@ var init = function() {
   scene.add(directionalLight);
 
   //照明を作成
-  const light = new THREE.SpotLight(0xFFFFFF, 1.4, 75, Math.PI/4, 0.5);
+  const light = new THREE.SpotLight(0xFFFFFF, 1.4, 75, Math.PI/4, 0.3);
   //ライトに影を有効にする
   light.castShadow = true;
   light.position.set(0, 10, 10);

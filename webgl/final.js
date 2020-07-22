@@ -93,7 +93,7 @@ var init = function() {
   for(let i=0; i<10; i++){
     var cubetemp = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1));
     var radian = i/10*(Math.PI)*2;
-    cubetemp.position.set(-3.5*Math.cos(radian), -0.3, -3.5*Math.sin(radian));
+    cubetemp.position.set(-3.5*Math.cos(radian), 0, -3.5*Math.sin(radian));
     cubegeometry.mergeMesh(cubetemp);
   }
   var cube = new THREE.Mesh(cubegeometry, mat);
@@ -107,7 +107,7 @@ var init = function() {
   for(let i=0; i<10; i++){
     var torustemp = new THREE.Mesh(new THREE.TorusGeometry(0.5, 0.2, 6, 12));
     var radian = i/10*(Math.PI)*2;
-    torustemp.position.set(-5.5*Math.cos(radian), -0.3, -5.5*Math.sin(radian));
+    torustemp.position.set(-7.5*Math.cos(radian), 0, -7.5*Math.sin(radian));
     torusgeometry.mergeMesh(torustemp);
   }
   var torus = new THREE.Mesh(torusgeometry, mat);

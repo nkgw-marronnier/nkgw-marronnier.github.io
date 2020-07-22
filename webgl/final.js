@@ -67,8 +67,8 @@ var init = function() {
 	var minamo_mat = new THREE.MeshPhongMaterial();
 	minamo_mat.map = minamo_texture;
   var textureLoader = new THREE.TextureLoader();
-	var kirakira_texture = textureLoader.load("texture/kirakira.jpg");
-	var kirakira_mat = new THREE.MeshLambertMaterial();
+	var ki_texture = textureLoader.load("texture/ki.jpg");
+	var ki_mat = new THREE.MeshLambertMaterial();
 	kirakira_mat.map = kirakira_texture;
 
   //バンプマップ読み込み
@@ -392,7 +392,7 @@ var init = function() {
   for(let i=0; i<10; i++){
     // 顔を作成
     var kaogeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    var kao = new THREE.Mesh(kaogeometry, kirakira_mat);
+    var kao = new THREE.Mesh(kaogeometry, ki_mat);
     var radian = i/10*(Math.PI)*2;
     kao.position.set(-7.5* Math.cos(radian), 0.7, -7.5*Math.sin(radian));
     kao.receiveShadow = true;
@@ -403,7 +403,7 @@ var init = function() {
   for(let i=0; i<10; i++){
     // 胴体を作成
     var doutaigeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    var doutai = new THREE.Mesh( doutaigeometry, kirakira_mat );
+    var doutai = new THREE.Mesh(doutaigeometry, ki_mat);
     var radian = i/10*(Math.PI)*2;
     doutai.position.set(-7.5*Math.cos(radian), 0, -7.5*Math.sin(radian));
     doutai.receiveShadow = true;
@@ -414,7 +414,7 @@ var init = function() {
   for(let i=0; i<10; i++){
     // 左耳を作成
     var hidarimimigeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    var hidarimimi = new THREE.Mesh(hidarimimigeometry, kirakira_mat);
+    var hidarimimi = new THREE.Mesh(hidarimimigeometry, ki_mat);
     var radian = i/10*(Math.PI)*2;
     hidarimimi.position.set(-7.75*Math.cos(radian), 1, -7.75*Math.sin(radian));
     hidarimimi.receiveShadow = true;
@@ -425,7 +425,7 @@ var init = function() {
   for(let i=0; i<10; i++){
     // 右耳を作成
     var migimimigeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    var migimimi = new THREE.Mesh(migimimigeometry, kirakira_mat);
+    var migimimi = new THREE.Mesh(migimimigeometry, ki_mat);
     var radian = i/10*(Math.PI)*2;
     migimimi.position.set(-7.25*Math.cos(radian), 1, -7.25*Math.sin(radian));
     migimimi.receiveShadow = true;
@@ -436,7 +436,7 @@ var init = function() {
   for(let i=0; i<10; i++){
     //左手を作成
     var hidaritegeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    var hidarite = new THREE.Mesh(hidaritegeometry, kirakira_mat);
+    var hidarite = new THREE.Mesh(hidaritegeometry, ki_mat);
     var radian = i/10*(Math.PI)*2;
     hidarite.position.set(-7.2*Math.cos(radian), 0.3, -7.2*Math.sin(radian));
     hidarite.receiveShadow = true;
@@ -458,7 +458,7 @@ var init = function() {
   for(let i=0; i<10; i++){
     //右手を作成
     var migitegeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    var migite = new THREE.Mesh(migitegeometry, kirakira_mat);
+    var migite = new THREE.Mesh(migitegeometry, ki_mat);
     var radian = i/10*(Math.PI)*2;
     migite.position.set(-7.8*Math.cos(radian), 0.3, -7.8*Math.sin(radian));
     migite.receiveShadow = true;
@@ -480,7 +480,7 @@ var init = function() {
   for(let i=0; i<10; i++){
     //右足を作成
     var migiashigeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    var migiashi = new THREE.Mesh(migiashigeometry, kirakira_mat);
+    var migiashi = new THREE.Mesh(migiashigeometry, ki_mat);
     var radian = i/10*(Math.PI)*2;
     migiashi.position.set(-7.2*Math.cos(radian), -0.3, -7.2*Math.sin(radian));
     migiashi.receiveShadow = true;
@@ -502,7 +502,7 @@ var init = function() {
   for(let i=0; i<10; i++){
       //左足を作成
     var hidariashigeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    var hidariashi = new THREE.Mesh(hidariashigeometry, kirakira_mat);
+    var hidariashi = new THREE.Mesh(hidariashigeometry, ki_mat);
     var radian = i/10*(Math.PI)*2;
     hidariashi.position.set(-7.8*Math.cos(radian), -0.3, -7.8*Math.sin(radian));
     hidariashi.receiveShadow = true;

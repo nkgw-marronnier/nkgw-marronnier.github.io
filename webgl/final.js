@@ -13,8 +13,8 @@ var init = function() {
 	var scene = new THREE.Scene();
 
 	// カメラを作成
-	var camera = new THREE.PerspectiveCamera( 45, width / height, 1, 500 );
-  camera.position.set(0,0,10);
+	var camera = new THREE.PerspectiveCamera(45, width/height, 1, 500);
+  camera.position.set(0, 0, 10);
 
   // カメラコントローラーを作成
   const controls = new THREE.OrbitControls(camera, canvas);
@@ -23,7 +23,7 @@ var init = function() {
   controls.enableDamping = true;
   controls.dampingFactor = 1.5;
 
-  //FPS
+  //FPS確認用
   var stats = new Stats();
   stats.showPanel( 0 ); //0: fps, 1: ms, 2: mb, 3+: custom
   document.body.appendChild( stats.dom );
@@ -83,36 +83,38 @@ var init = function() {
 	var earth = new THREE.Mesh(earthgeometry, mat_earth);
   earth.receiveShadow = true;
   earth.castShadow = true;
-  earth.position.set( 0, 0, 0 );
-  earth.rotation.x = Math.PI / 12;
+  earth.position.set(0, 0, 0);
+  earth.rotation.x = Math.PI/12;
   scene.add(earth);
-  earth.scale.set(2.5,2.5,2.5);
+  earth.scale.set(2.5, 2.5, 2.5);
 
   //立方体
   var cubegeometry = new THREE.Geometry();
   for(let i=0; i<10; i++){
-    var cubetemp = new THREE.Mesh(new THREE.BoxGeometry( 1, 1, 1));
+    var cubetemp = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1));
     var radian = i/10*(Math.PI)*2;
-    cubetemp.position.set(-3.5* Math.cos(radian),-0.3,-3.5*Math.sin(radian));
+    cubetemp.position.set(-3.5*Math.cos(radian), -0.3, -3.5*Math.sin(radian));
     cubegeometry.mergeMesh(cubetemp);
   }
-  var cube = new THREE.Mesh( cubegeometry, mat );
+  var cube = new THREE.Mesh(cubegeometry, mat);
   cube.receiveShadow = true;
   cube.castShadow = true;
-  round3_group.add( cube );
-  cube.scale.set(0.5,0.5,0.5);
+  round3_group.add(cube);
+  cube.scale.set(0.5, 0.5, 0.5);
 
-for(let i=0; i<10; i++){
-  //立方体
-  var torusgeometry = new THREE.TorusGeometry( 0.5, 0.2, 6, 12 );
-  var torus = new THREE.Mesh( torusgeometry, mat );
-  var radian = i/10*(Math.PI)*2;
-  torus.position.set(-5.5* Math.cos(radian),-0.3,-5.5*Math.sin(radian));
+  //ドーナツ
+  var torusgeometry = new THREE.Geometry();
+  for(let i=0; i<10; i++){
+    var torustemp = new THREE.Mesh(new THREE.TorusGeometry(0.5, 0.2, 6, 12));
+    var radian = i/10*(Math.PI)*2;
+    torustemp.position.set(-5.5*Math.cos(radian), -0.3, -5.5*Math.sin(radian));
+    
+  }
+  var torus = new THREE.Mesh(torusgeometry, mat);
   torus.receiveShadow = true;
   torus.castShadow = true;
-  round4_group.add( torus );
-  torus.scale.set(0.5,0.5,0.5);
-}
+  round4_group.add(torus);
+  torus.scale.set(0.5, 0.5, 0.5);
 
   //地面を作成
   var planegeometry = new THREE.PlaneGeometry(100,100);

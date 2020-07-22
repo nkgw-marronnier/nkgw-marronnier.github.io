@@ -13,7 +13,7 @@ var init = function() {
 	var scene = new THREE.Scene();
 
 	// カメラを作成
-	var camera = new THREE.PerspectiveCamera( 45, width / height, 1, 300 );
+	var camera = new THREE.PerspectiveCamera( 45, width / height, 1, 200 );
   camera.position.set(0,0,10);
 
   // カメラコントローラーを作成
@@ -541,9 +541,9 @@ for(let i=0; i<10; i++){
   //星空1(白色)を作成
 	var stargeometry = new THREE.Geometry();
 	// 配置する範囲
-	var SIZE = 300;
+	var SIZE = 200;
 	// 配置する個数
-	var LENGTH = 5000;
+	var LENGTH = 1000;
 	for (let i = 0; i < LENGTH; i++) {
 	stargeometry.vertices.push(new THREE.Vector3(
 		SIZE * (Math.random() - 0.5),
@@ -558,9 +558,9 @@ for(let i=0; i<10; i++){
 	//星空2(青色)を作成
 	var stargeometry2 = new THREE.Geometry();
 	// 配置する範囲
-	var SIZE = 300;
+	var SIZE = 200;
 	// 配置する個数
-	var LENGTH = 1000;
+	var LENGTH = 500;
 	for (let i = 0; i < LENGTH; i++) {
 	stargeometry2.vertices.push(new THREE.Vector3(
 		SIZE * (Math.random() - 0.5),
@@ -575,9 +575,9 @@ for(let i=0; i<10; i++){
 	//星空3(燈色)を作成
 	var stargeometry3 = new THREE.Geometry();
 	// 配置する範囲
-	var SIZE = 300;
+	var SIZE = 200;
 	// 配置する個数
-	var LENGTH = 1000;
+	var LENGTH = 500;
 	for (let i = 0; i < LENGTH; i++) {
 	stargeometry3.vertices.push(new THREE.Vector3(
 		SIZE * (Math.random() - 0.5),
@@ -592,9 +592,9 @@ for(let i=0; i<10; i++){
 	//星空4(紫色)を作成
 	var stargeometry4 = new THREE.Geometry();
 	// 配置する範囲
-	var SIZE = 300;
+	var SIZE = 200;
 	// 配置する個数
-	var LENGTH = 1000;
+	var LENGTH = 500;
 	for (let i = 0; i < LENGTH; i++) {
 	stargeometry4.vertices.push(new THREE.Vector3(
 		SIZE * (Math.random() - 0.5),

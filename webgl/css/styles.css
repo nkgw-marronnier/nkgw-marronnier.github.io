@@ -31,6 +31,8 @@ html{
   border-left: solid 5px #a2de96;
 }body{
 	color: #333;
+}main{
+  padding-bottom: 60px;
 }details {
   height: 10px;
   transition: .5s;

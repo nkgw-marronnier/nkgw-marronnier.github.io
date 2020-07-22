@@ -10,7 +10,7 @@ html{
   background-image: url("/nkgw-marronnier.ico");
   background-size: 55px 55px; /* 画像サイズ */
   background-repeat: no-repeat; /* 繰り返し表示オフ */
-  padding: 10px 0px 0px 75px; /* 画像と重ならないように文字列を右に移動 */
+  padding: px 0px 0px 65px; /* 画像と重ならないように文字列を右に移動 */
 }h1:first-letter{
 	font-size:50px;
 	color:#325A8C;

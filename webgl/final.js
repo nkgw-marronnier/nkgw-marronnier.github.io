@@ -91,7 +91,7 @@ var init = function() {
   //立方体
   var cubegeometry = new THREE.Geometry();
   for(let i=0; i<10; i++){
-    var cubetemp = new THREE.Mesh(new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1));
+    var cubetemp = new THREE.Mesh(new THREE.BoxGeometry( 1, 1, 1));
     var radian = i/10*(Math.PI)*2;
     cubetemp.position.set(-3.5* Math.cos(radian),-0.3,-3.5*Math.sin(radian));
     cubegeometry.mergeMesh(cubetemp);

@@ -634,7 +634,7 @@ for(let i=0; i<10; i++){
     }
     if(ue == 1){
       round_group.position.y -= 0.03;
-    }else{
+    }else if(ue == 0){
       round_group.position.y += 0.03;
     }
     if(round2_group.position.y >= 0.5){
@@ -645,7 +645,7 @@ for(let i=0; i<10; i++){
     if(ue2 == 1){
       round2_group.position.y -= 0.03;
       round5_group.position.y -= 0.07;
-    }else{
+    }else if(ue2 == 0){
       round2_group.position.y += 0.03;
       round5_group.position.y += 0.07;
     }

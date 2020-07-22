@@ -170,7 +170,7 @@ var init = function() {
     //回転軸と角度からクォータニオンを計算
     q2.setFromAxisAngle(axis2, angle2);
     //直方体オブジェクトのquaternionプロパティに代入
-    migite.quaternion.copy(q2);
+    migitetemp.quaternion.copy(q2);
     migitegeometry.mergeMesh(migitetemp);
 
     //---左手を作成---
@@ -185,7 +185,7 @@ var init = function() {
     //回転軸と角度からクォータニオンを計算
     q.setFromAxisAngle(axis, angle);
     //直方体オブジェクトのquaternionプロパティに代入
-    hidarite.quaternion.copy(q);
+    hidaritetemp.quaternion.copy(q);
     hidaritegeometry.mergeMesh(hidaritetemp);
 
     //---右足を作成---
@@ -200,7 +200,7 @@ var init = function() {
     //回転軸と角度からクォータニオンを計算
     q3.setFromAxisAngle(axis3, angle3);
     //直方体オブジェクトのquaternionプロパティに代入
-    migiashi.quaternion.copy(q3);
+    migiashitemp.quaternion.copy(q3);
     migiashigeometry.mergeMesh(migiashitemp);
 
     //---左足を作成---
@@ -215,7 +215,7 @@ var init = function() {
     //回転軸と角度からクォータニオンを計算
     q4.setFromAxisAngle(axis4, angle4);
     //直方体オブジェクトのquaternionプロパティに代入
-    hidariashi.quaternion.copy(q4);
+    hidariashitemp.quaternion.copy(q4);
     hidariashigeometry.mergeMesh(hidariashitemp);
   }
 

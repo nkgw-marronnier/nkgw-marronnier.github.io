@@ -7,7 +7,6 @@ var init = function () {
   canvas: document.querySelector('#canvas1'),
   antialisa: true});
   renderer.setSize(width, height);
-  document.body.appendChild(renderer.domElement);
 
   //シーンを作成
   var scene = new THREE.Scene();

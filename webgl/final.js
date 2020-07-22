@@ -89,18 +89,18 @@ var init = function() {
   earth.scale.set(2.5,2.5,2.5);
 
   //立方体
-
+  var cubegeometry = new THREE.Geometry();
   for(let i=0; i<10; i++){
-    var cubegeometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
-    var cube = new THREE.Mesh( cubegeometry, mat );
+    var cubetemp = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
     var radian = i/10*(Math.PI)*2;
-    cube.position.set(-3.5* Math.cos(radian),-0.3,-3.5*Math.sin(radian));
-    cube.receiveShadow = true;
-    cube.castShadow = true;
-    round3_group.add( cube );
-    cube.scale.set(0.5,0.5,0.5);
+    cubetemp.position.set(-3.5* Math.cos(radian),-0.3,-3.5*Math.sin(radian));
   }
-  
+  var cubegeometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1);
+  var cube = new THREE.Mesh( cubegeometry, mat );
+  cube.receiveShadow = true;
+  cube.castShadow = true;
+  round3_group.add( cube );
+  cube.scale.set(0.5,0.5,0.5);
 
 for(let i=0; i<10; i++){
   //立方体

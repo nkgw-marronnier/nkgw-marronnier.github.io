@@ -629,7 +629,7 @@ for(let i=0; i<10; i++){
     round5_group.rotation.y +=0.007;
     if(round_group.position.y >= 0.5){
       ue = 1;
-    }else{
+    }else if(round_group.position.y <= -0.5){
       ue = 0;
     }
     if(ue == 1){
@@ -639,7 +639,7 @@ for(let i=0; i<10; i++){
     }
     if(round2_group.position.y >= 0.5){
       ue2 = 1;
-    }else{
+    }else if(round2_group.position.y <= -0.5){
       ue2 = 0;
     }
     if(ue2 == 1){

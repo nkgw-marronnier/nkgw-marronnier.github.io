@@ -23,7 +23,7 @@ WebGL(Three.js)の最終課題につきましては動作が重くなる可能�
 * HP Pavilion Power Laptop 15 (OS:Windows10 pro, CPU:intel 第7世代 Core i7-7700HQ, Mem:16GB, Graphics:NVIDIA GeForce GTX 1050Ti, ブラウザや待機タスクなどにもよるが基本的に60FPSを維持)
 * MacBook Pro Retina 15-inch Mid 2015 （OS:macOS Catalina 10.15.6, CPU:Intel Core i7, Mem:16GB, Graphics:Intel Iris Pro, 常に60FPSで動作. オンボードでRetinaなのにすごいな)
 * iPad pro 2017 10.5inch (常に60FPSで動作)
-* iPad (大学貸与, 40~60FPSを行ったり来たり)
+* iPad 第５世代 (大学貸与, 40~60FPSを行ったり来たり)
 * iPhone 6S (40FPS台が限界ですぐに過熱)
 
 以上.

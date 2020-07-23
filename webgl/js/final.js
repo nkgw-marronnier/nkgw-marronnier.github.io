@@ -708,9 +708,9 @@ var init = function () {
     round4_group.rotation.y -= 0.005;
     round4_group.rotation.x -= 0.005;
     round5_group.rotation.y += 0.007;
-    if (round_group.position.y >= 0.5) {
+    if (round_group.position.y >= 0.7) {
       ue = 1;
-    } else if (round_group.position.y <= -0.5) {
+    } else if (round_group.position.y <= -0.7) {
       ue = 0;
     }
     if (ue == 1) {

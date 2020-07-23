@@ -701,7 +701,7 @@ var init = function () {
     earth.rotation.y += 0.01;
 
     // 熊を飛び跳ねさせる
-    round_group.rotation.y -= 0.005;
+    round_group.rotation.y -= 0.006;
     round2_group.rotation.y += 0.005;
     round3_group.rotation.y += 0.005;
     round3_group.rotation.x += 0.005;

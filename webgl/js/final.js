@@ -688,7 +688,7 @@ var init = function () {
   scene.add(starmesh4);
 
   //†漆黒の霧†
-  scene.fog = new THREE.Fog(0x000000, 20, 200);
+  scene.fog = new THREE.Fog(0x000000, 10, 200);
 
   var ue = 0;
   var ue2 = 1;

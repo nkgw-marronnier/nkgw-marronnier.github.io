@@ -8,9 +8,9 @@ html{
   border-bottom:#CC66FF dashed 3px;
   
   background-image: url("/nkgw-marronnier.ico");
-  background-size: 55px 55px; /* 画像サイズ */
-  background-repeat: no-repeat; /* 繰り返し表示オフ */
-  padding: 0px 0px 0px 65px; /* 画像と重ならないように文字列を右に移動 */
+  background-size: 55px 55px;
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 65px;
 }h1:first-letter{
 	font-size:50px;
 	color:#325A8C;
@@ -61,11 +61,11 @@ html{
 	color: #333;
 }main{
   padding-bottom: 60px;
-}details {
+}details{
   height: 10px;
   transition: 0.2s;
 }
-details[open] {
+details[open]{
   height: 100px;
 }a.foot{
   font-size: 25px;
@@ -82,15 +82,15 @@ details[open] {
   color:#FFFFFF;
 }.wrapper{
   min-height: 100vh;
-  position: relative;/*←相対位置*/
-  padding-bottom: 80px;/*←footerの高さ*/
-  box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+  position: relative;
+  padding-bottom: 80px;
+  box-sizing: border-box;
 }footer{
   width: 100%;
   background-color: #89c7de;
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  position: absolute;/*←絶対位置*/
-  bottom: 0; /*下に固定*/
+  position: absolute;
+  bottom: 0;
 }

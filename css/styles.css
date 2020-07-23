@@ -1,35 +1,47 @@
-html{
+html {
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  background:#fafafa;
-}h1{
-	position: relative;
-	padding:0px 0px 0px 0px;
-	font-size:30px;
-  border-bottom:#CC66FF dashed 3px;
-  
+  background: #fafafa;
+}
+
+h1 {
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  font-size: 30px;
+  border-bottom: #CC66FF dashed 3px;
+
   background-image: url("/nkgw-marronnier.ico");
   background-size: 55px 55px;
   background-repeat: no-repeat;
   padding: 0px 0px 0px 65px;
-}h1:first-letter{
-	font-size:50px;
-	color:#325A8C;
-}h2{
+}
+
+h1:first-letter {
+  font-size: 50px;
+  color: #325A8C;
+}
+
+h2 {
   border-bottom: solid 3px skyblue;
   position: relative;
-}h2:after{
+}
+
+h2:after {
   position: absolute;
   content: " ";
   display: block;
   border-bottom: solid 3px #ffc778;
   bottom: -3px;
   width: 10%;
-}h3{
+}
+
+h3 {
   position: relative;
   background: #f1f8ff;
   padding: 0.25em 0.5em;
   border-left: solid 2em #5c9ee7;
-}h3:before {
+}
+
+h3:before {
   content: "\02663";
   position: absolute;
   padding: 0em;
@@ -39,53 +51,82 @@ html{
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-}h4{
+}
+
+h4 {
   padding: 0.25em 0.5em;
   color: #494949;
   background: transparent;
   border-left: solid 5px #a2de96;
-}ul{
+}
+
+ul {
   border: solid 2px skyblue;
   padding: 0.1em 0.1em 0.1em 2.3em;
   position: relative;
-}ul li{
+}
+
+ul li {
   line-height: 1.5;
   padding: 0.2em 0;
-  list-style-type: none!important;
-}ul li:before{
+  list-style-type: none !important;
+}
+
+ul li:before {
   content: "\025b6";
   position: absolute;
-  left : 1em;
+  left: 1em;
   color: skyblue;
-}body{
-	color: #333;
-}main{
+}
+
+body {
+  color: #333;
+}
+
+main {
   padding-bottom: 60px;
-}details{
+}
+
+details {
   height: 10px;
   transition: 0.2s;
 }
-details[open]{
+
+details[open] {
   height: 100px;
-}a.foot{
+}
+
+a.foot {
   font-size: 25px;
-  font-weight:bold;
-  text-decoration:none;
-}a:link.foot{
-  color:#FFFFFF;
-}a:visited.foot{
-  color:#FFFFFF;
-}a:hover.foot{
-  color:#FFFFFF;
-  text-decoration:underline;
-}a:active.foot{
-  color:#FFFFFF;
-}.wrapper{
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:link.foot {
+  color: #FFFFFF;
+}
+
+a:visited.foot {
+  color: #FFFFFF;
+}
+
+a:hover.foot {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+a:active.foot {
+  color: #FFFFFF;
+}
+
+.wrapper {
   min-height: 100vh;
   position: relative;
   padding-bottom: 80px;
   box-sizing: border-box;
-}footer{
+}
+
+footer {
   width: 100%;
   background-color: #89c7de;
   color: #fff;

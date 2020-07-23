@@ -687,6 +687,8 @@ var init = function () {
   var starmesh4 = new THREE.Points(stargeometry4, starmaterial4);
   scene.add(starmesh4);
 
+  scene.fog = new THREE.FogExp2('#140066', 50, 200);
+
   var ue = 0;
   var ue2 = 1;
 

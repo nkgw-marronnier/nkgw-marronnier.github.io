@@ -24,6 +24,10 @@ var init = function () {
   controls.enableDamping = true;
   controls.dampingFactor = 1.0;
 
+  // カメラを轆轤みたいに回転してみる
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 0.5;
+
   //FPS確認用
   var stats = new Stats();
   stats.showPanel(0); //0: fps, 1: ms, 2: mb, 3+: custom

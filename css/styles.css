@@ -93,6 +93,7 @@ details.github {
 }
 
 details[open].github {
+  color: #98fb98;
   height: 20px;
 }
 

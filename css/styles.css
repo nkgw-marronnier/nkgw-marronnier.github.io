@@ -87,15 +87,6 @@ main {
   padding-bottom: 60px;
 }
 
-details {
-  height: 10px;
-  transition: 1.0s;
-}
-
-details[open] {
-  height: 100px;
-}
-
 details.github {
   height: 10px;
   transition: 1.0s;
@@ -103,6 +94,15 @@ details.github {
 
 details[open].github {
   height: 20px;
+}
+
+details {
+  height: 10px;
+  transition: 1.0s;
+}
+
+details[open] {
+  height: 100px;
 }
 
 a.foot {

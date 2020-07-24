@@ -156,11 +156,7 @@ a:active {
   margin-bottom: -50px;
 }
 
-.push {
-  height: 50px;
-}
-
-footer {
+footer, .push {
   width: 100%;
   background-color: #89c7de;
   color: #fff;
@@ -168,4 +164,5 @@ footer {
   padding: 10px 0;
   position: absolute;
   bottom: 0;
+  height: 50px;
 }

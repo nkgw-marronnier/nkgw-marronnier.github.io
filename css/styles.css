@@ -90,6 +90,7 @@ main {
 details.github {
   height: 10px;
   transition: 1.0s;
+  background-color: #98fb98;
 }
 
 details[open].github {
@@ -104,29 +105,6 @@ details {
 
 details[open] {
   height: 100px;
-}
-
-a {
-  font-size: 25px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-a:link {
-  color: #32cd32;
-}
-
-a:visited {
-  color: #32cd32;
-}
-
-a:hover {
-  color: #32cd32;
-  text-decoration: underline;
-}
-
-a:active {
-  color: #32cd32;
 }
 
 a.foot {
@@ -150,6 +128,27 @@ a:hover.foot {
 
 a:active.foot {
   color: #FFFFFF;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #32cd32;
+}
+
+a:visited {
+  color: #32cd32;
+}
+
+a:hover {
+  color: #32cd32;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #32cd32;
 }
 
 .wrapper {

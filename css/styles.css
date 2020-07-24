@@ -129,42 +129,21 @@ a:active.foot {
   color: #FFFFFF;
 }
 
-a:link.github {
-  color: #32cd32;
-}
-
-a:visited.github {
-  color: #32cd32;
-}
-
-a:hover.github {
-  color: #32cd32;
-  text-decoration: underline;
-}
-
-a:active.github {
-  color: #32cd32;
-}
-
-a {
-  text-decoration: none;
-}
-
 a:link {
-  color: #32cd32;
+  color: #0c330c;
 }
 
 a:visited {
-  color: #32cd32;
+  color: #0c330c;
 }
 
 a:hover {
-  color: #32cd32;
+  color: #0c330c;
   text-decoration: underline;
 }
 
 a:active {
-  color: #32cd32;
+  color: #0c330c;
 }
 
 .wrapper {

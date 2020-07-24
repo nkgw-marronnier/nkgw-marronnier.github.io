@@ -150,7 +150,6 @@ a:active {
 
 .wrapper {
   min-height: 100vh;
-  position: relative;
   padding-bottom: 10px;
   box-sizing: border-box;
   margin-bottom: -50px;
@@ -162,7 +161,6 @@ footer, .push {
   color: #fff;
   text-align: center;
   padding: 0px 0;
-  position: absolute;
   bottom: 0;
   height: 50px;
 }

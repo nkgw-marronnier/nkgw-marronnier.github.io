@@ -714,9 +714,9 @@ var init = function () {
       ue = 0;
     }
     if (ue == 1) {
-      round_group.position.y -= 0.05;
+      round_group.position.y -= 0.04;
     } else if (ue == 0) {
-      round_group.position.y += 0.05;
+      round_group.position.y += 0.04;
     }
     if (round2_group.position.y >= 0.5) {
       ue2 = 1;

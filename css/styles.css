@@ -96,6 +96,15 @@ details[open] {
   height: 100px;
 }
 
+details.github {
+  height: 10px;
+  transition: 1.0s;
+}
+
+details[open].github {
+  height: 20px;
+}
+
 a.foot {
   font-size: 25px;
   font-weight: bold;

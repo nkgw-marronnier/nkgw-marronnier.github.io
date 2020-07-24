@@ -106,26 +106,26 @@ details[open] {
   height: 100px;
 }
 
-a.foot {
+a.foot, a.github {
   font-size: 25px;
   font-weight: bold;
   text-decoration: none;
 }
 
-a:link.foot {
+a:link.foot, a:link.github {
   color: #FFFFFF;
 }
 
-a:visited.foot {
+a:visited.foot, a:visited.github {
   color: #FFFFFF;
 }
 
-a:hover.foot {
+a:hover.foot, a:hover.github {
   color: #FFFFFF;
   text-decoration: underline;
 }
 
-a:active.foot {
+a:active.foot, a:active.github {
   color: #FFFFFF;
 }
 

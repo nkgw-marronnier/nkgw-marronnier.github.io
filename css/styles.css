@@ -90,12 +90,11 @@ main {
 details.github {
   height: 10px;
   transition: 1.0s;
-  background-color: #98fb98;
 }
 
 details[open].github {
   background-color: #98fb98;
-  height: 20px;
+  height: 50px;
 }
 
 details {

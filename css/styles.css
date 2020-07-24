@@ -149,8 +149,11 @@ a:active {
 .wrapper {
   min-height: 100vh;
   position: relative;
-  padding-bottom: 80px;
+  padding-bottom: 10px;
   box-sizing: border-box;
+}
+.push {
+  height: 50px;
 }
 
 footer {

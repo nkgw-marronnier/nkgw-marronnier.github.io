@@ -93,7 +93,7 @@ details.github {
 }
 
 details[open].github {
-  color: #98fb98;
+  background-color: #98fb98;
   height: 20px;
 }
 
@@ -104,6 +104,29 @@ details {
 
 details[open] {
   height: 100px;
+}
+
+a {
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:link {
+  color: #32cd32;
+}
+
+a:visited {
+  color: #32cd32;
+}
+
+a:hover {
+  color: #32cd32;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #32cd32;
 }
 
 a.foot {

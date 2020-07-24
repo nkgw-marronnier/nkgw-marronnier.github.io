@@ -89,7 +89,7 @@ main {
 
 details {
   height: 10px;
-  transition: 0.2s;
+  transition: 1.0s;
 }
 
 details[open] {

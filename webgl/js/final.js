@@ -95,7 +95,7 @@ var init = function () {
     var cube = new THREE.Mesh(cubegeometry, mat);
     var radian = (i / 8) * Math.PI * 2;
     cube.position.set(-3.5 * Math.cos(radian), -0.3, -3.5 * Math.sin(radian));
-    cube.rotation.set(i,i,i);
+    cube.rotation.set(i, i, i);
     cube.receiveShadow = true;
     cube.castShadow = true;
     round3_group.add(cube);
@@ -103,11 +103,12 @@ var init = function () {
   }
 
   for (let i = 0; i < 10; i++) {
-    //立方体
+    //ドーナツ
     var torusgeometry = new THREE.TorusGeometry(0.5, 0.2, 6, 12);
     var torus = new THREE.Mesh(torusgeometry, mat);
     var radian = (i / 10) * Math.PI * 2;
     torus.position.set(-5.5 * Math.cos(radian), -0.3, -5.5 * Math.sin(radian));
+    torus.rotation.set(i, i, i);
     torus.receiveShadow = true;
     torus.castShadow = true;
     round4_group.add(torus);

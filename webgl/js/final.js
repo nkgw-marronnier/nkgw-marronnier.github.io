@@ -14,7 +14,7 @@ var init = function () {
   var scene = new THREE.Scene();
 
   // カメラを作成
-  var camera = new THREE.PerspectiveCamera(45, width / height, 1, 200);
+  var camera = new THREE.PerspectiveCamera(45, width / height, 1, 150);
   camera.position.set(0, 0, 25);
 
   // カメラコントローラーを作成
@@ -604,7 +604,7 @@ var init = function () {
   //星空1(白色)を作成
   var stargeometry = new THREE.Geometry();
   // 配置する範囲
-  var SIZE = 200;
+  var SIZE = 150;
   // 配置する個数
   var LENGTH = 5000;
   for (let i = 0; i < LENGTH; i++) {
@@ -626,7 +626,7 @@ var init = function () {
   //星空2(青色)を作成
   var stargeometry2 = new THREE.Geometry();
   // 配置する範囲
-  var SIZE = 200;
+  var SIZE = 150;
   // 配置する個数
   var LENGTH = 1000;
   for (let i = 0; i < LENGTH; i++) {
@@ -648,7 +648,7 @@ var init = function () {
   //星空3(燈色)を作成
   var stargeometry3 = new THREE.Geometry();
   // 配置する範囲
-  var SIZE = 200;
+  var SIZE = 150;
   // 配置する個数
   var LENGTH = 1000;
   for (let i = 0; i < LENGTH; i++) {
@@ -670,7 +670,7 @@ var init = function () {
   //星空4(紫色)を作成
   var stargeometry4 = new THREE.Geometry();
   // 配置する範囲
-  var SIZE = 200;
+  var SIZE = 150;
   // 配置する個数
   var LENGTH = 1000;
   for (let i = 0; i < LENGTH; i++) {
@@ -690,7 +690,7 @@ var init = function () {
   scene.add(starmesh4);
 
   //†漆黒の霧†
-  scene.fog = new THREE.Fog(0x000000, 10, 200);
+  scene.fog = new THREE.Fog(0x000000, 10, 150);
 
   var ue = 0;
   var ue2 = 1;

@@ -92,6 +92,7 @@ main {
 details.github {
   height: 10px;
   transition: 1.0s;
+  bottom: 10px;
 }
 
 details[open].github {
@@ -159,7 +160,7 @@ footer, .push {
   background-color: #89c7de;
   color: #fff;
   text-align: center;
-  padding: 10px 0;
+  padding: 1px 0;
   bottom: 0;
   height: 50px;
 }

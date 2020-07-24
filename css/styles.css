@@ -106,7 +106,7 @@ details[open] {
   height: 100px;
 }
 
-a.foot, a.github {
+a.foot {
   font-size: 25px;
   font-weight: bold;
   text-decoration: none;

@@ -112,21 +112,38 @@ a.foot {
   text-decoration: none;
 }
 
-a:link.foot, a:link.github {
+a:link.foot {
   color: #FFFFFF;
 }
 
-a:visited.foot, a:visited.github {
+a:visited.foot {
   color: #FFFFFF;
 }
 
-a:hover.foot, a:hover.github {
+a:hover.foot {
   color: #FFFFFF;
   text-decoration: underline;
 }
 
-a:active.foot, a:active.github {
+a:active.foot {
   color: #FFFFFF;
+}
+
+a:link.github {
+  color: #32cd32;
+}
+
+a:visited.github {
+  color: #32cd32;
+}
+
+a:hover.github {
+  color: #32cd32;
+  text-decoration: underline;
+}
+
+a:active.github {
+  color: #32cd32;
 }
 
 a {

@@ -15,7 +15,7 @@ var init = function () {
 
   // カメラを作成
   var camera = new THREE.PerspectiveCamera(45, width / height, 1, 200);
-  camera.position.set(0, 0, 50);
+  camera.position.set(0, 0, 25);
 
   // カメラコントローラーを作成
   const controls = new THREE.OrbitControls(camera, canvas);

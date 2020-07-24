@@ -95,6 +95,7 @@ var init = function () {
     var cube = new THREE.Mesh(cubegeometry, mat);
     var radian = (i / 8) * Math.PI * 2;
     cube.position.set(-3.5 * Math.cos(radian), -0.3, -3.5 * Math.sin(radian));
+    cube.rotation.set(i,i,i);
     cube.receiveShadow = true;
     cube.castShadow = true;
     round3_group.add(cube);

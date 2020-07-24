@@ -163,6 +163,6 @@ footer, .push {
   color: #fff;
   text-align: center;
   padding: 5px 0;
-  bottom: 30px;
+  bottom: -30px;
   height: 30px;
 }

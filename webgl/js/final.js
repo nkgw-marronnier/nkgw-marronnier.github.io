@@ -694,6 +694,8 @@ var init = function () {
   var starmesh4 = new THREE.Points(stargeometry4, starmaterial4);
   scene.add(starmesh4);
 
+  depthTest = false;
+
   // 天界樹を作成
   var treegeometry = new THREE.PlaneGeometry(20, 20);
   var tree_mat = new THREE.MeshBasicMaterial({
@@ -701,7 +703,7 @@ var init = function () {
   });
   tree_mat.map = tree_texture;
   var treeplane = new THREE.Mesh(treegeometry, tree_mat);
-  treeplane.position.set(25, 0, 0);
+  treeplane.position.set(25, 1, 1);
   treeplane.renderOrder = 1;
   scene.add(treeplane);
 
@@ -712,7 +714,7 @@ var init = function () {
   });
   tree2_mat.map = tree2_texture;
   var tree2plane = new THREE.Mesh(tree2geometry, tree2_mat);
-  tree2plane.position.set(-25, 0, 0);
+  tree2plane.position.set(-25, -1, -1);
   scene.add(tree2plane);
 
   // 天界樹3を作成
@@ -722,7 +724,7 @@ var init = function () {
   });
   tree3_mat.map = tree3_texture;
   var tree3plane = new THREE.Mesh(tree3geometry, tree3_mat);
-  tree3plane.position.set(0, 0, 25);
+  tree3plane.position.set(1.5, 1.5, 25);
   scene.add(tree3plane);
 
   // 天界樹4を作成
@@ -732,7 +734,7 @@ var init = function () {
   });
   tree4_mat.map = tree4_texture;
   var tree4plane = new THREE.Mesh(tree4geometry, tree4_mat);
-  tree4plane.position.set(0, 0, -25);
+  tree4plane.position.set(-1.5, -1.5, -25);
   scene.add(tree4plane);
 
   //　炎の作成

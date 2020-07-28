@@ -27,7 +27,7 @@ var init = function () {
   mat.bumpMap = bump;
   mat.bumpscale = 0.2;
 
-  // 円錐?を作成
+  // 円錐を作成
   var cylinderGeometry = new THREE.CylinderGeometry(0.3, 0.5, 1, 8);
   var cylinder = new THREE.Mesh(cylinderGeometry, mat);
   cylinder.position.set(0, 0, -5);

@@ -697,7 +697,7 @@ var init = function () {
 
   // set path to texture images
   // either relative or absolute path
-  VolumetricFire.texturePath = './textures/';
+  VolumetricFire.texturePath = 'textures/';
   var fireWidth = 100;
   var fireHeight = 400;
   var fireDepth = 100;

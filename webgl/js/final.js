@@ -735,7 +735,51 @@ var init = function () {
   tree4plane.position.set(-1.5, -1.5, -25);
   scene.add(tree4plane);
 
-  //　炎/dd(fire4.mesh);
+  //　炎の作成
+  VolumetricFire.texturePath = '/webgl/texture/';
+  var fireWidth = 10;
+  var fireHeight = 25;
+  var fireDepth = 10;
+  var sliceSpacing = 0.5;
+  var fire = new VolumetricFire(
+    fireWidth,
+    fireHeight,
+    fireDepth,
+    sliceSpacing,
+    camera
+  );
+  fire.mesh.position.set(24, 3, 24);
+  scene.add(fire.mesh);
+  //　炎2の作成
+  var fire2 = new VolumetricFire(
+    fireWidth,
+    fireHeight,
+    fireDepth,
+    sliceSpacing,
+    camera
+  );
+  fire2.mesh.position.set(-25, 3, 25);
+  scene.add(fire2.mesh);
+  //　炎3の作成
+  var fire3 = new VolumetricFire(
+    fireWidth,
+    fireHeight,
+    fireDepth,
+    sliceSpacing,
+    camera
+  );
+  fire3.mesh.position.set(26, 3, -24);
+  scene.add(fire3.mesh);
+  //　炎4の作成
+  var fire4 = new VolumetricFire(
+    fireWidth,
+    fireHeight,
+    fireDepth,
+    sliceSpacing,
+    camera
+  );
+  fire4.mesh.position.set(-24, 3, -26);
+  scene.add(fire4.mesh);
   
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);
@@ -800,7 +844,11 @@ var init = function () {
     // カメラコントロール更新
     controls.update();
 
-    // 炎の更/pdate(elapsed);
+    // 炎の更新
+    fire.update(elapsed);
+    fire2.update(elapsed);
+    fire3.update(elapsed);
+    fire4.update(elapsed);
 
     // 木と目が合う
     treeplane.rotation.setFromRotationMatrix(camera.matrix);

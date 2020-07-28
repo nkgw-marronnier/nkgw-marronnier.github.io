@@ -716,7 +716,7 @@ var init = function () {
 
   // you can set position, rotation and scale
   // fire.mesh accepts THREE.mesh features
-  fire.mesh.position.set(0, fireHeight / 2, 0);
+  fire.mesh.position.set(0, -3, 0);
 
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);

@@ -73,7 +73,6 @@ var init = function () {
   var ki_mat = new THREE.MeshLambertMaterial();
   ki_mat.map = ki_texture;
   var tree_texture = textureLoader.load("/webgl/texture/tree0.png");
-  tree_mat.map = tree_texture;
 
   //バンプマップ読み込み
   var bump = textureLoader.load("/webgl/texture/stone-bump.jpg");
@@ -736,11 +735,14 @@ var init = function () {
   scene.add(fire4.mesh);
 
   // 平面（ポリゴン）を作成
-  var treegeometry = new THREE.PlaneGeometry(200,200);
-  var tree_mat = new THREE.MeshBasicMaterial({transparent:true});
-  var treeplane = new THREE.Mesh( treegeometry, tree_mat );
+  var treegeometry = new THREE.PlaneGeometry(200, 200);
+  var tree_mat = new THREE.MeshBasicMaterial({
+    transparent: true
+  });
+  tree_mat.map = tree_texture;
+  var treeplane = new THREE.Mesh(treegeometry, tree_mat);
   treeplane.position.set(0, 250, 0);
-  scene.add( treeplane );
+  scene.add(treeplane);
 
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);

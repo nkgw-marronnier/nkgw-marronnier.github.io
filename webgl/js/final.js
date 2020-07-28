@@ -720,9 +720,11 @@ var init = function () {
   // fire.mesh accepts THREE.mesh features
   fire.mesh.position.set(
     -9 * Math.cos(radian),
-    Math.PI / 2,
+    0,
     -9 * Math.sin(radian)
   );
+
+  fire.mesh.rotation.x = Math.PI / 2;
 
   fire_group.add(fire.mesh);
 
@@ -742,7 +744,7 @@ var init = function () {
     //母なる地球
     earth.rotation.y += 0.01;
 
-    fire_group.rotation.y += 0.01;
+    fire_group.rotation.y += 0.05;
 
     // 熊を飛び跳ねさせる
     round_group.rotation.y -= 0.006;

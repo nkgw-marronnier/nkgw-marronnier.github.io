@@ -696,7 +696,6 @@ var init = function () {
   scene.add(starmesh4);
 
   //　炎の作成
-
   // set path to texture images
   // either relative or absolute path
   VolumetricFire.texturePath = '/textures/';
@@ -712,11 +711,16 @@ var init = function () {
     sliceSpacing,
     camera
   );
+
   scene.add(fire.mesh);
 
   // you can set position, rotation and scale
   // fire.mesh accepts THREE.mesh features
-  fire.mesh.position.set(0, 0, 0);
+  fire.mesh.position.set(
+    -9 * Math.cos(radian),
+    -0.3,
+    -9 * Math.sin(radian)
+  );
 
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);
@@ -733,6 +737,8 @@ var init = function () {
 
     //母なる地球
     earth.rotation.y += 0.01;
+
+    fire.rotation.y += 0.01;
 
     // 熊を飛び跳ねさせる
     round_group.rotation.y -= 0.006;

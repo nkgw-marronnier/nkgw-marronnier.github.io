@@ -699,30 +699,27 @@ var init = function () {
   // set path to texture images
   // either relative or absolute path
 
-  var fire_group = new THREE.Group();
-  scene.add(fire_group);
 
-  for (let i = 0; i < 4; i++) {
-    VolumetricFire.texturePath = '/textures/';
-    var fireWidth = 2;
-    var fireHeight = 7;
-    var fireDepth = 5;
-    var sliceSpacing = 0.5;
-    var fire = new VolumetricFire(
-      fireWidth,
-      fireHeight,
-      fireDepth,
-      sliceSpacing,
-      camera
-    );
-    var radian = (i / 4) * Math.PI * 2;
-    fire.mesh.position.set(
-      -9 * Math.cos(radian),
-      0,
-      -9 * Math.sin(radian)
-    );
-    fire_group.add(fire.mesh);
-  }
+  VolumetricFire.texturePath = '/textures/';
+  var fireWidth = 2.5;
+  var fireHeight = 7;
+  var fireDepth = 2.5;
+  var sliceSpacing = 0.5;
+  var fire = new VolumetricFire(
+    fireWidth,
+    fireHeight,
+    fireDepth,
+    sliceSpacing,
+    camera
+  );
+  fire.mesh.position.set(50, 1, 50);
+  scene.add(fire.mesh);
+  fire.mesh.position.set(-50, 1, 50);
+  scene.add(fire.mesh);
+  fire.mesh.position.set(50, 1, -50);
+  scene.add(fire.mesh);
+  fire.mesh.position.set(-50, 1, -50);
+  scene.add(fire.mesh);
 
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);
@@ -739,8 +736,6 @@ var init = function () {
 
     //母なる地球
     earth.rotation.y += 0.01;
-
-    fire_group.rotation.y -= 0.05;
 
     // 熊を飛び跳ねさせる
     round_group.rotation.y -= 0.006;

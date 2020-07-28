@@ -1,4 +1,3 @@
-
 /**
  * @author yomotsu / http://yomotsu.net
  * ported from http://webgl-fire.appspot.com/html/fire.html
@@ -8,14 +7,14 @@
  * https://www.iusb.edu/math-compsci/_prior-thesis/YVanzine_thesis.pdf
  */
 
-( function ( root, factory ) {
+(function (root, factory) {
 
-  if ( typeof define === 'function' && define.amd ) {
+  if (typeof define === 'function' && define.amd) {
 
     // AMD. Register as an anonymous module.
-    define( [], factory );
+    define([], factory);
 
-  } else if ( typeof module === 'object' && module.exports ) {
+  } else if (typeof module === 'object' && module.exports) {
 
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
@@ -25,11 +24,11 @@
   } else {
 
     // Browser globals (root is window)
-    root.VolumetricFire = factory( root );
+    root.VolumetricFire = factory(root);
 
   }
 
-}( this, function () {
+}(this, function () {
 
   'use strict';
 
@@ -44,12 +43,12 @@
 
     'void main ( void ) {',
 
-      'gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0 );',
-      'texOut = tex;',
+    'gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0 );',
+    'texOut = tex;',
 
     '}',
 
-  ].join( '\n' );
+  ].join('\n');
 
   var fs = [
 
@@ -58,8 +57,8 @@
     // Modified Blum Blum Shub pseudo-random number generator.
     'vec2 mBBS( vec2 val, float modulus ) {',
 
-      'val = mod( val, modulus ); // For numerical consistancy.',
-      'return mod(val * val, modulus);',
+    'val = mod( val, modulus ); // For numerical consistancy.',
+    'return mod(val * val, modulus);',
 
     '}',
 
@@ -73,19 +72,19 @@
      **/
     'float mnoise ( vec3 pos ) {',
 
-      'float intArg = floor( pos.z );',
-      'float fracArg = fract( pos.z );',
-      'vec2 hash = mBBS( intArg * 3.0 + vec2( 0, 3 ), modulus );',
-      'vec4 g = vec4 (',
-        'texture2D( nzw, vec2( pos.x, pos.y + hash.x ) / modulus ).xy,',
-        'texture2D( nzw, vec2( pos.x, pos.y + hash.y ) / modulus ).xy',
-      ') * 2.0 - 1.0;',
+    'float intArg = floor( pos.z );',
+    'float fracArg = fract( pos.z );',
+    'vec2 hash = mBBS( intArg * 3.0 + vec2( 0, 3 ), modulus );',
+    'vec4 g = vec4 (',
+    'texture2D( nzw, vec2( pos.x, pos.y + hash.x ) / modulus ).xy,',
+    'texture2D( nzw, vec2( pos.x, pos.y + hash.y ) / modulus ).xy',
+    ') * 2.0 - 1.0;',
 
-      'return mix(',
-        'g.x + g.y * fracArg,',
-        'g.z + g.w * ( fracArg - 1.0 ),',
-        'smoothstep( 0.0, 1.0, fracArg )',
-      ');',
+    'return mix(',
+    'g.x + g.y * fracArg,',
+    'g.z + g.w * ( fracArg - 1.0 ),',
+    'smoothstep( 0.0, 1.0, fracArg )',
+    ');',
 
     '}',
 
@@ -98,19 +97,19 @@
      **/
     'float turbulence( vec3 pos ) {',
 
-      'float sum  = 0.0;',
-      'float freq = 1.0;',
-      'float amp  = 1.0;',
+    'float sum  = 0.0;',
+    'float freq = 1.0;',
+    'float amp  = 1.0;',
 
-      'for ( int i = 0; i < 4; i++ ) {',
+    'for ( int i = 0; i < 4; i++ ) {',
 
-        'sum += abs( mnoise( pos * freq ) ) * amp;',
-        'freq *= lacunarity;',
-        'amp *= gain;',
+    'sum += abs( mnoise( pos * freq ) ) * amp;',
+    'freq *= lacunarity;',
+    'amp *= gain;',
 
-      '}',
+    '}',
 
-      'return sum;',
+    'return sum;',
 
     '}',
 
@@ -126,40 +125,40 @@
      **/
     'vec4 sampleFire( vec3 loc, vec4 scale ) {',
 
-      // Convert xz to [-1.0, 1.0] range.
-      'loc.xz = loc.xz * 2.0 - 1.0;',
+    // Convert xz to [-1.0, 1.0] range.
+    'loc.xz = loc.xz * 2.0 - 1.0;',
 
-      // Convert to (radius, height) to sample fire profile texture.
-      'vec2 st = vec2( sqrt( dot( loc.xz, loc.xz ) ), loc.y );',
+    // Convert to (radius, height) to sample fire profile texture.
+    'vec2 st = vec2( sqrt( dot( loc.xz, loc.xz ) ), loc.y );',
 
-      // Convert loc to 'noise' space
-      'loc.y -= time * scale.w; // Scrolling noise upwards over time.',
-      'loc *= scale.xyz; // Scaling noise space.',
+    // Convert loc to 'noise' space
+    'loc.y -= time * scale.w; // Scrolling noise upwards over time.',
+    'loc *= scale.xyz; // Scaling noise space.',
 
-      // Offsetting vertial texture lookup.
-      // We scale this by the sqrt of the height so that things are
-      // relatively stable at the base of the fire and volital at the
-      // top.
-      'float offset = sqrt( st.y ) * magnatude * turbulence( loc );',
-      'st.y += offset;',
+    // Offsetting vertial texture lookup.
+    // We scale this by the sqrt of the height so that things are
+    // relatively stable at the base of the fire and volital at the
+    // top.
+    'float offset = sqrt( st.y ) * magnatude * turbulence( loc );',
+    'st.y += offset;',
 
-      // TODO: Update fireProfile texture to have a black row of pixels.
-      'if ( st.y > 1.0 ) {',
+    // TODO: Update fireProfile texture to have a black row of pixels.
+    'if ( st.y > 1.0 ) {',
 
-        'return vec4( 0, 0, 0, 1 );',
+    'return vec4( 0, 0, 0, 1 );',
 
-      '}',
+    '}',
 
-      'vec4 result = texture2D( fireProfile, st );',
+    'vec4 result = texture2D( fireProfile, st );',
 
-      // Fading out bottom so slice clipping isnt obvious
-      'if ( st.y < 0.1 ) {',
+    // Fading out bottom so slice clipping isnt obvious
+    'if ( st.y < 0.1 ) {',
 
-        'result *= st.y / 0.1;',
+    'result *= st.y / 0.1;',
 
-      '}',
+    '}',
 
-      'return result;',
+    'return result;',
 
     '}',
 
@@ -167,32 +166,34 @@
 
     'void main( void ) {',
 
-      // Mapping texture coordinate to -1 => 1 for xy, 0=> 1 for y
-      'vec3 color = sampleFire( texOut, vec4( 1.0, 2.0, 1.0, 0.5 ) ).xyz;',
-      'gl_FragColor = vec4( color * 1.5, 1 );',
+    // Mapping texture coordinate to -1 => 1 for xy, 0=> 1 for y
+    'vec3 color = sampleFire( texOut, vec4( 1.0, 2.0, 1.0, 0.5 ) ).xyz;',
+    'gl_FragColor = vec4( color * 1.5, 1 );',
 
     '}',
 
-  ].join( '\n' );
+  ].join('\n');
 
-  var initMaterial =  ( function () {
+  var initMaterial = (function () {
 
     var material;
     var textureLoader = new THREE.TextureLoader();
 
     return function () {
 
-      if ( !!material ) { return material; }
+      if (!!material) {
+        return material;
+      }
 
       // TODO
       // Canvas2D で noise 画像を作る
-      var nzw = textureLoader.load( VolumetricFire.texturePath + 'nzw.png' );
+      var nzw = textureLoader.load(VolumetricFire.texturePath + 'nzw.png');
       nzw.wrapS = THREE.RepeatWrapping;
       nzw.wrapT = THREE.RepeatWrapping;
       nzw.magFilter = THREE.LinearFilter;
       nzw.minFilter = THREE.LinearFilter;
 
-      var fireProfile = textureLoader.load( VolumetricFire.texturePath + 'firetex.png' );
+      var fireProfile = textureLoader.load(VolumetricFire.texturePath + 'firetex.png');
       fireProfile.wrapS = THREE.ClampToEdgeWrapping;
       fireProfile.wrapT = THREE.ClampToEdgeWrapping;
       fireProfile.magFilter = THREE.LinearFilter;
@@ -213,73 +214,73 @@
         }
       };
 
-      material = new THREE.RawShaderMaterial( {
-        vertexShader   : vs,
-        fragmentShader : fs,
-        uniforms       : uniforms,
-        side           : THREE.DoubleSide,
-        blending       : THREE.AdditiveBlending,
-        transparent    : true
-      } );
+      material = new THREE.RawShaderMaterial({
+        vertexShader: vs,
+        fragmentShader: fs,
+        uniforms: uniforms,
+        side: THREE.DoubleSide,
+        blending: THREE.AdditiveBlending,
+        transparent: true
+      });
 
       return material;
 
     };
 
-  } )();
+  })();
 
 
   var cornerNeighbors = [
-    [ 1, 2, 4 ],
-    [ 0, 5, 3 ],
-    [ 0, 3, 6 ],
-    [ 1, 7, 2 ],
-    [ 0, 6, 5 ],
-    [ 1, 4, 7 ],
-    [ 2, 7, 4 ],
-    [ 3, 5, 6 ],
+    [1, 2, 4],
+    [0, 5, 3],
+    [0, 3, 6],
+    [1, 7, 2],
+    [0, 6, 5],
+    [1, 4, 7],
+    [2, 7, 4],
+    [3, 5, 6],
   ];
 
   var incomingEdges = [
-    [ -1,  2,  4, -1,  1, -1, -1, -1 ],
-    [  5, -1, -1,  0, -1,  3, -1, -1 ],
-    [  3, -1, -1,  6, -1, -1,  0, -1 ],
-    [ -1,  7,  1, -1, -1, -1, -1,  2 ],
-    [  6, -1, -1, -1, -1,  0,  5, -1 ],
-    [ -1,  4, -1, -1,  7, -1, -1,  1 ],
-    [ -1, -1,  7, -1,  2, -1, -1,  4 ],
-    [ -1, -1, -1,  5, -1,  6,  3, -1 ],
+    [-1, 2, 4, -1, 1, -1, -1, -1],
+    [5, -1, -1, 0, -1, 3, -1, -1],
+    [3, -1, -1, 6, -1, -1, 0, -1],
+    [-1, 7, 1, -1, -1, -1, -1, 2],
+    [6, -1, -1, -1, -1, 0, 5, -1],
+    [-1, 4, -1, -1, 7, -1, -1, 1],
+    [-1, -1, 7, -1, 2, -1, -1, 4],
+    [-1, -1, -1, 5, -1, 6, 3, -1],
   ];
 
-  var VolumetricFire = function ( width, height, depth, sliceSpacing, camera ) {
+  var VolumetricFire = function (width, height, depth, sliceSpacing, camera) {
 
     this.camera = camera;
 
     this._sliceSpacing = sliceSpacing;
 
-    var widthHalf  = width  * 0.5;
+    var widthHalf = width * 0.5;
     var heightHalf = height * 0.5;
-    var depthHalf  = depth  * 0.5;
+    var depthHalf = depth * 0.5;
 
     this._posCorners = [
-      new THREE.Vector3( -widthHalf, -heightHalf, -depthHalf ),
-      new THREE.Vector3(  widthHalf, -heightHalf, -depthHalf ),
-      new THREE.Vector3( -widthHalf,  heightHalf, -depthHalf ),
-      new THREE.Vector3(  widthHalf,  heightHalf, -depthHalf ),
-      new THREE.Vector3( -widthHalf, -heightHalf,  depthHalf ),
-      new THREE.Vector3(  widthHalf, -heightHalf,  depthHalf ),
-      new THREE.Vector3( -widthHalf,  heightHalf,  depthHalf ),
-      new THREE.Vector3(  widthHalf,  heightHalf,  depthHalf )
+      new THREE.Vector3(-widthHalf, -heightHalf, -depthHalf),
+      new THREE.Vector3(widthHalf, -heightHalf, -depthHalf),
+      new THREE.Vector3(-widthHalf, heightHalf, -depthHalf),
+      new THREE.Vector3(widthHalf, heightHalf, -depthHalf),
+      new THREE.Vector3(-widthHalf, -heightHalf, depthHalf),
+      new THREE.Vector3(widthHalf, -heightHalf, depthHalf),
+      new THREE.Vector3(-widthHalf, heightHalf, depthHalf),
+      new THREE.Vector3(widthHalf, heightHalf, depthHalf)
     ];
     this._texCorners = [
-      new THREE.Vector3( 0, 0, 0 ),
-      new THREE.Vector3( 1, 0, 0 ),
-      new THREE.Vector3( 0, 1, 0 ),
-      new THREE.Vector3( 1, 1, 0 ),
-      new THREE.Vector3( 0, 0, 1 ),
-      new THREE.Vector3( 1, 0, 1 ),
-      new THREE.Vector3( 0, 1, 1 ),
-      new THREE.Vector3( 1, 1, 1 )
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(1, 0, 0),
+      new THREE.Vector3(0, 1, 0),
+      new THREE.Vector3(1, 1, 0),
+      new THREE.Vector3(0, 0, 1),
+      new THREE.Vector3(1, 0, 1),
+      new THREE.Vector3(0, 1, 1),
+      new THREE.Vector3(1, 1, 1)
     ];
 
     this._viewVector = new THREE.Vector3();
@@ -289,15 +290,15 @@
     // still did not figure out, how many vertexes should be...
     // three.jsでは可変にできない、ひとまず多めに用意
 
-    var index    = new Uint16Array ( ( width + height + depth ) * 30 );
-    var position = new Float32Array( ( width + height + depth ) * 30 * 3 );
-    var tex      = new Float32Array( ( width + height + depth ) * 30 * 3 );
+    var index = new Uint16Array((width + height + depth) * 30);
+    var position = new Float32Array((width + height + depth) * 30 * 3);
+    var tex = new Float32Array((width + height + depth) * 30 * 3);
 
     var geometry = new THREE.BufferGeometry();
     geometry.dynamic = true;
-    geometry.setIndex( new THREE.BufferAttribute( index, 1 ) );
-    geometry.addAttribute( 'position', new THREE.BufferAttribute( position, 3 ) );
-    geometry.addAttribute( 'tex',      new THREE.BufferAttribute( tex,      3 ) );
+    geometry.setIndex(new THREE.BufferAttribute(index, 1));
+    geometry.addAttribute('position', new THREE.BufferAttribute(position, 3));
+    geometry.addAttribute('tex', new THREE.BufferAttribute(tex, 3));
 
     var material = initMaterial();
 
@@ -310,7 +311,7 @@
 
   }
 
-  VolumetricFire.prototype.update = function ( elapsed ) {
+  VolumetricFire.prototype.update = function (elapsed) {
 
     this.updateViewVector();
     this.slice();
@@ -321,13 +322,13 @@
 
   VolumetricFire.prototype.updateGeometry = function () {
 
-    this.mesh.geometry.index.array.set( this._indexes );
-    this.mesh.geometry.attributes.position.array.set( this._points );
-    this.mesh.geometry.attributes.tex.array.set( this._texCoords );
+    this.mesh.geometry.index.array.set(this._indexes);
+    this.mesh.geometry.attributes.position.array.set(this._points);
+    this.mesh.geometry.attributes.tex.array.set(this._texCoords);
 
-    this.mesh.geometry.index.needsUpdate               = true;
+    this.mesh.geometry.index.needsUpdate = true;
     this.mesh.geometry.attributes.position.needsUpdate = true;
-    this.mesh.geometry.attributes.tex.needsUpdate      = true;
+    this.mesh.geometry.attributes.tex.needsUpdate = true;
 
   }
 
@@ -347,129 +348,133 @@
     );
 
     this._viewVector.set(
-      - modelViewMatrix.elements[  2 ],
-      - modelViewMatrix.elements[  6 ],
-      - modelViewMatrix.elements[ 10 ]
+      -modelViewMatrix.elements[2],
+      -modelViewMatrix.elements[6],
+      -modelViewMatrix.elements[10]
     ).normalize();
 
   };
 
   VolumetricFire.prototype.slice = function () {
 
-    this._points    = [];
+    this._points = [];
     this._texCoords = [];
-    this._indexes   = [];
+    this._indexes = [];
 
     var i;
-    var cornerDistance0 = this._posCorners[ 0 ].dot( this._viewVector );
+    var cornerDistance0 = this._posCorners[0].dot(this._viewVector);
 
-    var cornerDistance = [ cornerDistance0 ];
+    var cornerDistance = [cornerDistance0];
     var maxCorner = 0;
     var minDistance = cornerDistance0;
     var maxDistance = cornerDistance0;
 
-    for ( i = 1; i < 8; i = ( i + 1 )|0 ) {
+    for (i = 1; i < 8; i = (i + 1) | 0) {
 
-      cornerDistance[ i ] = this._posCorners[ i ].dot( this._viewVector );
+      cornerDistance[i] = this._posCorners[i].dot(this._viewVector);
 
-      if ( cornerDistance[ i ] > maxDistance ) {
+      if (cornerDistance[i] > maxDistance) {
 
         maxCorner = i;
-        maxDistance = cornerDistance[ i ];
+        maxDistance = cornerDistance[i];
 
       }
 
-      if ( cornerDistance[ i ] < minDistance ) {
+      if (cornerDistance[i] < minDistance) {
 
-        minDistance = cornerDistance[ i ];
+        minDistance = cornerDistance[i];
 
       }
 
     }
 
     // Aligning slices
-    var sliceDistance = Math.floor( maxDistance / this._sliceSpacing ) * this._sliceSpacing;
+    var sliceDistance = Math.floor(maxDistance / this._sliceSpacing) * this._sliceSpacing;
 
     var activeEdges = [];
-    var firstEdge   = 0;
-    var nextEdge    = 0;
+    var firstEdge = 0;
+    var nextEdge = 0;
     var expirations = new PriorityQueue();
 
-    var createEdge = function ( startIndex, endIndex ) {
+    var createEdge = function (startIndex, endIndex) {
 
-      if ( nextEdge >= 12 ) { return undefined; }
-
-      var activeEdge = {
-          expired    : false,
-          startIndex : startIndex,
-          endIndex   : endIndex,
-          deltaPos   : new THREE.Vector3(),
-          deltaTex   : new THREE.Vector3(),
-          pos        : new THREE.Vector3(),
-          tex        : new THREE.Vector3(),
-          cur        : nextEdge
+      if (nextEdge >= 12) {
+        return undefined;
       }
 
-      var range = cornerDistance[ startIndex ] - cornerDistance[ endIndex ];
+      var activeEdge = {
+        expired: false,
+        startIndex: startIndex,
+        endIndex: endIndex,
+        deltaPos: new THREE.Vector3(),
+        deltaTex: new THREE.Vector3(),
+        pos: new THREE.Vector3(),
+        tex: new THREE.Vector3(),
+        cur: nextEdge
+      }
 
-      if ( range !== 0.0 ) {
+      var range = cornerDistance[startIndex] - cornerDistance[endIndex];
+
+      if (range !== 0.0) {
 
         var irange = 1.0 / range;
 
         activeEdge.deltaPos.subVectors(
-          this._posCorners[ endIndex ],
-          this._posCorners[ startIndex ]
-        ).multiplyScalar( irange );
+          this._posCorners[endIndex],
+          this._posCorners[startIndex]
+        ).multiplyScalar(irange);
 
         activeEdge.deltaTex.subVectors(
-          this._texCorners[ endIndex ],
-          this._texCorners[ startIndex ]
-        ).multiplyScalar( irange );
+          this._texCorners[endIndex],
+          this._texCorners[startIndex]
+        ).multiplyScalar(irange);
 
-        var step = cornerDistance[ startIndex ] - sliceDistance;
+        var step = cornerDistance[startIndex] - sliceDistance;
 
         activeEdge.pos.addVectors(
-          activeEdge.deltaPos.clone().multiplyScalar( step ),
-          this._posCorners[ startIndex ]
+          activeEdge.deltaPos.clone().multiplyScalar(step),
+          this._posCorners[startIndex]
         );
 
         activeEdge.tex.addVectors(
-          activeEdge.deltaTex.clone().multiplyScalar( step ),
-          this._texCorners[ startIndex ]
+          activeEdge.deltaTex.clone().multiplyScalar(step),
+          this._texCorners[startIndex]
         );
 
-        activeEdge.deltaPos.multiplyScalar( this._sliceSpacing );
-        activeEdge.deltaTex.multiplyScalar( this._sliceSpacing );
+        activeEdge.deltaPos.multiplyScalar(this._sliceSpacing);
+        activeEdge.deltaTex.multiplyScalar(this._sliceSpacing);
 
       }
 
-      expirations.push( activeEdge, cornerDistance[ endIndex ] );
-      activeEdges[ nextEdge++ ] = activeEdge;
+      expirations.push(activeEdge, cornerDistance[endIndex]);
+      activeEdges[nextEdge++] = activeEdge;
       return activeEdge;
 
     };
 
-    for ( i = 0; i < 3; i = ( i + 1 )|0 ) {
+    for (i = 0; i < 3; i = (i + 1) | 0) {
 
-      var activeEdge = createEdge.call( this, maxCorner, cornerNeighbors[ maxCorner ][ i ] );
-      activeEdge.prev = ( i + 2 ) % 3;
-      activeEdge.next = ( i + 1 ) % 3;
+      var activeEdge = createEdge.call(this, maxCorner, cornerNeighbors[maxCorner][i]);
+      activeEdge.prev = (i + 2) % 3;
+      activeEdge.next = (i + 1) % 3;
 
     }
 
     var nextIndex = 0;
 
-    while ( sliceDistance > minDistance ) {
+    while (sliceDistance > minDistance) {
 
-      while ( expirations.top().priority >= sliceDistance ) {
+      while (expirations.top().priority >= sliceDistance) {
 
         var edge = expirations.pop().object;
 
-        if ( edge.expired ) { continue; }
+        if (edge.expired) {
+          continue;
+        }
 
         if (
-          edge.endIndex !== activeEdges[ edge.prev ].endIndex &&
-          edge.endIndex !== activeEdges[ edge.next ].endIndex
+          edge.endIndex !== activeEdges[edge.prev].endIndex &&
+          edge.endIndex !== activeEdges[edge.next].endIndex
         ) {
 
           // split this edge.
@@ -479,16 +484,16 @@
           var activeEdge1 = createEdge.call(
             this,
             edge.endIndex,
-            incomingEdges[ edge.endIndex ][ edge.startIndex ]
+            incomingEdges[edge.endIndex][edge.startIndex]
           );
           activeEdge1.prev = edge.prev;
-          activeEdges[ edge.prev ].next = nextEdge - 1;
+          activeEdges[edge.prev].next = nextEdge - 1;
           activeEdge1.next = nextEdge;
 
           var activeEdge2 = createEdge.call(
             this,
             edge.endIndex,
-            incomingEdges[ edge.endIndex ][ activeEdge1.endIndex ]
+            incomingEdges[edge.endIndex][activeEdge1.endIndex]
           );
           activeEdge2.prev = nextEdge - 2;
           activeEdge2.next = edge.next;
@@ -501,15 +506,15 @@
           var prev;
           var next;
 
-          if ( edge.endIndex === activeEdges[ edge.prev ].endIndex ) {
+          if (edge.endIndex === activeEdges[edge.prev].endIndex) {
 
-            prev = activeEdges[ edge.prev ];
+            prev = activeEdges[edge.prev];
             next = edge;
 
           } else {
 
             prev = edge;
-            next = activeEdges[ edge.next ];
+            next = activeEdges[edge.next];
 
           }
 
@@ -520,12 +525,12 @@
           var activeEdge = createEdge.call(
             this,
             edge.endIndex,
-            incomingEdges[ edge.endIndex ][ prev.startIndex ]
+            incomingEdges[edge.endIndex][prev.startIndex]
           );
           activeEdge.prev = prev.prev;
-          activeEdges[ activeEdge.prev ].next = nextEdge - 1;
+          activeEdges[activeEdge.prev].next = nextEdge - 1;
           activeEdge.next = next.next;
-          activeEdges[ activeEdge.next ].prev = nextEdge - 1;
+          activeEdges[activeEdge.next].prev = nextEdge - 1;
           firstEdge = nextEdge - 1;
 
         }
@@ -538,7 +543,7 @@
       do {
 
         ++count;
-        var activeEdge = activeEdges[ cur ];
+        var activeEdge = activeEdges[cur];
         this._points.push(
           activeEdge.pos.x,
           activeEdge.pos.y,
@@ -549,13 +554,13 @@
           activeEdge.tex.y,
           activeEdge.tex.z
         );
-        activeEdge.pos.add( activeEdge.deltaPos );
-        activeEdge.tex.add( activeEdge.deltaTex );
+        activeEdge.pos.add(activeEdge.deltaPos);
+        activeEdge.tex.add(activeEdge.deltaTex);
         cur = activeEdge.next;
 
-      } while ( cur !== firstEdge );
+      } while (cur !== firstEdge);
 
-      for ( i = 2; i < count; i = ( i + 1 )|0 ) {
+      for (i = 2; i < count; i = (i + 1) | 0) {
 
         this._indexes.push(
           nextIndex,
@@ -572,7 +577,7 @@
 
   };
 
-  VolumetricFire.texturePath = './textures/';
+  VolumetricFire.texturePath = '/webgl/texture/';
 
   ///
 
@@ -594,7 +599,7 @@
 
     pop: function () {
 
-      if ( !this.sorted ) {
+      if (!this.sorted) {
 
         this.sort();
 
@@ -604,21 +609,24 @@
 
     },
 
-    top : function() {
+    top: function () {
 
-      if ( !this.sorted ) {
+      if (!this.sorted) {
 
         this.sort();
 
       }
 
-      return this.contents[ this.contents.length - 1 ];
+      return this.contents[this.contents.length - 1];
 
     },
 
-    push : function( object, priority ) {
+    push: function (object, priority) {
 
-      this.contents.push( { object: object, priority: priority } );
+      this.contents.push({
+        object: object,
+        priority: priority
+      });
       this.sorted = false;
 
     }
@@ -627,4 +635,4 @@
 
   return VolumetricFire;
 
-} ) );
+}));

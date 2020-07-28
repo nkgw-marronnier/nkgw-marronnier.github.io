@@ -2,6 +2,8 @@ var init = function () {
   var width = 960,
     height = 540;
 
+  var clock = new THREE.Clock();
+
   // レンダラーを作成
   var renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector("#canvas"),
@@ -727,6 +729,8 @@ var init = function () {
 
     stats.begin();
 
+    var elapsed = clock.getElapsedTime();
+
     //母なる地球
     earth.rotation.y += 0.01;
 
@@ -773,7 +777,7 @@ var init = function () {
 
     controls.update();
 
-    fire.update();
+    fire.update(elapsed);
 
     requestAnimationFrame(update);
 

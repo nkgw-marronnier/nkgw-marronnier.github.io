@@ -738,7 +738,7 @@ var init = function () {
     //母なる地球
     earth.rotation.y += 0.01;
 
-    fire.rotation.y += 0.01;
+    fire.mesh.rotation.y += 0.01;
 
     // 熊を飛び跳ねさせる
     round_group.rotation.y -= 0.006;

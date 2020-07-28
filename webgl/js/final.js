@@ -708,7 +708,7 @@ var init = function () {
     sliceSpacing,
     camera
   );
-  fire.mesh.position.set(50, 1, 50);
+  fire.mesh.position.set(25, 3, 25);
   scene.add(fire.mesh);
   var fireWidth = 10;
   var fireHeight = 25;
@@ -721,7 +721,7 @@ var init = function () {
     sliceSpacing,
     camera
   );
-  fire2.mesh.position.set(-50, 1, 50);
+  fire2.mesh.position.set(-25, 3, 25);
   scene.add(fire2.mesh);
   var fireWidth = 10;
   var fireHeight = 25;
@@ -734,7 +734,7 @@ var init = function () {
     sliceSpacing,
     camera
   );
-  fire3.mesh.position.set(50, 1, -50);
+  fire3.mesh.position.set(25, 3, -25);
   scene.add(fire3.mesh);
   var fireWidth = 10;
   var fireHeight = 25;
@@ -747,7 +747,7 @@ var init = function () {
     sliceSpacing,
     camera
   );
-  fire4.mesh.position.set(-50, 1, -50);
+  fire4.mesh.position.set(-25, 3, -25);
   scene.add(fire4.mesh);
 
   //†漆黒の霧†

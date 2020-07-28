@@ -716,7 +716,7 @@ var init = function () {
     camera
   );
 
-  fire_group.add(fire.mesh);
+  fire_group.add(fire);
 
   // you can set position, rotation and scale
   // fire.mesh accepts THREE.mesh features

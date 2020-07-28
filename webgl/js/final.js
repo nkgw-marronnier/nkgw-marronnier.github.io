@@ -694,8 +694,6 @@ var init = function () {
   var starmesh4 = new THREE.Points(stargeometry4, starmaterial4);
   scene.add(starmesh4);
 
-  depthTest = false;
-
   // 天界樹を作成
   var treegeometry = new THREE.PlaneGeometry(20, 20);
   var tree_mat = new THREE.MeshBasicMaterial({
@@ -750,7 +748,7 @@ var init = function () {
     sliceSpacing,
     camera
   );
-  fire.mesh.position.set(25, 3, 25);
+  fire.mesh.position.set(24, 3, 24);
   scene.add(fire.mesh);
   //　炎2の作成
   var fire2 = new VolumetricFire(
@@ -770,7 +768,7 @@ var init = function () {
     sliceSpacing,
     camera
   );
-  fire3.mesh.position.set(25, 3, -25);
+  fire3.mesh.position.set(26, 3, -24);
   scene.add(fire3.mesh);
   //　炎4の作成
   var fire4 = new VolumetricFire(
@@ -780,7 +778,7 @@ var init = function () {
     sliceSpacing,
     camera
   );
-  fire4.mesh.position.set(-25, 3, -25);
+  fire4.mesh.position.set(-24, 3, -26);
   scene.add(fire4.mesh);
   
   //†漆黒の霧†

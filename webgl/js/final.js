@@ -698,6 +698,10 @@ var init = function () {
   //　炎の作成
   // set path to texture images
   // either relative or absolute path
+
+  var fire_group = new THREE.Group();
+  scene.add(fire_group);
+
   VolumetricFire.texturePath = '/textures/';
   var fireWidth = 2.5;
   var fireHeight = 5;
@@ -712,7 +716,7 @@ var init = function () {
     camera
   );
 
-  scene.add(fire.mesh);
+  fire_group.add(fire.mesh);
 
   // you can set position, rotation and scale
   // fire.mesh accepts THREE.mesh features

@@ -710,10 +710,6 @@ var init = function () {
   );
   fire.mesh.position.set(25, 3, 25);
   scene.add(fire.mesh);
-  var fireWidth = 10;
-  var fireHeight = 25;
-  var fireDepth = 10;
-  var sliceSpacing = 0.5;
   var fire2 = new VolumetricFire(
     fireWidth,
     fireHeight,
@@ -723,10 +719,6 @@ var init = function () {
   );
   fire2.mesh.position.set(-25, 3, 25);
   scene.add(fire2.mesh);
-  var fireWidth = 10;
-  var fireHeight = 25;
-  var fireDepth = 10;
-  var sliceSpacing = 0.5;
   var fire3 = new VolumetricFire(
     fireWidth,
     fireHeight,
@@ -736,10 +728,6 @@ var init = function () {
   );
   fire3.mesh.position.set(25, 3, -25);
   scene.add(fire3.mesh);
-  var fireWidth = 10;
-  var fireHeight = 25;
-  var fireDepth = 10;
-  var sliceSpacing = 0.5;
   var fire4 = new VolumetricFire(
     fireWidth,
     fireHeight,

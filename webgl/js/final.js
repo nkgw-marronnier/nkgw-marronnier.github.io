@@ -810,6 +810,9 @@ var init = function () {
     controls.update();
 
     fire.update(elapsed);
+    fire2.update(elapsed);
+    fire3.update(elapsed);
+    fire4.update(elapsed);
 
     requestAnimationFrame(update);
 

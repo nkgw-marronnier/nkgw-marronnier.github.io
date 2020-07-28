@@ -693,23 +693,6 @@ var init = function () {
   var starmesh4 = new THREE.Points(stargeometry4, starmaterial4);
   scene.add(starmesh4);
 
-  VolumetricFire.texturePath = './textures/';
-  var fireWidth = 100;
-  var fireHeight = 400;
-  var fireDepth = 100;
-  var sliceSpacing = 10;
-
-  var fire = new VolumetricFire(
-    fireWidth,
-    fireHeight,
-    fireDepth,
-    sliceSpacing,
-    camera
-  );
-  scene.add(fire.mesh);
-
-  fire.mesh.position.set(0, fireHeight / 2, 0);
-
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);
 
@@ -768,8 +751,6 @@ var init = function () {
     starmesh4.rotation.x += 0.0001;
 
     controls.update();
-
-    fire.update( elapsed );
 
     renderer.render(scene, camera);
 

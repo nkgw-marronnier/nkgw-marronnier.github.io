@@ -73,6 +73,9 @@ var init = function () {
   var ki_mat = new THREE.MeshLambertMaterial();
   ki_mat.map = ki_texture;
   var tree_texture = textureLoader.load("/webgl/texture/tree0.png");
+  var tree2_texture = textureLoader.load("/webgl/texture/tree1.png");
+  var tree3_texture = textureLoader.load("/webgl/texture/tree2.png");
+  var tree4_texture = textureLoader.load("/webgl/texture/tree3.png");
 
   //バンプマップ読み込み
   var bump = textureLoader.load("/webgl/texture/stone-bump.jpg");
@@ -734,8 +737,8 @@ var init = function () {
   fire4.mesh.position.set(-25, 3, -25);
   scene.add(fire4.mesh);
 
-  // 平面（ポリゴン）を作成
-  var treegeometry = new THREE.PlaneGeometry(30, 30);
+  // 天界樹を作成
+  var treegeometry = new THREE.PlaneGeometry(20, 20);
   var tree_mat = new THREE.MeshBasicMaterial({
     transparent: true
   });
@@ -743,6 +746,36 @@ var init = function () {
   var treeplane = new THREE.Mesh(treegeometry, tree_mat);
   treeplane.position.set(25, 0, 0);
   scene.add(treeplane);
+
+  // 天界樹2を作成
+  var tree2geometry = new THREE.PlaneGeometry(20, 20);
+  var tree2_mat = new THREE.MeshBasicMaterial({
+    transparent: true
+  });
+  tree2_mat.map = tree2_texture;
+  var tree2plane = new THREE.Mesh(tree2geometry, tree2_mat);
+  tree2plane.position.set(-25, 0, 0);
+  scene.add(tree2plane);
+
+  // 天界樹を作成
+  var tree3geometry = new THREE.PlaneGeometry(20, 20);
+  var tree3_mat = new THREE.MeshBasicMaterial({
+    transparent: true
+  });
+  tree3_mat.map = tree3_texture;
+  var tree3plane = new THREE.Mesh(tree3geometry, tree3_mat);
+  tree3plane.position.set(25, 0, 25);
+  scene.add(tree3plane);
+
+  // 天界樹を作成
+  var tree4geometry = new THREE.PlaneGeometry(20, 20);
+  var tree4_mat = new THREE.MeshBasicMaterial({
+    transparent: true
+  });
+  tree4_mat.map = tree4_texture;
+  var tree4plane = new THREE.Mesh(tree4geometry, tree4_mat);
+  tree4plane.position.set(-25, 0, -25);
+  scene.add(tree4plane);
 
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);
@@ -753,6 +786,7 @@ var init = function () {
   // 初回実行
   var update = function () {
 
+    // FPS確認用
     stats.begin();
 
     var elapsed = clock.getElapsedTime();
@@ -801,14 +835,20 @@ var init = function () {
     starmesh4.rotation.y += 0.0001;
     starmesh4.rotation.x += 0.0001;
 
+    // カメラコントロール更新
     controls.update();
 
+    // 炎の更新
     fire.update(elapsed);
     fire2.update(elapsed);
     fire3.update(elapsed);
     fire4.update(elapsed);
 
+    // 木と目が合う
     treeplane.rotation.setFromRotationMatrix(camera.matrix);
+    tree2plane.rotation.setFromRotationMatrix(camera.matrix);
+    tree3plane.rotation.setFromRotationMatrix(camera.matrix);
+    tree4plane.rotation.setFromRotationMatrix(camera.matrix);
 
     requestAnimationFrame(update);
 

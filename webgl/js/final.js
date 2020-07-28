@@ -696,10 +696,6 @@ var init = function () {
   scene.add(starmesh4);
 
   //　炎の作成
-  // set path to texture images
-  // either relative or absolute path
-
-
   VolumetricFire.texturePath = '/textures/';
   var fireWidth = 10;
   var fireHeight = 25;
@@ -714,12 +710,33 @@ var init = function () {
   );
   fire.mesh.position.set(50, 1, 50);
   scene.add(fire.mesh);
-  fire.mesh.position.set(-50, 1, 50);
-  scene.add(fire.mesh);
-  fire.mesh.position.set(50, 1, -50);
-  scene.add(fire.mesh);
-  fire.mesh.position.set(-50, 1, -50);
-  scene.add(fire.mesh);
+  var fire2 = new VolumetricFire(
+    fireWidth,
+    fireHeight,
+    fireDepth,
+    sliceSpacing,
+    camera
+  );
+  fire2.mesh.position.set(-50, 1, 50);
+  scene.add(fire2.mesh);
+  var fire3 = new VolumetricFire(
+    fireWidth,
+    fireHeight,
+    fireDepth,
+    sliceSpacing,
+    camera
+  );
+  fire3.mesh.position.set(50, 1, -50);
+  scene.add(fire3.mesh);
+  var fire4 = new VolumetricFire(
+    fireWidth,
+    fireHeight,
+    fireDepth,
+    sliceSpacing,
+    camera
+  );
+  fire4.mesh.position.set(-50, 1, -50);
+  scene.add(fire4.mesh);
 
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);

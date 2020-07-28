@@ -701,14 +701,12 @@ var init = function () {
 
   // 初回実行
   var update = function () {
-    
-    requestAnimationFrame(update);
 
     stats.begin();
 
     //母なる地球
     earth.rotation.y += 0.01;
-
+    
     // 熊を飛び跳ねさせる
     round_group.rotation.y -= 0.006;
     round2_group.rotation.y += 0.005;
@@ -739,7 +737,7 @@ var init = function () {
       round2_group.position.y += 0.03;
       round5_group.position.y += 0.07;
     }
-
+    
     //星空を回転させる
     starmesh.rotation.y += 0.0001;
     starmesh.rotation.x += 0.0001;
@@ -749,9 +747,11 @@ var init = function () {
     starmesh3.rotation.x += 0.0001;
     starmesh4.rotation.y += 0.0001;
     starmesh4.rotation.x += 0.0001;
-
+    
     controls.update();
 
+    requestAnimationFrame(update);
+    
     renderer.render(scene, camera);
 
     stats.end();

@@ -722,17 +722,6 @@ var init = function () {
       -9 * Math.sin(radian)
     );
     fire_group.add(fire.mesh);
-
-    //回転軸ベクトルの宣言・規格化
-    var axis_fire = new THREE.Vector3(-10, -5, -10).normalize();
-    //回転角度の指定(ラジアン)
-    var angle_fire = (4 * Math.PI) / 4;
-    //クォータニオンオブジェクトの宣言
-    var q_fire = new THREE.Quaternion();
-    //回転軸と角度からクォータニオンを計算
-    q_fire.setFromAxisAngle(axis_fire, angle_fire);
-    //直方体オブジェクトのquaternionプロパティに代入
-    fire.mesh.quaternion.copy(q_fire);
   }
 
   //†漆黒の霧†

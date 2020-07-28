@@ -110,7 +110,7 @@ var init = function () {
   torusKnot2.position.set(0, 4.2, -17);
   scene.add(torusKnot2);
 
-  //ルービックキューブもどき
+  //ルービックキューブ
   var GameCubeGeometry = new THREE.CubeGeometry(1, 1, 1, 1, 1, 1);
   var GameCubeMaterial = new THREE.MeshBasicMaterial({
     color: 0xff4500,
@@ -120,7 +120,7 @@ var init = function () {
   GameCube.position.set(0, 0, -5);
   scene.add(GameCube);
 
-  //ルービックキューブもどき2
+  //ルービックキューブ2
   var GameCubeGeometry2 = new THREE.CubeGeometry(200, 200, 200, 5, 5, 5);
   var GameCubeMaterial2 = new THREE.MeshBasicMaterial({
     color: 0x7fffd4,

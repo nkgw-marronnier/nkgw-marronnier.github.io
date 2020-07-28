@@ -699,7 +699,7 @@ var init = function () {
   var tree_mat = new THREE.MeshBasicMaterial({
     transparent: true,
     side: THREE.DoubleSide,
-    depthWrite: True
+    depthWrite: true
   });
   tree_mat.map = tree_texture;
   var treeplane = new THREE.Mesh(treegeometry, tree_mat);
@@ -712,7 +712,7 @@ var init = function () {
   var tree2_mat = new THREE.MeshBasicMaterial({
     transparent: true,
     side: THREE.DoubleSide,
-    depthWrite: True
+    depthWrite: true
   });
   tree2_mat.map = tree2_texture;
   var tree2plane = new THREE.Mesh(tree2geometry, tree2_mat);
@@ -724,7 +724,7 @@ var init = function () {
   var tree3_mat = new THREE.MeshBasicMaterial({
     transparent: true,
     side: THREE.DoubleSide,
-    depthWrite: True
+    depthWrite: true
   });
   tree3_mat.map = tree3_texture;
   var tree3plane = new THREE.Mesh(tree3geometry, tree3_mat);
@@ -736,7 +736,7 @@ var init = function () {
   var tree4_mat = new THREE.MeshBasicMaterial({
     transparent: true,
     side: THREE.DoubleSide,
-    depthWrite: True
+    depthWrite: true
   });
   tree4_mat.map = tree4_texture;
   var tree4plane = new THREE.Mesh(tree4geometry, tree4_mat);
@@ -755,6 +755,7 @@ var init = function () {
     fireDepth,
     sliceSpacing,
     camera
+
   );
   fire.mesh.position.set(24, 3, 24);
   scene.add(fire.mesh);

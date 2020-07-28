@@ -220,7 +220,9 @@
         uniforms: uniforms,
         side: THREE.DoubleSide,
         blending: THREE.AdditiveBlending,
-        transparent: true
+        transparent: true,
+        depthWrite: true,
+        depthTest: true
       });
 
       return material;

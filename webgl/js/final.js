@@ -696,7 +696,7 @@ var init = function () {
   scene.add(starmesh4);
 
   //　炎の作成
-  VolumetricFire.texturePath = '/textures/';
+  VolumetricFire.texturePath = '/webgl/texture/';
   var fireWidth = 10;
   var fireHeight = 25;
   var fireDepth = 10;

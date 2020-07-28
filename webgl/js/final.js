@@ -701,7 +701,6 @@ var init = function () {
 
   var fire_group = new THREE.Group();
   scene.add(fire_group);
-  fire_group.add(fire.mesh);
 
   for (let i = 0; i < 4; i++) {
     VolumetricFire.texturePath = '/textures/';

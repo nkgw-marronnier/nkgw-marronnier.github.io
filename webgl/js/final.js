@@ -780,18 +780,20 @@ var init = function () {
   );
   fire4.mesh.position.set(-25, 3, -25);
   scene.add(fire4.mesh);
-
+  
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);
-
+  
   var ue = 0;
   var ue2 = 1;
-
+  
   // 初回実行
   var update = function () {
-
+    
     // FPS確認用
     stats.begin();
+    
+    requestAnimationFrame(update);
 
     var elapsed = clock.getElapsedTime();
 
@@ -853,8 +855,6 @@ var init = function () {
     tree2plane.rotation.setFromRotationMatrix(camera.matrix);
     tree3plane.rotation.setFromRotationMatrix(camera.matrix);
     tree4plane.rotation.setFromRotationMatrix(camera.matrix);
-
-    requestAnimationFrame(update);
 
     renderer.render(scene, camera);
 

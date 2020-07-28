@@ -18,7 +18,7 @@ var init = function () {
   camera.position.set(0, 0, 30);
 
   // カメラコントローラーを作成
-  const controls = new THREE.OrbitControls(camera,  canvas);
+  const controls = new THREE.OrbitControls(camera, canvas);
 
   // 滑らかにカメラコントローラーを制御する
   controls.enableDamping = true;
@@ -693,6 +693,29 @@ var init = function () {
   var starmesh4 = new THREE.Points(stargeometry4, starmaterial4);
   scene.add(starmesh4);
 
+  //　炎の作成
+
+  // set path to texture images
+  // either relative or absolute path
+  VolumetricFire.texturePath = './textures/';
+  var fireWidth = 100;
+  var fireHeight = 400;
+  var fireDepth = 100;
+  var sliceSpacing = 10;
+
+  var fire = new VolumetricFire(
+    fireWidth,
+    fireHeight,
+    fireDepth,
+    sliceSpacing,
+    camera
+  );
+  scene.add(fire.mesh);
+
+  // you can set position, rotation and scale
+  // fire.mesh accepts THREE.mesh features
+  fire.mesh.position.set(0, fireHeight / 2, 0);
+
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);
 
@@ -704,9 +727,11 @@ var init = function () {
 
     stats.begin();
 
+    var elapsed = clock.getElapsedTime();
+
     //母なる地球
     earth.rotation.y += 0.01;
-    
+
     // 熊を飛び跳ねさせる
     round_group.rotation.y -= 0.006;
     round2_group.rotation.y += 0.005;
@@ -737,7 +762,7 @@ var init = function () {
       round2_group.position.y += 0.03;
       round5_group.position.y += 0.07;
     }
-    
+
     //星空を回転させる
     starmesh.rotation.y += 0.0001;
     starmesh.rotation.x += 0.0001;
@@ -747,11 +772,13 @@ var init = function () {
     starmesh3.rotation.x += 0.0001;
     starmesh4.rotation.y += 0.0001;
     starmesh4.rotation.x += 0.0001;
-    
+
     controls.update();
 
+    fire.update( elapsed );
+
     requestAnimationFrame(update);
-    
+
     renderer.render(scene, camera);
 
     stats.end();

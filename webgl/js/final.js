@@ -77,10 +77,6 @@ var init = function () {
   var ki_texture = textureLoader.load("/webgl/texture/ki.jpg");
   var ki_mat = new THREE.MeshLambertMaterial();
   ki_mat.map = ki_texture;
-  var Narashino_texture = textureLoader.load("/webgl/texture/Narashino.jpg");
-  var Narashino_mat = new THREE.MeshLambertMaterial();
-  Narashino_mat.map = Narashino_texture;
-
 
   //バンプマップ読み込み
   var bump = textureLoader.load("/webgl/texture/stone-bump.jpg");
@@ -705,40 +701,40 @@ var init = function () {
 
   var fire_group = new THREE.Group();
   scene.add(fire_group);
-
-  VolumetricFire.texturePath = '/textures/';
-  var fireWidth = 2.5;
-  var fireHeight = 7;
-  var fireDepth = 5;
-  var sliceSpacing = 0.5;
-
-  var fire = new VolumetricFire(
-    fireWidth,
-    fireHeight,
-    fireDepth,
-    sliceSpacing,
-    camera
-  );
-
-  // you can set position, rotation and scale
-  // fire.mesh accepts THREE.mesh features
-  fire.mesh.position.set(
-    -9 * Math.cos(radian),
-    0,
-    -9 * Math.sin(radian)
-  );
-
-  fire.mesh.rotation.x = 3 * Math.PI / 2;
-
   fire_group.add(fire.mesh);
 
-  // 隕石を作成
-  var Narashinogeometry = new THREE.SphereGeometry(0.5, 32, 32);
-  var Narashino = new THREE.Mesh(Narashinogeometry, Narashino_mat);
-  Narashino.position.set(-9 * Math.cos(radian), 0, -9 * Math.sin(radian));
-  Narashino.castShadow = true;
-  fire_group.add(Narashino);
-  Narashino.scale.set(0.7, 0.7, 0.7);
+  for (let i = 0; i < 4; i++) {
+    VolumetricFire.texturePath = '/textures/';
+    var fireWidth = 2;
+    var fireHeight = 7;
+    var fireDepth = 5;
+    var sliceSpacing = 0.5;
+    var fire = new VolumetricFire(
+      fireWidth,
+      fireHeight,
+      fireDepth,
+      sliceSpacing,
+      camera
+    );
+    var radian = (i / 4) * Math.PI * 2;
+    fire.mesh.position.set(
+      -9 * Math.cos(radian),
+      0,
+      -9 * Math.sin(radian)
+    );
+    fire_group.add(fire.mesh);
+
+    //回転軸ベクトルの宣言・規格化
+    var axis_fire = new THREE.Vector3(-10, -5, -10).normalize();
+    //回転角度の指定(ラジアン)
+    var angle_fire = (4 * Math.PI) / 4;
+    //クォータニオンオブジェクトの宣言
+    var q_fire = new THREE.Quaternion();
+    //回転軸と角度からクォータニオンを計算
+    q_fire.setFromAxisAngle(axis_fire, angle_fire);
+    //直方体オブジェクトのquaternionプロパティに代入
+    fire.mesh.quaternion.copy(q_fire);
+  }
 
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);

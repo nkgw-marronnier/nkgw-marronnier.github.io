@@ -709,6 +709,7 @@ var init = function () {
   );
   fire.mesh.position.set(25, 3, 25);
   scene.add(fire.mesh);
+  //　炎2の作成
   var fire2 = new VolumetricFire(
     fireWidth,
     fireHeight,
@@ -718,6 +719,7 @@ var init = function () {
   );
   fire2.mesh.position.set(-25, 3, 25);
   scene.add(fire2.mesh);
+  //　炎3の作成
   var fire3 = new VolumetricFire(
     fireWidth,
     fireHeight,
@@ -727,6 +729,7 @@ var init = function () {
   );
   fire3.mesh.position.set(25, 3, -25);
   scene.add(fire3.mesh);
+  //　炎4の作成
   var fire4 = new VolumetricFire(
     fireWidth,
     fireHeight,
@@ -757,7 +760,7 @@ var init = function () {
   tree2plane.position.set(-25, 0, 0);
   scene.add(tree2plane);
 
-  // 天界樹を作成
+  // 天界樹3を作成
   var tree3geometry = new THREE.PlaneGeometry(20, 20);
   var tree3_mat = new THREE.MeshBasicMaterial({
     transparent: true
@@ -767,7 +770,7 @@ var init = function () {
   tree3plane.position.set(0, 0, 25);
   scene.add(tree3plane);
 
-  // 天界樹を作成
+  // 天界樹4を作成
   var tree4geometry = new THREE.PlaneGeometry(20, 20);
   var tree4_mat = new THREE.MeshBasicMaterial({
     transparent: true

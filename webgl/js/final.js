@@ -728,7 +728,7 @@ var init = function () {
     -9 * Math.sin(radian)
   );
 
-  fire.mesh.rotation.x = Math.PI / 2;
+  fire.mesh.rotation.x = 3 * Math.PI / 2;
 
   fire_group.add(fire.mesh);
 

@@ -704,7 +704,7 @@ var init = function () {
 
   VolumetricFire.texturePath = '/textures/';
   var fireWidth = 2.5;
-  var fireHeight = 5;
+  var fireHeight = 7;
   var fireDepth = 5;
   var sliceSpacing = 0.5;
 
@@ -724,7 +724,7 @@ var init = function () {
     -9 * Math.sin(radian)
   );
 
-  fire.mesh.rotation.x = Math.PI / 2;
+  fire.mesh.rotation.x = 3 * Math.PI / 2;
 
   fire_group.add(fire.mesh);
 
@@ -744,7 +744,7 @@ var init = function () {
     //母なる地球
     earth.rotation.y += 0.01;
 
-    fire_group.rotation.y += 0.05;
+    fire_group.rotation.y -= 0.05;
 
     // 熊を飛び跳ねさせる
     round_group.rotation.y -= 0.006;

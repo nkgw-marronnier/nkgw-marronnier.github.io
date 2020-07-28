@@ -764,7 +764,7 @@ var init = function () {
   });
   tree3_mat.map = tree3_texture;
   var tree3plane = new THREE.Mesh(tree3geometry, tree3_mat);
-  tree3plane.position.set(25, 0, 25);
+  tree3plane.position.set(0, 0, 25);
   scene.add(tree3plane);
 
   // 天界樹を作成
@@ -774,7 +774,7 @@ var init = function () {
   });
   tree4_mat.map = tree4_texture;
   var tree4plane = new THREE.Mesh(tree4geometry, tree4_mat);
-  tree4plane.position.set(-25, 0, -25);
+  tree4plane.position.set(0, 0, -25);
   scene.add(tree4plane);
 
   //†漆黒の霧†

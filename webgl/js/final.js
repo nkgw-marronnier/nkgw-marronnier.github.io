@@ -800,11 +800,7 @@ var init = function () {
     // カメラコントロール更新
     controls.update();
 
-    // 炎の更新
-    fire.update(elapsed);
-    fire2.update(elapsed);
-    fire3.update(elapsed);
-    fire4.update(elapsed);
+    // 炎の更/pdate(elapsed);
 
     // 木と目が合う
     treeplane.rotation.setFromRotationMatrix(camera.matrix);

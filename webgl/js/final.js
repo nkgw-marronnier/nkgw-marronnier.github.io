@@ -699,7 +699,7 @@ var init = function () {
   var tree_mat = new THREE.MeshBasicMaterial({
     transparent: true,
     side: THREE.DoubleSide,
-    depthWrite: true,
+    depthWrite: false,
     depthTest: true
   });
   tree_mat.map = tree_texture;
@@ -712,7 +712,7 @@ var init = function () {
   var tree2_mat = new THREE.MeshBasicMaterial({
     transparent: true,
     side: THREE.DoubleSide,
-    depthWrite: true,
+    depthWrite: false,
     depthTest: true
   });
   tree2_mat.map = tree2_texture;
@@ -725,7 +725,7 @@ var init = function () {
   var tree3_mat = new THREE.MeshBasicMaterial({
     transparent: true,
     side: THREE.DoubleSide,
-    depthWrite: true,
+    depthWrite: false,
     depthTest: true
   });
   tree3_mat.map = tree3_texture;
@@ -738,7 +738,7 @@ var init = function () {
   var tree4_mat = new THREE.MeshBasicMaterial({
     transparent: true,
     side: THREE.DoubleSide,
-    depthWrite: true,
+    depthWrite: false,
     depthTest: true
   });
   tree4_mat.map = tree4_texture;

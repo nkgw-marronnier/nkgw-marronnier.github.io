@@ -752,7 +752,7 @@ var init = function () {
 
   // 天界樹2を作成
   var tree2geometry = new THREE.PlaneGeometry(20, 20);
-  var tree2_mat = new THREE.SpriteMaterial({
+  var tree2_mat = new THREE.MeshBasicMaterial({
     transparent: true
   });
   tree2_mat.map = tree2_texture;
@@ -762,7 +762,7 @@ var init = function () {
 
   // 天界樹3を作成
   var tree3geometry = new THREE.PlaneGeometry(20, 20);
-  var tree3_mat = new THREE.SpriteMaterial({
+  var tree3_mat = new THREE.MeshBasicMaterial({
     transparent: true
   });
   tree3_mat.map = tree3_texture;
@@ -772,7 +772,7 @@ var init = function () {
 
   // 天界樹4を作成
   var tree4geometry = new THREE.PlaneGeometry(20, 20);
-  var tree4_mat = new THREE.SpriteMaterial({
+  var tree4_mat = new THREE.MeshBasicMaterial({
     transparent: true
   });
   tree4_mat.map = tree4_texture;

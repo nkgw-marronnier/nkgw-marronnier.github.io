@@ -57,26 +57,23 @@ var init = function () {
   var texture_earth = textureLoader.load("/webgl/texture/earth.jpg");
   var mat_earth = new THREE.MeshLambertMaterial();
   mat_earth.map = texture_earth;
-  var textureLoader = new THREE.TextureLoader();
   var texture = textureLoader.load("/webgl/texture/stone.jpg");
   var mat = new THREE.MeshPhongMaterial();
   mat.map = texture;
-  var textureLoader = new THREE.TextureLoader();
   var kawa1_texture = textureLoader.load("/webgl/texture/kawa1.jpg");
   var kawa1_mat = new THREE.MeshLambertMaterial();
   kawa1_mat.map = kawa1_texture;
-  var textureLoader = new THREE.TextureLoader();
   var kawa2_texture = textureLoader.load("/webgl/texture/kawa2.jpg");
   var kawa2_mat = new THREE.MeshLambertMaterial();
   kawa2_mat.map = kawa2_texture;
-  var textureLoader = new THREE.TextureLoader();
   var minamo_texture = textureLoader.load("/webgl/texture/minamo.jpg");
   var minamo_mat = new THREE.MeshPhongMaterial();
   minamo_mat.map = minamo_texture;
-  var textureLoader = new THREE.TextureLoader();
   var ki_texture = textureLoader.load("/webgl/texture/ki.jpg");
   var ki_mat = new THREE.MeshLambertMaterial();
   ki_mat.map = ki_texture;
+  var tree_texture = textureLoader.load("/webgl/texture/tree0.png");
+  tree_mat.map = tree_texture;
 
   //バンプマップ読み込み
   var bump = textureLoader.load("/webgl/texture/stone-bump.jpg");
@@ -738,6 +735,13 @@ var init = function () {
   fire4.mesh.position.set(-25, 3, -25);
   scene.add(fire4.mesh);
 
+  // 平面（ポリゴン）を作成
+  var treegeometry = new THREE.PlaneGeometry(200,200);
+  var tree_mat = new THREE.MeshBasicMaterial({transparent:true});
+  var treeplane = new THREE.Mesh( treegeometry, tree_mat );
+  treeplane.position.set(0, 250, 0);
+  scene.add( treeplane );
+
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);
 
@@ -801,6 +805,8 @@ var init = function () {
     fire2.update(elapsed);
     fire3.update(elapsed);
     fire4.update(elapsed);
+
+    treeplane.rotation.setFromRotationMatrix(camera.matrix);
 
     requestAnimationFrame(update);
 

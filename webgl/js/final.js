@@ -848,10 +848,10 @@ var init = function () {
     fire4.update(elapsed);
 
     // 木と目が合う
-    treeplane.rotation.setFromRotationMatrix(camera.matrix);
-    tree2plane.rotation.setFromRotationMatrix(camera.matrix);
-    tree3plane.rotation.setFromRotationMatrix(camera.matrix);
-    tree4plane.rotation.setFromRotationMatrix(camera.matrix);
+    treeplane.rotation.setFromRotationMatrix(this.camera.matrix);
+    tree2plane.rotation.setFromRotationMatrix(this.camera.matrix);
+    tree3plane.rotation.setFromRotationMatrix(this.camera.matrix);
+    tree4plane.rotation.setFromRotationMatrix(this.camera.matrix);
 
     requestAnimationFrame(update);
 

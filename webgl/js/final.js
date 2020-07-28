@@ -77,6 +77,10 @@ var init = function () {
   var ki_texture = textureLoader.load("/webgl/texture/ki.jpg");
   var ki_mat = new THREE.MeshLambertMaterial();
   ki_mat.map = ki_texture;
+  var Narashino_texture = textureLoader.load("/webgl/texture/Narashino.jpg");
+  var Narashino_mat = new THREE.MeshLambertMaterial();
+  Narashino_mat.map = Narashino_texture;
+
 
   //バンプマップ読み込み
   var bump = textureLoader.load("/webgl/texture/stone-bump.jpg");
@@ -724,9 +728,17 @@ var init = function () {
     -9 * Math.sin(radian)
   );
 
-  fire.mesh.rotation.x = 3 * Math.PI / 2;
+  fire.mesh.rotation.x = Math.PI / 2;
 
   fire_group.add(fire.mesh);
+
+  // 隕石を作成
+  var Narashinogeometry = new THREE.SphereGeometry(0.5, 32, 32);
+  var Narashino = new THREE.Mesh(Narashinogeometry, Narashino_mat);
+  Narashino.position.set(-9 * Math.cos(radian), 0, -9 * Math.sin(radian));
+  Narashino.castShadow = true;
+  fire_group.add(Narashino);
+  Narashino.scale.set(0.7, 0.7, 0.7);
 
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);

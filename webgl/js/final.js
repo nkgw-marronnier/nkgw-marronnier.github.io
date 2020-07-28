@@ -700,10 +700,10 @@ var init = function () {
   // set path to texture images
   // either relative or absolute path
   VolumetricFire.texturePath = '/textures/';
-  var fireWidth = 5;
-  var fireHeight = 10;
-  var fireDepth = 10;
-  var sliceSpacing = 5;
+  var fireWidth = 2.5;
+  var fireHeight = 5;
+  var fireDepth = 5;
+  var sliceSpacing = 0.5;
 
   var fire = new VolumetricFire(
     fireWidth,
@@ -716,7 +716,7 @@ var init = function () {
 
   // you can set position, rotation and scale
   // fire.mesh accepts THREE.mesh features
-  fire.mesh.position.set(0, -3, 0);
+  fire.mesh.position.set(0, 0, 0);
 
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);

@@ -18,7 +18,7 @@ var init = function () {
   camera.position.set(0, 0, 30);
 
   // カメラコントローラーを作成
-  const controls = new THREE.OrbitControls(camera,  renderer.domElement, canvas);
+  const controls = new OrbitControls(camera,  canvas);
 
   // 滑らかにカメラコントローラーを制御する
   controls.enableDamping = true;

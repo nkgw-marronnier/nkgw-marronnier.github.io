@@ -705,7 +705,6 @@ var init = function () {
   tree_mat.map = tree_texture;
   var treeplane = new THREE.Mesh(treegeometry, tree_mat);
   treeplane.position.set(25, 1, 1);
-  treeplane.renderOrder = 1;
   scene.add(treeplane);
 
   // 天界樹2を作成

@@ -716,8 +716,6 @@ var init = function () {
     camera
   );
 
-  fire_group.add(fire);
-
   // you can set position, rotation and scale
   // fire.mesh accepts THREE.mesh features
   fire.mesh.position.set(
@@ -725,6 +723,8 @@ var init = function () {
     -0.3,
     -9 * Math.sin(radian)
   );
+
+  fire_group.add(fire.mesh);
 
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);
@@ -742,7 +742,7 @@ var init = function () {
     //母なる地球
     earth.rotation.y += 0.01;
 
-    fire.mesh.rotation.y += 0.1;
+    fire_group.rotation.y += 0.1;
 
     // 熊を飛び跳ねさせる
     round_group.rotation.y -= 0.006;

@@ -701,9 +701,9 @@ var init = function () {
 
 
   VolumetricFire.texturePath = '/textures/';
-  var fireWidth = 2.5;
-  var fireHeight = 7;
-  var fireDepth = 2.5;
+  var fireWidth = 10;
+  var fireHeight = 25;
+  var fireDepth = 10;
   var sliceSpacing = 0.5;
   var fire = new VolumetricFire(
     fireWidth,

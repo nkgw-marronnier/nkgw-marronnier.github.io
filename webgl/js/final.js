@@ -727,8 +727,6 @@ var init = function () {
 
     stats.begin();
 
-    var elapsed = clock.getElapsedTime();
-
     //母なる地球
     earth.rotation.y += 0.01;
 
@@ -775,7 +773,7 @@ var init = function () {
 
     controls.update();
 
-    fire.update( elapsed );
+    fire.update();
 
     requestAnimationFrame(update);
 

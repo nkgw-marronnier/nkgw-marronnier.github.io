@@ -718,6 +718,9 @@ var init = function () {
 
   // 初回実行
   var update = function () {
+    
+    requestAnimationFrame(update);
+
     stats.begin();
 
     //母なる地球
@@ -769,8 +772,6 @@ var init = function () {
     fire.update( elapsed );
 
     renderer.render(scene, camera);
-
-    requestAnimationFrame(update);
 
     stats.end();
   };

@@ -735,13 +735,13 @@ var init = function () {
   scene.add(fire4.mesh);
 
   // 平面（ポリゴン）を作成
-  var treegeometry = new THREE.PlaneGeometry(200, 200);
+  var treegeometry = new THREE.PlaneGeometry(30, 30);
   var tree_mat = new THREE.MeshBasicMaterial({
     transparent: true
   });
   tree_mat.map = tree_texture;
   var treeplane = new THREE.Mesh(treegeometry, tree_mat);
-  treeplane.position.set(0, 250, 0);
+  treeplane.position.set(25, 0, 0);
   scene.add(treeplane);
 
   //†漆黒の霧†

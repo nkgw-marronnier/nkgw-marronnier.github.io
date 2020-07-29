@@ -10,6 +10,7 @@ var init = function () {
     antialisa: true,
   });
   renderer.setSize(width, height);
+  renderer.setClearColor( 0x000000, 0 );
   renderer.shadowMap.enabled = true;
 
   // シーンを作成
@@ -17,7 +18,7 @@ var init = function () {
 
   // カメラを作成
   var camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 150);
-  camera.position.set(0, 0, 30);
+  camera.position.set(0, 0, 35);
 
   // カメラコントローラーを作成
   const controls = new THREE.OrbitControls(camera, canvas);
@@ -700,7 +701,7 @@ var init = function () {
     transparent: true,
     side: THREE.DoubleSide,
     depthWrite: true,
-    depthTest: false
+    //depthTest: false
   });
   tree_mat.map = tree_texture;
   var treeplane = new THREE.Mesh(treegeometry, tree_mat);
@@ -713,7 +714,7 @@ var init = function () {
     transparent: true,
     side: THREE.DoubleSide,
     depthWrite: true,
-    depthTest: false
+    //depthTest: false
   });
   tree2_mat.map = tree2_texture;
   var tree2plane = new THREE.Mesh(tree2geometry, tree2_mat);
@@ -726,7 +727,7 @@ var init = function () {
     transparent: true,
     side: THREE.DoubleSide,
     depthWrite: true,
-    depthTest: false
+    //depthTest: false
   });
   tree3_mat.map = tree3_texture;
   var tree3plane = new THREE.Mesh(tree3geometry, tree3_mat);
@@ -739,7 +740,7 @@ var init = function () {
     transparent: true,
     side: THREE.DoubleSide,
     depthWrite: true,
-    depthTest: false
+    //depthTest: false
   });
   tree4_mat.map = tree4_texture;
   var tree4plane = new THREE.Mesh(tree4geometry, tree4_mat);

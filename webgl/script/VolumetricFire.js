@@ -222,7 +222,7 @@
         blending: THREE.AdditiveBlending,
         transparent: true,
         depthWrite: true,
-        depthTest: false
+        //depthTest: false
       });
 
       return material;

@@ -221,7 +221,7 @@
         side: THREE.DoubleSide,
         blending: THREE.AdditiveBlending,
         transparent: true,
-        depthWrite: true,
+        depthWrite: false,
         //depthTest: false
       });
 

@@ -745,7 +745,7 @@ var init = function () {
   var fireWidth = 10;
   var fireHeight = 25;
   var fireDepth = 10;
-  var sliceSpacing = 3;
+  var sliceSpacing = 5;
   var fire = new VolumetricFire(
     fireWidth,
     fireHeight,

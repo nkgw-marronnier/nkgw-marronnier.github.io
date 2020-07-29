@@ -28,7 +28,7 @@ var init = function () {
   controls.dampingFactor = 1.0;
 
   // カメラを轆轤みたいに回転してみる
-  controls.autoRotate = false;
+  controls.autoRotate = true;
   controls.autoRotateSpeed = 0.5;
 
   //FPS確認用
@@ -759,7 +759,6 @@ var init = function () {
     fireDepth,
     sliceSpacing,
     camera
-
   );
   fire.mesh.position.set(24, 3, 24);
   scene.add(fire.mesh);

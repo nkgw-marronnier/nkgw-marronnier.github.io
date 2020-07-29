@@ -723,7 +723,7 @@ var init = function () {
   var tree3_mat = new THREE.MeshBasicMaterial({
     transparent: true,
     side: THREE.DoubleSide,
-  }); 
+  });
   tree3_mat.map = tree3_texture;
   var tree3plane = new THREE.Mesh(tree3geometry, tree3_mat);
   tree3plane.position.set(1.5, 1.5, 35);
@@ -785,24 +785,24 @@ var init = function () {
   );
   fire4.mesh.position.set(-39.5, 3, -40);
   scene.add(fire4.mesh);
-  
+
   //†漆黒の霧†
   scene.fog = new THREE.Fog(0x000000, 10, 150);
-  
+
   var ue = 0;
   var ue2 = 1;
-  
+
   // 初回実行
   var update = function () {
-    
+
     // FPS確認用
     stats.begin();
-    
+
     var elapsed = clock.getElapsedTime();
-    
+
     //母なる地球
     earth.rotation.y += 0.01;
-    
+
     // 熊を飛び跳ねさせる
     round_group.rotation.y -= 0.006;
     round2_group.rotation.y += 0.005;
@@ -833,7 +833,7 @@ var init = function () {
       round2_group.position.y += 0.03;
       round5_group.position.y += 0.07;
     }
-    
+
     //星空を回転させる
     starmesh.rotation.y += 0.0001;
     starmesh.rotation.x += 0.0001;
@@ -843,27 +843,27 @@ var init = function () {
     starmesh3.rotation.x += 0.0001;
     starmesh4.rotation.y += 0.0001;
     starmesh4.rotation.x += 0.0001;
-    
+
     // カメラコントロール更新
     controls.update();
     camera.updateProjectionMatrix();
-    
+
     // 炎の更新
     fire.update(elapsed);
     fire2.update(elapsed);
     fire3.update(elapsed);
     fire4.update(elapsed);
-    
+
     // 木と目が合う
     treeplane.rotation.setFromRotationMatrix(camera.matrix);
     tree2plane.rotation.setFromRotationMatrix(camera.matrix);
     tree3plane.rotation.setFromRotationMatrix(camera.matrix);
     tree4plane.rotation.setFromRotationMatrix(camera.matrix);
-    
+
     requestAnimationFrame(update);
 
     renderer.render(scene, camera);
-    
+
     stats.end();
   };
   update();

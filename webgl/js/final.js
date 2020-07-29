@@ -12,6 +12,7 @@ var init = function () {
   renderer.setSize(width, height);
   renderer.sortObjects = true;
   renderer.shadowMap.enabled = true;
+  renderer.setPixelRatio(window.devicePixelRatio || 1);
 
   // シーンを作成
   var scene = new THREE.Scene();

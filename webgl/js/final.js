@@ -855,6 +855,7 @@ var init = function () {
     
     // カメラコントロール更新
     controls.update();
+    camera.updateProjectionMatrix();
     
     // 炎の更新
     fire.update(elapsed);

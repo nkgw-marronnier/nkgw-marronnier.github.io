@@ -697,7 +697,7 @@ var init = function () {
 
   // 天界樹を作成
   var treegeometry = new THREE.PlaneGeometry(20, 20);
-  var tree_mat = new THREE.MeshBasicMaterial({
+  var tree_mat = new THREE.MeshLambertMaterial({
     transparent: true,
     side: THREE.DoubleSide,
     depthWrite: true,
@@ -710,7 +710,7 @@ var init = function () {
 
   // 天界樹2を作成
   var tree2geometry = new THREE.PlaneGeometry(20, 20);
-  var tree2_mat = new THREE.MeshBasicMaterial({
+  var tree2_mat = new THREE.MeshLambertMaterial({
     transparent: true,
     side: THREE.DoubleSide,
     depthWrite: true,
@@ -723,7 +723,7 @@ var init = function () {
 
   // 天界樹3を作成
   var tree3geometry = new THREE.PlaneGeometry(20, 20);
-  var tree3_mat = new THREE.MeshBasicMaterial({
+  var tree3_mat = new THREE.MeshLambertMaterial({
     transparent: true,
     side: THREE.DoubleSide,
     depthWrite: true,
@@ -736,7 +736,7 @@ var init = function () {
 
   // 天界樹4を作成
   var tree4geometry = new THREE.PlaneGeometry(20, 20);
-  var tree4_mat = new THREE.MeshBasicMaterial({
+  var tree4_mat = new THREE.MeshLambertMaterial({
     transparent: true,
     side: THREE.DoubleSide,
     depthWrite: true,

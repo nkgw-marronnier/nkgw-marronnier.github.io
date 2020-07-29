@@ -20,7 +20,6 @@ var init = function () {
   // カメラを作成
   var camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 150);
   camera.position.set(0, 0, 25);
-  camera.rotation.y = Math.PI / 6;
 
   // カメラコントローラーを作成
   const controls = new THREE.OrbitControls(camera, canvas);
@@ -754,7 +753,7 @@ var init = function () {
   var fireWidth = 10;
   var fireHeight = 25;
   var fireDepth = 10;
-  var sliceSpacing = 0.5;
+  var sliceSpacing = 5;
   var fire = new VolumetricFire(
     fireWidth,
     fireHeight,

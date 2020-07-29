@@ -10,7 +10,7 @@ var init = function () {
     antialisa: true,
   });
   renderer.setSize(width, height);
-  renderer.sortObjects = false;
+  renderer.sortObjects = true;
   renderer.shadowMap.enabled = true;
 
   // シーンを作成

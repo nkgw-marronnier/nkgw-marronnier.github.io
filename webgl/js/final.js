@@ -613,7 +613,7 @@ var init = function () {
   // 配置する範囲
   var SIZE = 150;
   // 配置する個数
-  var LENGTH = 10000;
+  var LENGTH = 5000;
   for (let i = 0; i < LENGTH; i++) {
     stargeometry.vertices.push(
       new THREE.Vector3(
@@ -635,7 +635,7 @@ var init = function () {
   // 配置する範囲
   var SIZE = 150;
   // 配置する個数
-  var LENGTH = 5000;
+  var LENGTH = 3000;
   for (let i = 0; i < LENGTH; i++) {
     stargeometry2.vertices.push(
       new THREE.Vector3(
@@ -657,7 +657,7 @@ var init = function () {
   // 配置する範囲
   var SIZE = 150;
   // 配置する個数
-  var LENGTH = 5000;
+  var LENGTH = 3000;
   for (let i = 0; i < LENGTH; i++) {
     stargeometry3.vertices.push(
       new THREE.Vector3(
@@ -679,7 +679,7 @@ var init = function () {
   // 配置する範囲
   var SIZE = 150;
   // 配置する個数
-  var LENGTH = 5000;
+  var LENGTH = 3000;
   for (let i = 0; i < LENGTH; i++) {
     stargeometry4.vertices.push(
       new THREE.Vector3(

@@ -657,7 +657,7 @@ var init = function () {
   // 配置する範囲
   var SIZE = 150;
   // 配置する個数
-  var LENGTH = 1000;
+  var LENGTH = 10000;
   for (let i = 0; i < LENGTH; i++) {
     stargeometry3.vertices.push(
       new THREE.Vector3(
@@ -667,9 +667,10 @@ var init = function () {
       )
     );
   }
+  var color = "0x" + Math.floor(Math.random() * 16777215).toString(16);
   var starmaterial3 = new THREE.PointsMaterial({
     size: 0.4,
-    color: 0xff8c00,
+    color: Number(color),
   });
   var starmesh3 = new THREE.Points(stargeometry3, starmaterial3);
   scene.add(starmesh3);

@@ -33,9 +33,9 @@ var init = function () {
   controls.autoRotateSpeed = 0.5;
 
   //FPS確認用
-  var stats = new Stats();
-  stats.showPanel(0); //0: fps, 1: ms, 2: mb, 3+: custom
-  document.body.appendChild(stats.dom);
+  //var stats = new Stats();
+  //stats.showPanel(0); //0: fps, 1: ms, 2: mb, 3+: custom
+  //document.body.appendChild(stats.dom);
 
   //グループを作る
   var round_group = new THREE.Group();
@@ -796,7 +796,7 @@ var init = function () {
   var update = function () {
 
     // FPS確認用
-    stats.begin();
+    //stats.begin();
 
     var elapsed = clock.getElapsedTime();
 
@@ -864,7 +864,7 @@ var init = function () {
 
     renderer.render(scene, camera);
 
-    stats.end();
+    //stats.end();
   };
   update();
 };

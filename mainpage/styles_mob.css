@@ -5,6 +5,7 @@
     background: #fafafa;
     height: 100%;
     margin: 0;
+    font-size: 20px;
   }
 
   body {
@@ -24,7 +25,7 @@
 
   h2 {
     position: relative;
-    font-size: 2vw;
+    font-size: 25px;
     text-align: center;
   }
 
@@ -98,6 +99,7 @@
     background: #fafafa;
     height: 100%;
     margin: 0;
+    font-size: 20px;
   }
 
   body {
@@ -117,7 +119,7 @@
 
   h2 {
     position: relative;
-    font-size: 2vw;
+    font-size: 25px;
     text-align: center;
   }
 

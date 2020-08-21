@@ -1,6 +1,6 @@
 @media screen and (min-width: 767px) {
   html {
-    font-family: '游明朝', 'HG正楷書体-PRO', serif, sans-serif;
+    font-family: "Sawarabi Mincho", '游明朝', 'HG正楷書体-PRO', serif, sans-serif;
     color: #000;
     background: #fafafa;
     height: 100%;
@@ -20,7 +20,7 @@
     text-align: center;
     font-size: 2.3vw;
   }
-  
+
   h2 {
     position: relative;
     text-align: center;

@@ -1,19 +1,10 @@
 @media screen and (min-width: 767px) {
   html {
     font-family: "Reisho E1", '怨霊', '游明朝', 'HG正楷書体-PRO', serif, sans-serif;
-    color: #f00;
-    background: #000;
+    color: #000;
+    background: #fafafa;
     height: 100%;
     margin: 0;
-
-    scrollbar-base-color: #f00;
-    scrollbar-face-color: #f00;
-    scrollbar-track-color: #390000;
-    scrollbar-arrow-color: #f00;
-    scrollbar-highlight-color: #450000;
-    scrollbar-shadow-color: #290000;
-    scrollbar-3dlight-color: #000;
-    scrollbar-darkshadow-color: #000;
   }
 
   body {

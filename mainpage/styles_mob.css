@@ -53,9 +53,9 @@
 
   input:checked+.tab_class {
     text-decoration: underline;
-    text-decoration-color: #f00;
-    background-color: #330000;
-    color: #f00;
+    text-decoration-color: #fafafa;
+    background-color: #000;
+    color: #fafafa;
   }
 
   .content_class {
@@ -72,20 +72,20 @@
   }
 
   a:link.return {
-    color: #f00;
+    color: rgb(4, 131, 0);
   }
 
   a:visited.return {
-    color: #f00;
+    color: rgb(4, 131, 0);
   }
 
   a:hover.return {
-    color: #f00;
+    color: rgb(4, 131, 0);
     text-decoration: underline;
   }
 
   a:active.return {
-    color: #f00;
+    color: rgb(4, 131, 0);
   }
 }
 
@@ -145,9 +145,9 @@
 
   input:checked+.tab_class {
     text-decoration: underline 2px;
-    text-decoration-color: #f00;
-    background-color: #330000;
-    color: #f00;
+    text-decoration-color: #fafafa;
+    background-color: #000;
+    color: #fafafa;
   }
 
   .content_class {
@@ -164,19 +164,19 @@
   }
 
   a:link.return {
-    color: #f00;
+    color: rgb(4, 131, 0);
   }
 
   a:visited.return {
-    color: #f00;
+    color: rgb(4, 131, 0);
   }
 
   a:hover.return {
-    color: #f00;
+    color: rgb(4, 131, 0);
     text-decoration: underline;
   }
 
   a:active.return {
-    color: #f00;
+    color: rgb(4, 131, 0);
   }
 }

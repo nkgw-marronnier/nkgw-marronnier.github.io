@@ -20,6 +20,11 @@
     text-align: center;
     font-size: 2.3vw;
   }
+  
+  h2 {
+    position: relative;
+    text-align: center;
+  }
 
   .area {
     width: 90%;

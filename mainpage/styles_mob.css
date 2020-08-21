@@ -1,6 +1,6 @@
 @media screen and (max-width: 767px) {
   html {
-    font-family: '游明朝', 'HG正楷書体-PRO', serif, sans-serif;
+    font-family: "Sawarabi Mincho", '游明朝', 'HG正楷書体-PRO', serif, sans-serif;
     color: #000;
     background: #fafafa;
     height: 100%;
@@ -91,7 +91,7 @@
 @media screen and (orientation: landscape) {
 
   html {
-    font-family: '游明朝', 'HG正楷書体-PRO', serif, sans-serif;
+    font-family: "Sawarabi Mincho", '游明朝', 'HG正楷書体-PRO', serif, sans-serif;
     color: #000;
     background: #fafafa;
     height: 100%;

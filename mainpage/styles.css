@@ -1,0 +1,94 @@
+@media screen and (min-width: 767px) {
+  html {
+    font-family: "Reisho E1", '怨霊', '游明朝', 'HG正楷書体-PRO', serif, sans-serif;
+    color: #f00;
+    background: #000;
+    height: 100%;
+    margin: 0;
+
+    scrollbar-base-color: #f00;
+    scrollbar-face-color: #f00;
+    scrollbar-track-color: #390000;
+    scrollbar-arrow-color: #f00;
+    scrollbar-highlight-color: #450000;
+    scrollbar-shadow-color: #290000;
+    scrollbar-3dlight-color: #000;
+    scrollbar-darkshadow-color: #000;
+  }
+
+  body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+  }
+
+  h1 {
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+    font-size: 2.3vw;
+  }
+
+  .area {
+    width: 60%;
+    margin: auto;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .tab_class {
+    width: calc(100%/5);
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.55vw;
+    text-align: center;
+    display: block;
+    float: left;
+    order: -1;
+    cursor: pointer;
+    margin: -5px 0px -5px;
+  }
+
+  input[name="tab_name"] {
+    display: none;
+  }
+
+  input:checked+.tab_class {
+    text-decoration: underline;
+    text-decoration-color: #f00;
+    background-color: #330000;
+    color: #f00;
+  }
+
+  .content_class {
+    display: none;
+    width: 100%;
+    padding: 15px 15px 15px 15px;
+    border: solid 2px #440000;
+    font: 1.1vw;
+  }
+
+  input:checked+.tab_class+.content_class {
+    display: block;
+    margin: 15px 15px 15px;
+  }
+
+  a:link.return {
+    color: #f00;
+  }
+
+  a:visited.return {
+    color: #f00;
+  }
+
+  a:hover.return {
+    color: #f00;
+    text-decoration: underline;
+  }
+
+  a:active.return {
+    color: #f00;
+  }
+
+}

@@ -86,7 +86,7 @@
 @media screen and (orientation: landscape) {
 
   html {
-    font-family: "Reisho E1", '游明朝', 'HG正楷書体-PRO', serif, sans-serif;
+    font-family: '游明朝', 'HG正楷書体-PRO', serif, sans-serif;
     color: #000;
     background: #fafafa;
     height: 100%;
@@ -104,7 +104,7 @@
     position: relative;
     padding: 0px 0px 0px 0px;
     text-align: center;
-    font-size: 8vw;
+    font-size: 5vw;
   }
 
   .area {

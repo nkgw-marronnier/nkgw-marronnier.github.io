@@ -1,0 +1,170 @@
+@media screen and (max-width: 767px) {
+  html {
+    font-family: "Reisho E1", '游明朝', 'HG正楷書体-PRO', serif, sans-serif;
+    color: #f00;
+    background: #000;
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+  }
+
+  h1 {
+    position: relative;
+    padding: 0px 15px 0px 0px;
+    text-align: center;
+    font-size: 8vw;
+  }
+
+  .area {
+    width: 95%;
+    margin: auto;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .tab_class {
+    width: calc(100%/5);
+    height: 50px;
+    line-height: 50px;
+    font-size: 2.5vw;
+    text-align: center;
+    display: block;
+    float: left;
+    order: -1;
+    cursor: pointer;
+    margin: 5px 0px 10px;
+  }
+
+  input[name="tab_name"] {
+    display: none;
+  }
+
+  input:checked+.tab_class {
+    text-decoration: underline;
+    text-decoration-color: #f00;
+    background-color: #330000;
+    color: #f00;
+  }
+
+  .content_class {
+    display: none;
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+    border: solid 2px #440000;
+    font: 1.6vw;
+  }
+
+  input:checked+.tab_class+.content_class {
+    display: block;
+    margin: 5px 5px 5px;
+  }
+
+  a:link.return {
+    color: #f00;
+  }
+
+  a:visited.return {
+    color: #f00;
+  }
+
+  a:hover.return {
+    color: #f00;
+    text-decoration: underline;
+  }
+
+  a:active.return {
+    color: #f00;
+  }
+}
+
+@media screen and (orientation: landscape) {
+
+  html {
+    font-family: "Reisho E1", '游明朝', 'HG正楷書体-PRO', serif, sans-serif;
+    color: #f00;
+    background: #000;
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+  }
+
+  h1 {
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+    font-size: 8vw;
+  }
+
+  .area {
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .tab_class {
+    width: calc(100%/5);
+    height: 50px;
+    line-height: 50px;
+    font-size: 2vw;
+    text-align: center;
+    display: block;
+    float: left;
+    order: -1;
+    cursor: pointer;
+    margin: -5px 0px -5px;
+  }
+
+  input[name="tab_name"] {
+    display: none;
+  }
+
+  input:checked+.tab_class {
+    text-decoration: underline 2px;
+    text-decoration-color: #f00;
+    background-color: #330000;
+    color: #f00;
+  }
+
+  .content_class {
+    display: none;
+    width: 100%;
+    padding: 15px 15px 15px 15px;
+    border: solid 2px #440000;
+    font: 1.1vw;
+  }
+
+  input:checked+.tab_class+.content_class {
+    display: block;
+    margin: 15px 15px 15px;
+  }
+
+  a:link.return {
+    color: #f00;
+  }
+
+  a:visited.return {
+    color: #f00;
+  }
+
+  a:hover.return {
+    color: #f00;
+    text-decoration: underline;
+  }
+
+  a:active.return {
+    color: #f00;
+  }
+}

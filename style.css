@@ -1,0 +1,154 @@
+.tab-wrap {
+  background: rgb(255,255,255,0.8);
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 0 0 20px;
+}
+
+.tab-label {
+  color: Gray;
+  cursor: pointer;
+  flex: 1;
+  font-weight: bold;
+  font-size: 23px;
+  order: -1;
+  padding: 12px 24px;
+  position: relative;
+  text-align: center;
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  user-select: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tab-label:hover {
+  background: rgba(5, 255, 0, 0.1);
+}
+
+.tab-switch:checked + .tab-label {
+  color: rgb(5, 255, 0);
+}
+
+.tab-label::after {
+  background: rgb(5, 255, 0);
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 3px;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(100%);
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 0.2s 80ms;
+  width: 100%;
+  z-index: 1;
+}
+
+.tab-switch:checked ~ .tab-label::after {
+  transform: translateX(-100%);
+}
+
+.tab-switch:checked + .tab-label::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tab-content {
+  height: 0;
+  opacity: 0;
+  padding: 0 20px;
+  pointer-events: none;
+  transform: translateX(-30%);
+  transition: transform 0.3s 80ms, opacity 0.3s 80ms;
+  width: 100%;
+}
+
+.tab-switch:checked ~ .tab-content {
+  transform: translateX(30%);
+}
+
+.tab-switch:checked + .tab-label + .tab-content {
+  height: auto;
+  opacity: 1;
+  order: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.tab-wrap::after {
+  content: "";
+  height: 20px;
+  order: -1;
+  width: 100%;
+}
+
+.tab-switch {
+  display: none;
+}
+
+/* ============================== */
+
+ul {
+  padding: 0;
+}
+
+ul li{
+  color: #404040;
+  border-left: solid 6px #3cff00;/*左側の線*/
+  border-bottom: solid 2px #dadada;/*下に灰色線*/
+  background: rgb(255,255,255,0.8);
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1.5;
+  padding: 0.5em;
+  list-style-type: none!important;/*ポチ消す*/
+  font-weight: bold;
+  font-size: 18px;
+}
+
+ol li {
+  color: #404040;
+  border: solid 6px #dbff78;/*左側の線*/
+  border-radius: 10px;
+  background: rgb(255,255,255,0.8);
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1.5;
+  padding: 0.5em;
+  list-style-type: none!important;/*ポチ消す*/
+  font-weight: bold;
+  font-size: 15px;
+}
+
+p{
+  color: #1e366a;
+  border-top: solid #1e366a 1px;/*上のボーダー*/
+  border-bottom: solid #1e366a 1px;/*下のボーダー*/
+  padding: 0.5em 0 0.5em 1.5em;
+}
+
+font.title{
+  font-size:25px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+h1{
+  font-size: 50px;
+  text-align: center;
+}
+
+body {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  background: WhiteSmoke;
+  font-family: sans-serif;
+}
+
+footer{
+  padding-top: 20px;
+  text-align: center;
+}
